@@ -1,0 +1,56 @@
+<h1>Notifications</h1>
+<div class="container">
+    <div class="task">
+        <mat-card class="example-card">
+            <mat-card-content>
+                <div>
+                    <img src="assets/images/logo.png">
+                </div>
+                <div class="form">
+                    <form  autocomplete="off" >
+                        <label>Title:</label> 
+                  
+                        <input class="t-title" type="text">
+    
+                        <br>
+                        
+                        <label>Destination:</label>
+                 
+                        <select class="tdest">
+    
+                        </select>
+    
+                        <br>
+                        
+                        <label>Description:</label>
+                        
+                        <input class="tdesc" type="text">
+                        <br>
+                        
+                        <input type="submit" value="Send">
+                        
+                </form>
+            </div>
+          
+        </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="display">
+        <div *ngFor="let note of notifications; let i = index">
+            <mat-card class="example-card">
+                <label>Title &nbsp;</label><input class="title" type="text" value="{{note.title}}"><br><br>
+                <label>Description &nbsp;</label> <textarea value="{{note.message}}"></textarea>
+                <br>
+                <button mat-button color="primary">Edit</button>
+                <button mat-button color="warn">Delete</button>
+            </mat-card>
+            
+        </div>
+    </div>
+    
+    </div>
+  
+
+
+   

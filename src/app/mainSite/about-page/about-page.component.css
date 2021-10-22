@@ -1,0 +1,57 @@
+.banner-img{
+    width: 100%;
+}
+
+.about-head{
+    position: relative;
+    left: 450px;
+    font-family: Sniglet;
+    font-size: 30px;
+}
+
+.approach{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.approach-head, .altr{
+    font-size: 25px;
+    font-family: Quicksand;
+    font-weight: 700;
+    color: #73BF43;
+}
+.approach-img{
+    position: relative;
+    right: 70px;
+}
+
+.focus{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.focus-text{
+    position: relative;
+    
+}
+
+.focus-img{
+    position: relative;
+    bottom: 50px;
+}
+
+.aim{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.aim-text{
+    position: relative;
+
+}
+
+.aim-img{
+    position: relative;
+    bottom: 15px;
+}

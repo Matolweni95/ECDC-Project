@@ -1,0 +1,39 @@
+<router-outlet></router-outlet>
+<h1>Mountain View Educators</h1>
+<table mat-table [dataSource] = "dataSource">
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID</th>
+        <th style="padding-left: 24px;" mat-cell1 *matCellDef="let post"> {{post.id}} </th>
+    </ng-container><br>
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef> TYPE</th>
+      <th mat-cell *matCellDef="let post"> {{post.type}}</th>
+  </ng-container>
+  <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> NAME</th>
+      <th mat-cell *matCellDef="let post"> {{post.name}}</th>
+  </ng-container>
+  <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>EMAIL</th>
+      <th mat-cell *matCellDef="let post"> {{post.email}}</th>
+  </ng-container>
+  <ng-container matColumnDef="password">
+      <th mat-header-cell *matHeaderCellDef> PASSWORD</th>
+      <th mat-cell *matCellDef="let post"> {{post.password}}</th>
+  </ng-container>
+ <ng-container matColumnDef="crudBtns">
+     <th mat-header-cell *matHeaderCellDef>
+     
+     </th>
+     
+     <td style="float: right;" mat-cell *matCellDef="let post">
+         <button [routerLink]="['/Manager-Portal/View-Teacher']" style="margin:15px;" mat-raised-button color="accent">View Teacher</button>
+         <button [routerLink]="['/Manager-Portal/Edit-Teacher']" style="margin:15px;" mat-raised-button color="warn">Edit Teacher</button>
+      </td>
+ </ng-container>
+ 
+
+  <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+  <tr mat-row *matRowDef="let post; columns: displayColumns;"></tr>
+</table>
+<mat-paginator [pageSizeOptions] = "[5,10,20]" showFirstLastButtons></mat-paginator>

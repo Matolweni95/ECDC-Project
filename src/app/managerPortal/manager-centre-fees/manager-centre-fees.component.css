@@ -1,0 +1,45 @@
+.container{
+    display: flex;
+    gap: 80px;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+    padding-top: 80px;
+}
+
+
+h1{
+    padding-bottom: 5px;
+    text-align: center;
+    margin-left: 100px;
+}
+
+.title{
+    margin-left: 44px;
+}
+
+.tdesc, .tdest{
+    margin-left: 60px;
+    margin-bottom: 10px;
+}
+
+.grade{
+    margin-left: 53px;
+}
+
+.t-title {
+    margin-left: 103px;
+    margin-bottom: 10px;
+}
+
+.display {
+    
+    flex-wrap: wrap;
+    columns: 2;
+    gap: 10px;
+}
+
+mat-card{
+    margin-bottom: 10px;
+}
+

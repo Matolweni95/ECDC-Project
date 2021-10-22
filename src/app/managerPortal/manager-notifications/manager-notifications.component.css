@@ -1,0 +1,41 @@
+.container{
+    display: flex;
+    gap: 80px;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+}
+
+h1{
+    padding-bottom: 45px;
+    text-align: center;
+    margin-left: 70px;
+}
+
+.title{
+    margin-left: 44px;
+}
+
+.tdesc, .tdest{
+    margin-left: 60px;
+    margin-bottom: 10px;
+}
+
+.t-title {
+    margin-left: 103px;
+    margin-bottom: 10px;
+}
+
+.display {
+    
+    flex-wrap: wrap;
+    columns: 2;
+    gap: 10px;
+}
+
+mat-card{
+    margin-bottom: 10px;
+    color: black;
+    background-color: white;
+}
+

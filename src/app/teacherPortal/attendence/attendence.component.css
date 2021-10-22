@@ -1,0 +1,31 @@
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell{
+    border-bottom: none;
+}
+
+.mat-class{
+    padding-left: 275px;
+}
+
+.cont{
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.mat-head{
+    margin-left: 150px;
+    width: 200px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 50px;
+}
+
+mat-card{
+    background-color: #ec6c03;
+    color: white;
+}

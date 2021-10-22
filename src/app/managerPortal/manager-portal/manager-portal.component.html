@@ -1,0 +1,80 @@
+
+<mat-toolbar>
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!sidenav.opened">
+        menu
+      </mat-icon>
+      <mat-icon *ngIf="sidenav.opened">
+        close
+      </mat-icon>
+    </button>
+    Mountain View Childcare Society
+  </mat-toolbar>
+
+    <mat-sidenav-container>
+      <mat-sidenav #sidenav= "matSidenav">
+    
+        <img class="avatar mat-elevation-z8" src="assets/images/elne-staff5.png">
+        <h4 class="name">{{name}}</h4>
+        <p class="designation">{{type}}</p>
+    
+        <mat-divider></mat-divider>
+        <button [routerLink]="['/Manager-Portal/Manager-Home']" mat-button class="menu-button">
+          <mat-icon>home</mat-icon>
+          <span>Home</span>
+        </button>
+        <br>
+        <button [routerLink]="['/Manager-Portal/Mountain-Teachers']" mat-button class="menu-button">
+          <mat-icon>settings</mat-icon>
+          <span>Manage Teachers</span>
+        </button>
+        <br>
+        <button [routerLink]="['/Manager-Portal/Mountain-Kids']" mat-button class="menu-button">
+          <mat-icon>settings</mat-icon>
+          <span>Manage Learners</span>
+        </button>
+        <br>
+        <button [routerLink]="['/Manager-Portal/Fees']" mat-button class="menu-button">
+          <mat-icon>settings</mat-icon>
+          <span>Manage Centre Fees</span>
+        </button>
+        <br>
+        <button [routerLink]="['/Manager-Portal/Notification']" mat-button class="menu-button">
+          <mat-icon>library_add</mat-icon>
+          <span>Add Notification</span>
+        </button>
+        <br>
+    
+        <button [routerLink]="['/Manager-Portal/Mountain-Applications']" mat-button class="menu-button">
+          <mat-icon>insert_drive_file</mat-icon>
+          <span>Admissions</span>
+        </button>
+        <br>
+        <button [routerLink]="['/Manager-Portal/Mountain-Funds']"mat-button class="menu-button">
+          <mat-icon>attach_money</mat-icon>
+          <span>Centre Funds</span>
+        </button>
+        <br>
+        <button [routerLink]="['/Manager-Portal/MountainChat']" mat-button class="menu-button">
+          <mat-icon>chat_bubble_outline</mat-icon>
+          <span>Mountain Chat</span>
+        </button>
+        <br>
+        <button [routerLink]="['/Manager-Portal/MyProfile']" mat-button class="menu-button">
+          <mat-icon>person</mat-icon>
+          <span>My Profile</span>
+        </button>
+        <mat-divider></mat-divider>
+        <button *ngIf="logoutbtn" mat-button class="menu-button" (click)="logout()">
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Log Out</span>
+        </button>
+        
+      </mat-sidenav>
+      <mat-sidenav-content>
+        
+        <div class="content mat-elevation-z4">
+          <router-outlet></router-outlet>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>

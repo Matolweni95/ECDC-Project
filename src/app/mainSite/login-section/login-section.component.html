@@ -1,0 +1,94 @@
+<body>
+
+    <!--
+        <div class="container">
+            <div class="hero-container">
+                <div class="hero">
+                    <img src="assets/images/logo.png">
+                </div>
+            </div>
+            <div class="login">
+                <h2 class="text-center">Login</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                </div>
+                <div class="col-md-4 col-md-offset-5">
+                    <div class="jumbotron">
+                    <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off" >
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" formControlName="email" autocomplete="off" class="form-control input-sm" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="Password">Password</label>
+                            <input type="password" name="Password" formControlName="password" autocomplete="off" class="form-control input-sm" placeholder="Password">
+                        </div><br>
+                    <button type="submit"  class="btn btn-success" >Login</button>
+                    <button type="submit"  class="btn btn-danger" >Register</button>
+                    </form>
+                </div>
+            </div>
+        <div class="col-md-5">
+        </div>
+        </div>
+        
+        </div>
+        
+        
+        </div>
+    
+    -->
+    
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <div class="form">
+                <button [routerLink]="['/Teacher-Application/Application']">Teacher Applications</button>
+                <button [routerLink]="['/Parent-Application/Application']">Parent Applications</button>
+            </div>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <div class="login">
+                    <h2 class="text-center">Login</h2>
+                    <div class="row">
+                        <div class="col-md-4">
+                    </div>
+                    <div class="col-md-16 col-md-offset-5">
+                        <div class="jumbotron">
+                        <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off" >
+                            <div class="form-group">
+                                <input type="email" name="email" formControlName="email" autocomplete="off" class="form-control input-sm" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="Password" formControlName="password" autocomplete="off" class="form-control input-sm" placeholder="Password">
+                            </div><br>
+                        <button type="submit"  class="btn btn-success" >Login</button>
+                        </form>
+                    </div>
+                </div>
+                </div>
+                </div>
+        
+                
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button id="signIn" nclick="test()">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friends!</h1>
+                    <img src="/assets/images/logo.png">
+                    <p>Not part of our family yet?</p>
+                    <button class="ghost" id="signUp" onclick="test()">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    </body>
+    <router-outlet></router-outlet>
+        

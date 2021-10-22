@@ -1,0 +1,86 @@
+.footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px 20px 40px;
+    background-color: rgb(65, 38, 7);
+    position: relative;
+    font-family: Quicksand;
+    color: white;
+    height: auto;
+    width: auto;
+    margin: 0 auto;
+    overflow: hidden;
+    
+}
+
+.foot-icons{
+    height: 18px;
+    width: 18px;
+    margin-right: 20px;
+    position: relative; 
+    top: 4px; 
+}
+
+.foot-img{
+    height: 170px;
+    width: 200px;
+    position: relative;
+    bottom: 3px;
+    right: 70px;
+}
+.footimg{
+    position: relative;
+    height: 210px;
+    width: 100%;
+    top: 36px;
+}
+.mid-foot{
+    background-image: url(/assets/images/footerTopBorder.png);
+    position: relative;
+    top: 16px;
+}
+.loc-move{
+    position: relative;
+    left: 43px;
+    line-height: 18px;
+    top: 5px;
+}
+
+.links{
+    position: relative;
+    right: 55px;
+    font-family: Quicksand;
+    color: white;
+    
+    
+}
+
+.f-link{
+    color: white;
+}
+
+.link-text{
+    line-height: 33px;
+    position: relative;
+    bottom: 8px;
+}
+
+.link-cont-text{
+    position: relative;
+    line-height: 30px;
+    top: 66px;
+}
+
+.link-head{
+    position: relative;
+    bottom: 20px;
+    font-size: 22px;
+}
+
+.cont-head{
+    position: relative;
+    bottom: 20px;
+    font-size: 22px;
+
+}
+

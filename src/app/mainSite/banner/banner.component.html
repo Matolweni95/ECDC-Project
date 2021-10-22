@@ -1,0 +1,53 @@
+<!--
+<div class="slideshow-container">
+    <div class="slideshow-inner">
+      <div class="mySlides fade">
+        <img class = "caresel" src="assets/images/slider_1.jpg"  alt="sally lightfoot crab"/> 
+      </div>
+      <div class="mySlides fade">
+        <img class = "caresel" src='assets/images/slider_2.jpg' alt="fighting nazca boobies"/> 
+      </div>
+      <div class="mySlides fade">
+        <img class = "caresel" src='assets/images/slider_3.jpg'  alt="otovalo waterfall"/>
+      </div>
+      <div class="mySlides fade">
+        <img class = "caresel" src='assets/images/slider_4.jpg'  alt="otovalo waterfall"/>
+      </div>
+      </div>
+      <a class="prev" onclick='plusSlides(-1)'>&#10094;</a>
+      <a class="next" onclick='plusSlides(1)'>&#10095;</a>
+    </div>
+    <img class = "hero-logo" src="assets/images/logo.png">
+  -->
+
+  <ngb-carousel>
+    
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img src="assets/images/slider_2.jpg" alt="Angular Carousel 1">
+      </div>
+      <div class="carousel-caption">
+        <h3>Title Goes Here</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img src="assets/images/slider_1.jpg" alt="Angular Carousel 2">
+      </div>
+      <div class="carousel-caption">
+        <h3>Title Goes Here</h3>
+        <p>Consectetur tortor volutpat pretium.</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img src="assets/images/slider_3.jpg" alt="Angular Carousel 2">
+      </div>
+      <div class="carousel-caption">
+        <h3>Title Goes Here</h3>
+        <p>Consectetur tortor volutpat pretium.</p>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+  <img class = "hero-logo" src="assets/images/logo.png">

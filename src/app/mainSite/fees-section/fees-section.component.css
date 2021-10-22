@@ -1,0 +1,194 @@
+.fees{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.divide{
+    display: flex;
+    text-align: center;
+}
+.fee-text{
+    color: #73BF43;
+    font-size: 38px;
+    font-weight: 900;
+    font-family: Quicksand;
+
+    
+}
+
+.bubbles{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+}
+
+.container{
+    text-align: center;
+    background-color: rgb(75, 169, 247);
+    border-radius: 25px;
+    height: fit-content;
+    
+}
+
+.top-cont{
+    height: 40px;
+    font-weight: 900;
+    font-family: Quicksand;
+    font-weight:900;
+}
+
+.bott-cont{
+    position: relative;
+    top: 16px;
+    background-color: rgb(159, 210, 252);
+    border-radius: 0px 0px 25px 25px;
+    border-top: none;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.container-2{
+    text-align: center;
+    background-color: #73BF43;
+    border-radius: 25px;
+    height: fit-content;
+    
+}
+
+.top-cont2{
+    height: 40px;
+    font-weight: 900;
+    font-family: Quicksand;
+    font-weight:900;
+}
+
+.bott-cont2{
+    position: relative;
+    background-color: #acd394;
+    border-radius: 0px 0px 25px 25px;
+    border-top: none;
+    padding-bottom: 10px;
+    top: 16px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.container3{
+    text-align: center;
+    background-color: rgb(179, 32, 216);
+    border-radius: 25px;
+    height: fit-content;
+}
+
+.top-cont3{
+    height: 40px;
+    font-weight: 900;
+    font-family: Quicksand;
+    font-weight:900;
+}
+
+.bott-cont3{
+    position: relative;
+    background-color: rgb(184, 103, 204);
+    border-radius: 0px 0px 25px 25px;
+    border-top: none;
+    padding-bottom: 10px;
+    top: 16px;
+    padding-right: 15px;
+    padding-left: 15px;
+
+}
+
+.discount{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.move{
+    position: relative;
+    left: 59%;
+}
+
+.bold{
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.fee-head{
+    font-size: 35px;
+    color: #73BF43;
+    font-weight: 900;
+    font-family: Quicksand;
+    
+}
+
+.including{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.fees-inc{
+    line-height: 30px;
+}
+
+.no-space{
+    line-height: 24px;
+}
+
+
+
+.fee-img{
+    height: 300px;
+    position: relative;
+    top: 70px;
+}
+
+.drop-in-sec{
+    margin-top: 80px;
+    position: relative;
+    top: 55px;
+}
+
+.drop-head{
+    font-size: 40px;
+    font-weight: 900;
+    color: #73BF43;
+}
+
+.drop-text{
+    text-align: center;
+    color: rgb(65, 38, 7);
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.text1{
+    font-size: 30px;
+    font-weight: 900;
+    color: #73BF43;
+}
+
+
+.text2{
+
+    font-size: 25px;
+    font-weight: 900;
+    color: #73BF43;
+
+}
+
+.text3{
+    font-size: 25px;
+    font-weight: 900;
+    color: rgb(65, 38, 7);
+
+}

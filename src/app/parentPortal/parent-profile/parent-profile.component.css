@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    height: 100%;
+}
+
+.mat-form-field{
+    width: 300px;
+}
+
+img {
+    border-radius: 25px;
+}

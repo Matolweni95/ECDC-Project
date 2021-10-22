@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+
+*{
+    font-family: Quicksand;
+    font-weight: 700;
+}
+.navbar {
+    overflow: hidden;
+    background-color: #73BF43;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 54px;  
+}
+  
+  .navbar a {
+    float: left;
+    font-size: 13px;
+    font-weight: 300;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: 13px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    color: yellow;
+  }
+
+  .dropdown-content a:hover{
+      color: #73BF43;;
+  }
+  
+ 
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+}
+.lower-nav{
+    padding: 0px 0px 0px 70px;
+    display: flex;
+    position: relative;
+    height: 80px;
+    background-color: #f5f5f5;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contact-call{
+    position: relative;
+    
+}
+
+.contact-email{
+    position: relative;
+    
+}
+
+.btn-login{
+    width: 150px;
+    border-radius: 5px;
+    border: solid 1px;
+    padding: 5px 0px 5px 0px;
+    box-shadow: hsl(0, 2%, 78%) 3px 3px 0px;
+    cursor: pointer;
+    
+}
+
+.login-text{
+    position: relative;
+    font-family: Quicksand;
+    font-weight: 800;
+    
+}

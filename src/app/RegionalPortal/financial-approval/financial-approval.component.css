@@ -1,0 +1,54 @@
+
+
+.example-card {
+    max-width: 1600px;
+  }
+
+  .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75%;
+  }
+
+  mat-card-content{
+      display: flex;
+  }
+
+  p{
+      margin-left: 15px;
+      padding-bottom: 20px;
+  }
+
+  button{
+      margin-top: 30px;
+      margin-left: 10px;
+  }
+
+  .form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  select{
+    margin-bottom: 30px;
+  }
+
+  .desc{
+    margin-left: 55px;
+    margin-bottom: 30px;
+  }
+
+  .centre{
+    margin-left: 43px;
+  }
+  
+  h1{
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .upload {
+      margin-left: 22px;
+  }

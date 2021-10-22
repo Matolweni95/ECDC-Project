@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Olds Alberta Child Care | Olds Alberta Daycare | Olds Alberta Preschool | About Mountain View Child Care Society</title>
+
+<!--[if lt IE 9]>
+
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+
+<![endif]-->
+
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="css/fonts.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+
+<!-- Left MENU -->
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<link type="text/css" rel="stylesheet" href="dist/css/jquery.mmenu.css" />
+<script type="text/javascript" src="dist/js/jquery.mmenu.min.js"></script>
+<script type="text/javascript">
+
+$(function() {
+
+var $menu = $('nav#menu'), $html = $('html, body');
+
+$menu.mmenu({
+
+	dragOpen : false
+
+});
+
+
+
+var $anchor = false;
+
+$menu.find('li > a').on('click', function(e) {
+
+	$anchor = $(this);
+
+});
+
+var api = $menu.data('mmenu');
+
+api.bind('closed', function() {
+
+	if($anchor) {
+
+		var href = $anchor.attr('href');
+
+		$anchor = false;
+
+		//	if the clicked link is linked to an anchor, scroll the page to that anchor
+
+		if(href.slice(0, 1) == '#') {
+
+			$html.animate({
+
+				scrollTop : $(href).offset().top
+
+			});
+
+		}
+
+	}
+
+});
+
+});
+
+</script>
+
+<!-- Left MENU -->
+
+<script type="text/javascript" src="js/active.js"></script>
+<script type="text/javascript" src="js/scrolltopcontrol.js"></script>
+<script type="text/javascript">
+
+$(function() {
+
+    //caches a jQuery object containing the header element
+
+    var header = $(".headerPnl");
+
+    $(window).scroll(function() {
+
+        var scroll = $(window).scrollTop();
+
+
+
+        if (scroll >= 10) {
+
+            header.removeClass('headerPnl').addClass("headerPnl2");
+
+        } else {
+
+            header.removeClass("headerPnl2").addClass('headerPnl');
+
+        }
+
+    });
+
+});
+
+</script>
+</head>
+
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+
+  var js, fjs = d.getElementsByTagName(s)[0];
+
+  if (d.getElementById(id)) return;
+
+  js = d.createElement(s); js.id = id;
+
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=141058212630215";
+
+  fjs.parentNode.insertBefore(js, fjs);
+
+}(document, 'script', 'facebook-jssdk'));</script><!-- #BeginLibraryItem "/Library/header.lbi" --><nav id="menu">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about-us.html">About Us</a>
+      <ul>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="reviews.html">Parent Reviews</a></li>
+        <li><a href="staff.html">Our Staff</a></li>
+        <li><a href="society.html">Society</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Programs</a>
+      <ul>
+        <li><a href="curriculum.html">Our Curriculum</a></li>
+        <li><a href="programs.html">Our Program</a></li>
+      </ul>
+    </li>
+    <li><a href="staff.html">For Parents</a>
+      <ul>
+        <li><a href="enrollment.html">Enrollment</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
+        <li><a href="news.html">News &amp; Events</a></li>
+        <li><a href="links.html">Links</a></li>
+        <li><a href="faq.html">FAQ's</a></li>
+      </ul>
+    </li>
+    <li><a href="photos.html">Photos</a></li>
+    <li><a href="careers.html">Careers</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+<div class="headerPnl"><a href="#menu"><img src="images/menu.png" class="menuIcon" alt="" /></a>
+  <div class="topMenuPnl">
+    <div class="mainDiv">
+      <ul id="navigation">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#url">About Us <i class="fa fa-angle-down"></i></a>
+          <ul>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="reviews.html">Parent Reviews</a></li>
+        <li><a href="staff.html">Our Staff</a></li>
+        <li><a href="society.html">Society</a></li>
+          </ul>
+        </li>
+        <li><a href="#url">Program <i class="fa fa-angle-down"></i></a>
+          <ul>
+        <li><a href="curriculum.html">Our Curriculum</a></li>
+        <li><a href="programs.html">Our Program</a></li>
+          </ul>
+        </li>
+    <li><a href="staff.html">For Parents <i class="fa fa-angle-down"></i></a>
+      <ul>
+        <li><a href="enrollment.html">Enrollment</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
+        <li><a href="news.html">News &amp; Events</a></li>
+        <li><a href="links.html">Links</a></li>
+        <li><a href="faq.html">FAQ's</a></li>
+      </ul>
+    </li>
+    <li><a href="photos.html">Photos</a></li>
+    <li><a href="careers.html">Careers</a></li>
+    <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="headerInfo">
+    <div class="mainDiv">
+      <p class="address"><img src="images/headerInfoIcon_3.png" alt="">4410 – 47 Avenue, Olds, AB T4H 1A2</p>
+      <p class="email"><img src="images/headerInfoIcon_2.png" alt=""><a href="mailto:director@mvccs.ca">director@mvccs.ca</a></p>
+      <p class="phone"><img src="images/headerInfoIcon_1.png" alt=""><a href="tel:5877961011">(587)796-1011</a></p>
+    </div>
+  </div>
+</div><!-- #EndLibraryItem --><div class="bannerPnl"><!-- #BeginLibraryItem "/Library/innerpagelogo.lbi" -->    <div class="InnerPageLogo">
+    <div class="mainDiv"><a href="index.html" class="innerLogo"><img src="images/logo.png" alt=""></a></div>
+    </div><!-- #EndLibraryItem --><div class="sliderList"> <img src="images/innerPageBanner7.jpg" class="inrBnr" alt=""></div>
+</div>
+<div class="middilePnl">
+  <div class="mainDiv">
+	  
+	  
+	  <script type="text/javascript">
+<!--
+	if( ( navigator.userAgent.indexOf( "MSIE" ) > -1 ) ) {
+		document.onkeypress = ieKeyPress;
+	} else {
+		document.captureEvents( Event.keypress );
+		document.onkeypress = function( event ) {
+			if( (event.which == 121 || event.which == 25) && (event.ctrlKey == true) ) {
+				psredirect();
+				return false;
+			}
+		}
+	}
+	function ieKeyPress() {
+		if( window.event.keyCode == 25 ) {
+			psredirect();
+		}
+	}
+	function psredirect() {
+		document.location = '/generator/default.php?page=pages&view=edit&doc=about-us.html&return=%2Fabout-us.html';
+	}
+-->
+</script><div class="bodyContent">
+	<h1>About Mountain View Child Care Society</h1>
+	<p>We believe in the value and uniqueness of each child we serve.</p>
+	<p>Mountain View Child Care Society is dedicated and committed to our children by providing exceptional education and quality child care. We think our child care centre should be an extension of each child's family. Teachers and parents are encouraged to work together to provide love and support as your child reaches developmental milestones and his/her own personal achievements! We are passionate about education and providing our children with the tools to be successful in life. Through Play children learn about themselves, their world and those around them. They develop the skills and knowledge they will need to succeed in their lives. All children learn and grow in their own special way. </p>
+	<h2>OUR PHILOSOPHY </h2>
+	<p>Mountain View Child Care Society employs a developmentally appropriate approach to learning and early development. Our philosophy is based on the following set of principles.</p>
+	<ul type="disc">
+		<li>Children must have some control over the direction of their learning.</li>
+		<li>Children must be able to learn through experiences of touching, moving, listening, seeing, and hearing.</li>
+		<li>Children have a relationship with other children and with material items in the world that they must be allowed to explore.</li>
+		<li>Children must have endless ways and opportunities to express themselves.</li>
+		<li>Parents are encouraged to take part in discussions about centre policy, child development concerns, curriculum planning and evaluation.</li>
+		<li>Children are seen as inquisitive, intelligent, competent, resourceful individuals who can express their knowledge in various ways.</li>
+		<li>Environments matter in facilitating learning to all children who attend our programs.</li>
+	</ul>
+	<p>These principles align with the curriculum approach termed Play, Possibilities and Participation. </p>
+	<p><strong>Our goals and objective at Mountain View Child Care Society are to enhance each child’s growth and learning by:</strong></p>
+	<ul>
+		<li>Developing the child’s sense of self-worth</li>
+		<li>Providing a wide-range of experiences to foster learning, creativity and problem solving in all areas--language, mathematics, science, music, art, physical education, health and safety</li>
+		<li>Encouraging the child’s natural curiosity about the world around him/her</li>
+		<li>Developing emotional growth of the child and consideration of others</li>
+		<li>Developing a sense of trust in peers and adults</li>
+		<li>Encouraging parents to participate, observe, provide input and suggestions in the planning and implementation of the program to meet the individual differences and preferences of each child</li>
+		<li>Provide a high quality early childhood program which meets the needs and promotes equally; social, emotional, physical, and cognitive development of the children and adults (parents, staff, and administrators) who are involved in the program</li>
+		<li>Maintain an environment which children will be comfortable, relaxed, safe, happy, involved in play and other learning activities.</li>
+	</ul></div>
+<div class="sidebar">
+	<div class="sidebarFacebook">
+		<h6><a href="https://www.facebook.com/MountainViewChildCare" style="color: rgb(255, 255, 255);">Stay Connected</a></h6><br />
+		
+		<h4><a href="https://www.instagram.com/oldsmvccs"><img src="/generator/assets/instagram115sq.jpg" title="oldsmvccs" alt="instagram.com/oldsmvccs" /></a><br />
+			<br />
+			</h4></div>
+	<div class="exNews">
+		<h6>Exciting News</h6>
+		<p>We are open for enrollment. Please visit our Enrollment page for details.</p>
+		<p><br />
+			Our <span style="font-weight: bold;">Out of School Program (OSP) </span>is Open! Call for information!<a href="tel:5877961011">(587)796-1011</a></p>
+		<p>We have launched our summer program running from July 5-Aug 27 2021 for ages 6-10. Please call for more information and to reserve your spot today!</p>
+		<p><span style="font-weight: bold;">SWEET SILVER!</span> We were selected by the community in the Mountain View Gazette's Reader's Choice Awards. Our thanks are noted on our News Page! <span style="font-style: italic;">Thank you everyone for your continued support.</span></p>
+		<p>&nbsp;</p></div></div>    
+    
+  </div>
+</div><!-- #BeginLibraryItem "/Library/footer.lbi" --><div class="footerTopBdr"></div>
+<div class="footerPnl">
+  <div class="mainDiv">
+    <div class="footerPnl_1">
+      <h3>Contact</h3>
+      <p>4410 – 47 Avenue, Olds, AB T4H 1A2</p>
+      <div class="footerMap"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6978.895892019017!2d-114.10037848891932!3d51.7986265377251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x537410fe92b0f849%3A0x35d47a8dd5e25c90!2s4410+47+Ave%2C+Olds%2C+AB+T4H+1A2%2C+Canada!5e0!3m2!1sen!2sus!4v1531156677095" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+    </div>
+    <div class="footerPnl_2">
+      <div class="footerContactInfo">
+        <h4>Get in Touch</h4>
+        <h5><a href="tel:5877961011">(587)796-1011</a></h5>
+        <p>E: <a href="mailto:director@mvccs.ca">director@mvccs.ca</a><br>
+          F: <a href="tel:5877961011">(587)796-1011</a></p>
+      </div>
+    </div>
+    <div class="footerPnl_3 footerMenu">
+      <h3>Sitemap</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="curriculum.html">Curriculum</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="staff.html">Staff</a></li>
+        <li><a href="society.html">Society</a></li>
+        <li><a href="enrollment.html">Enrollment</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="links.html">Links</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="photos.html">Photos</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footerPnl_4"> <a class="pLogin" href="#">Secure parent Login</a>
+      <ul class="socialIcon">
+        <li><a href="https://www.facebook.com/MountainViewChildCare/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="https://www.instagram.com/Mtnviewchildcaresociety/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+       <!-- <li><a href="#url"><i class="fa fa-google-plus"></i></a></li>
+        <li><a href="#url"><i class="fa fa-youtube"></i></a></li>		  
+        <li><a href="#url"><i class="fa fa-yelp"></i></a></li>-->
+      </ul>
+      <br class="clear_me">
+      <p class="copyRight">&copy; 2018 Mountain View Child Care Society. All rights reserved<br>
+        <a href="http://websitesfordaycares.com/" target="_blank">Websites for Daycares</a></p>
+    </div>
+  </div>
+</div><!-- #EndLibraryItem --></body>
+</html>

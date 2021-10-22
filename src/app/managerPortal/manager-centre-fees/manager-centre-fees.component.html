@@ -1,0 +1,62 @@
+<body>
+    <h1>Mountain Fees</h1>
+    <div class="container">
+        <div class="task">
+            <mat-card class="example-card">
+                <mat-card-content>
+                    <div>
+                        <img src="assets/images/logo.png">
+                    </div>
+                    <div class="form">
+                        <form  autocomplete="off" >
+                            <label>Grade:</label> 
+                      
+                            <select class="grade">
+        
+                            </select>
+        
+                            <br>
+                            
+                            <label>Fees:</label>
+                     
+                            <input type="text" class="tdest">
+        
+                            <br>
+                            
+                            <label>Year:</label>
+                            
+                            <mat-form-field class="mat-head" appearance="fill">
+                                <mat-label>Date</mat-label>
+                                <input matInput [matDatepicker]="picker3" [value]="date.value">
+                                <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                                <mat-datepicker #picker3></mat-datepicker>
+                              </mat-form-field>
+                              <mat-form-field class="mat-head" appearance="fill">
+                                <mat-label>Date</mat-label>
+                                <input matInput [matDatepicker]="picker3" [value]="date.value">
+                                <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                                <mat-datepicker #picker3></mat-datepicker>
+                              </mat-form-field>
+                    </form>
+                </div>
+              
+            </mat-card-content>
+            </mat-card>
+            
+        </div>
+    
+        <div class="display">
+            <div *ngFor="let note of notifications; let i = index">
+                <mat-card class="example-card">
+                    <label>Title &nbsp;</label><input class="title" type="text" value="{{note.title}}"><br><br>
+                    <label>Description &nbsp;</label> <textarea value="{{note.message}}"></textarea>
+                    <br>
+                    <button mat-button color="primary">Edit</button>
+                    <button mat-button color="warn">Delete</button>
+                </mat-card>
+                
+            </div>
+        </div>
+        
+        </div>
+        </body>

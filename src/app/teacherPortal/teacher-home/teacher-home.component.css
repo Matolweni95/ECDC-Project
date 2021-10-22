@@ -1,0 +1,25 @@
+mat-card {
+    width: 225px;
+    height: 230px;
+    color: white;
+    background-color: #ec6c03;
+}
+
+.cont{
+    margin: 16px 16px;
+    display: flex;
+    gap: 35px;
+    
+}
+.card{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    flex-wrap: wrap;
+    border: none;
+}
+.example-cards{
+    width:520px;
+    height: 75vh;
+}
+

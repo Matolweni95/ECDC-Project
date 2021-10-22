@@ -1,0 +1,30 @@
+.staff-head{
+    position: relative;
+    font-size: 30px;
+    color: #73BF43;
+    font-weight: 900;
+}
+
+.staff-intro{
+    text-align: center;
+}
+
+.staff-img{
+    
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.staff-image{
+    width: 250px;
+    height: 250px;
+    border-radius: 5%;
+}
+
+figcaption{
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    color: #73BF43;
+}

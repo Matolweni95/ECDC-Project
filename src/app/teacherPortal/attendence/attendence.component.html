@@ -1,0 +1,78 @@
+<div class="container">
+
+    <div class="hero">
+      <img src="assets/images/logo.png">
+    </div>
+  
+    <div class="value">
+      <mat-card>
+      <div class="cont">
+        <h1>Learner Attendence</h1>
+    
+        <mat-form-field class="mat-head" appearance="fill">
+            <mat-label>Date</mat-label>
+            <input matInput [matDatepicker]="picker3" [value]="date.value">
+            <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+            <mat-datepicker #picker3></mat-datepicker>
+          </mat-form-field>
+    </div>
+    
+    <form>
+    
+    <table mat-table [dataSource] = "dataSource">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> </th>
+            <th style="padding-left: 24px;" mat-cell1 *matCellDef="let post"> {{post.id}} </th>
+        </ng-container><br>
+        <ng-container matColumnDef="type">
+          <th mat-header-cell *matHeaderCellDef> </th>
+          <th mat-cell *matCellDef="let post"> {{post.type}}</th>
+      </ng-container>
+      <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> </th>
+          <th mat-cell *matCellDef="let post"> {{post.name}}</th>
+      </ng-container>
+      <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <th mat-cell *matCellDef="let post"> {{post.email}}</th>
+      </ng-container>
+      <ng-container matColumnDef="password">
+          <th mat-header-cell *matHeaderCellDef> </th>
+          <th mat-cell *matCellDef="let post"> {{post.password}}</th>
+      </ng-container>
+     <ng-container matColumnDef="crudBtns">
+         <th mat-header-cell *matHeaderCellDef>
+         
+         </th>
+         
+         <td style="float: right;" mat-cell *matCellDef="let post">
+            <mat-form-field class="mat-class" appearance="fill">
+                <mat-label>Attendence Status</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let stat of status" [value]="stat.value">
+                    {{stat.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+    
+          </td>
+    
+     </ng-container>
+    
+    
+     
+    
+      <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+      <tr mat-row *matRowDef="let post; columns: displayColumns;"></tr>
+    </table>
+    <button mat-button color="primary">Primary</button>
+    </form>
+  
+    </mat-card>
+    <mat-paginator [pageSizeOptions] = "[5,10,20]" showFirstLastButtons></mat-paginator> 
+  
+    </div>
+    
+    
+  </div>
+  

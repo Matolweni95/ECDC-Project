@@ -1,0 +1,40 @@
+<router-outlet></router-outlet>
+<h1>Funding Request</h1>
+<div class="container">
+
+
+<mat-card class="example-card">
+    <mat-card-content>
+        <div>
+            <img src="assets/images/logo.png">
+        </div>
+        <div class="form">
+            <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off" >
+                <label>Centre Name:</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                <select class="centre" name=notifs> Please select data below
+                    <option *ngFor="let notifs of notifications" value="notifs.Message">
+                  {{ notifs.Message }}
+                </option>
+                
+                 </select>
+                 <br>
+                 <label>Liaison:</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                 <select class="liaison" name=notifs> Please select data below
+                     <option *ngFor="let notifs of notifications" value="notifs.Message">
+                   {{ notifs.Message }}
+                 </option>
+                 
+                  </select>
+                  <br>
+                  <label>Amoount Requested:</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="text">
+                   <br>
+                   <input type="submit" value="Send">
+                    
+            </form>
+        </div>
+      
+    </mat-card-content>
+  
+  </mat-card>
+  </div>
