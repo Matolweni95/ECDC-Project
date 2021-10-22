@@ -13,42 +13,16 @@
         <br>
         <hr>
         <div class = "cards">
-            <div class="avi">
-                <img class="avatar" src="assets/images/brenda-staff12.png">
-                <div class="card">
-                    <p>ipsum Lorem ipsum dolor sit amet consectetur<br>
-                    Unde voluptas enim maiores error, blanditiis<br>
-                    voluptatum, doloribus ullam, quas voluptatem<br>
-                    praesentium nulla consectetur! Dignissimos<br>
-                    doloribus.
-                    </p>
-                    <button class="apply-btn">Apply</button>
-                </div>
-            </div>
-            <div class="avi">
-                <img class="avatar" src="assets/images/brenda-staff12.png">
-                <div class="card">
-                    <p>ipsum Lorem ipsum dolor sit amet consectetur<br>
-                    Unde voluptas enim maiores error, blanditiis<br>
-                    voluptatum, doloribus ullam, quas voluptatem<br>
-                    praesentium nulla consectetur! Dignissimos<br>
-                    doloribus.
-                    </p>
-                    <button class="apply-btn">Apply</button>
-                </div>
-            </div>
-            <div class="avi">
-                <img class="avatar" src="assets/images/brenda-staff12.png">
-                <div class="card">
-                    <p>ipsum Lorem ipsum dolor sit amet consectetur<br>
-                    Unde voluptas enim maiores error, blanditiis<br>
-                    voluptatum, doloribus ullam, quas voluptatem<br>
-                    praesentium nulla consectetur! Dignissimos<br>
-                    doloribus.
-                    </p>
-                    <button class="apply-btn">Apply</button>
-                </div>
-            </div>
+        
+            <li *ngFor="let item of vacancies">
+                <mat-card class="notif-bubble">
+                {{item.jobTitle}}
+                {{item.jobDescription}}<br>
+        
+                </mat-card>
+              </li>
+            
+            
         </div>
 </section>
 <app-footer></app-footer>

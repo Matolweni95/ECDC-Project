@@ -62,10 +62,11 @@
         
         <mat-card-content>
           <p>
-            <!-- <li *ngFor="let item of notifications">
-              {{item.Message}}
-              {{item.Id}}
-            </li> -->
+            <li *ngFor="let item of notifications">
+              {{item.title}}<br>
+              {{item.message}}
+              {{item.Id}}<br><br>
+            </li>
           </p>
         </mat-card-content>
        

@@ -16,9 +16,21 @@ export class Notification {
 })
 export class ParentHomeComponent implements OnInit {
 
-  constructor() { }
+  notifications:any[] = [];
+
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.getNotifs();
   }
 
+  getNotifs(){
+    this.http.get<any>('http://localhost/FinalProj/php/fetchNotifs.php').subscribe(
+      response => {
+        console.log(response);
+        this.notifications = response;
+      }
+    )
+  }
 }

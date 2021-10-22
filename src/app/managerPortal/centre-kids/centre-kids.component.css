@@ -2,3 +2,7 @@ h1{
     margin: 20px 0px;
     text-align: center;
 }
+
+table.mat-table{
+    background-color: #0d5301;
+}

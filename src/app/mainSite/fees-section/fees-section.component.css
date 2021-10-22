@@ -28,10 +28,9 @@
 }
 
 .container{
-    text-align: center;
+
     background-color: rgb(75, 169, 247);
-    border-radius: 25px;
-    height: fit-content;
+   
     
 }
 
@@ -43,14 +42,9 @@
 }
 
 .bott-cont{
-    position: relative;
-    top: 16px;
+
     background-color: rgb(159, 210, 252);
-    border-radius: 0px 0px 25px 25px;
-    border-top: none;
-    padding-bottom: 10px;
-    padding-right: 15px;
-    padding-left: 15px;
+  
 }
 
 .container-2{
@@ -191,4 +185,12 @@
     font-weight: 900;
     color: rgb(65, 38, 7);
 
+}
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+    width: unset;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
