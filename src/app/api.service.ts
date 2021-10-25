@@ -7,7 +7,7 @@ import { Users } from './users';
 })
 export class ApiService {
   redirectUrl: string | undefined;
-  baseUrl:string = "http://localhost/FinalProj/php";
+  baseUrl:string = "http://localhost:8080/FinalProj/php";
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
   constructor(private httpClient : HttpClient) { }
   public userlogin(username: any, password: any) {

@@ -25,7 +25,7 @@ export class ManagerHomeComponent implements OnInit {
   }
 
   getNotifs(){
-    this.http.get<any>('http://localhost/FinalProj/php/fetchNotifs.php').subscribe(
+    this.http.get<any>('http://sict-mysql.mandela.ac.za/FinalProj/php/fetchNotifs.php').subscribe(
       response => {
         console.log(response);
         this.notifications = response;
