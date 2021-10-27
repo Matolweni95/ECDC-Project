@@ -21,7 +21,7 @@ export class ManagerNotificationsComponent implements OnInit {
   }
 
   getNotifs(){
-    this.http.get<any>('http://localhost/FinalProj/php/fetchNotifs.php').subscribe(
+    this.http.get<any>('http://localhost:8080/FinalProj/php/fetchNotifs.php').subscribe(
       response => {
         console.log(response);
         this.notifications = response;

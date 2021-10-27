@@ -58,7 +58,7 @@ export class LoginSectionComponent implements OnInit {
         this.router.navigate([redirect]);
       }
     
-      else if (localStorage.getItem('token1') == 'Liaison'){
+      else if (localStorage.getItem('token1') == 'Provincial Liaison'){
         const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : 'Liaison-Portal/Liaison-Home';
         this.router.navigate([redirect]);
       }

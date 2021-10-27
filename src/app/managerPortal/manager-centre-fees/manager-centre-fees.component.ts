@@ -27,7 +27,7 @@ export class ManagerCentreFeesComponent implements OnInit {
   }
 
   getNotifs(){
-    this.http.get<any>('http://localhost/angularproj/php/fetchNotifs.php').subscribe(
+    this.http.get<any>('http://localhost:8080/angularproj/php/fetchNotifs.php').subscribe(
       response => {
         console.log(response);
         this.notifications = response;

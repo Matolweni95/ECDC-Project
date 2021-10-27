@@ -27,10 +27,12 @@ h1{
 }
 
 .display {
-    
+    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     columns: 2;
     gap: 10px;
+    
 }
 
 mat-card{

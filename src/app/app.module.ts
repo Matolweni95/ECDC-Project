@@ -85,6 +85,16 @@ import { RegionalManagerProfileComponent } from './RegionalPortal/regional-manag
 import { FinancialApprovalComponent } from './RegionalPortal/financial-approval/financial-approval.component';
 import { ApplicationApprovalComponent } from './RegionalPortal/application-approval/application-approval.component';
 import { SyllabusComponent } from './RegionalPortal/syllabus/syllabus.component';
+import { AdminPortalComponent } from './adminPortal/admin-portal/admin-portal.component';
+import { AdminHomeComponent } from './adminPortal/admin-home/admin-home.component';
+import { AdminTeacherComponent } from './adminPortal/Teacher/admin-teacher/admin-teacher.component';
+import { AdminParentComponent } from './adminPortal/Parent/admin-parent/admin-parent.component';
+import { AdminManagerComponent } from './adminPortal/Manager/admin-manager/admin-manager.component';
+import { AdminCoordinatorComponent } from './adminPortal/Coordinator/admin-coordinator/admin-coordinator.component';
+import { AdminLiaisonComponent } from './adminPortal/Liaison/admin-liaison/admin-liaison.component';
+import { LiaisonPortalComponent } from './liaisonPortal/liaison-portal/liaison-portal.component';
+import { LiaisonHomeComponent } from './liaisonPortal/liaison-home/liaison-home.component';
+import { LiaisonProfileComponent } from './liaisonPortal/liaison-profile/liaison-profile.component';
 
 
 @NgModule({
@@ -148,6 +158,16 @@ import { SyllabusComponent } from './RegionalPortal/syllabus/syllabus.component'
     FinancialApprovalComponent,
     ApplicationApprovalComponent,
     SyllabusComponent,
+    AdminPortalComponent,
+    AdminHomeComponent,
+    AdminTeacherComponent,
+    AdminParentComponent,
+    AdminManagerComponent,
+    AdminCoordinatorComponent,
+    AdminLiaisonComponent,
+    LiaisonPortalComponent,
+    LiaisonHomeComponent,
+    LiaisonProfileComponent,
     
   ],
   imports: [

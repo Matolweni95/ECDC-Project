@@ -53,6 +53,10 @@ import { RegionalManagerHomeComponent } from './RegionalPortal/regional-manager-
 import { RegionalManagerPortalComponent } from './RegionalPortal/regional-manager-portal/regional-manager-portal.component';
 import { RegionalManagerProfileComponent } from './RegionalPortal/regional-manager-profile/regional-manager-profile.component';
 import { SyllabusComponent } from './RegionalPortal/syllabus/syllabus.component';
+import { AdminPortalComponent } from './adminPortal/admin-portal/admin-portal.component';
+import { AdminHomeComponent } from './adminPortal/admin-home/admin-home.component';
+import { LiaisonPortalComponent } from './liaisonPortal/liaison-portal/liaison-portal.component';
+import { LiaisonHomeComponent } from './liaisonPortal/liaison-home/liaison-home.component';
 
 const routes: Routes = [
   { path: '', component: HomeSectionComponent },
@@ -138,6 +142,24 @@ children:[
   { path: 'Applicant-View', component: ApplicationViewComponent},
 ]},
 //RegionalCOO paths end
+
+//Admin paths begin
+{ path: 'Admin-Portal', component: AdminPortalComponent,
+children:[
+  { path: 'Dashboard', component: AdminHomeComponent},
+
+]},
+
+//Admin paths end
+
+//Liaison Paths begin
+{ path: 'Liaison-Portal', component: LiaisonPortalComponent,
+children:[
+  { path: 'Liaison-Home', component: LiaisonHomeComponent},
+
+]},
+
+//Liaison Paths end
 ];
 
 @NgModule({
