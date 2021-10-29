@@ -57,6 +57,11 @@ import { AdminPortalComponent } from './adminPortal/admin-portal/admin-portal.co
 import { AdminHomeComponent } from './adminPortal/admin-home/admin-home.component';
 import { LiaisonPortalComponent } from './liaisonPortal/liaison-portal/liaison-portal.component';
 import { LiaisonHomeComponent } from './liaisonPortal/liaison-home/liaison-home.component';
+import { TeacherRegisterPortalComponent } from './registration/Teacher/teacher-register-portal/teacher-register-portal.component';
+import { TeacherRegisterFormComponent } from './registration/Teacher/teacher-register-form/teacher-register-form.component';
+import { ParentRegisterPortalComponent } from './registration/Parent/parent-register-portal/parent-register-portal.component';
+import { ParentRegisterFormComponent } from './registration/Parent/parent-register-form/parent-register-form.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeSectionComponent },
@@ -68,6 +73,19 @@ const routes: Routes = [
   { path: 'Contact-us', component: ContactSectionComponent },
   { path: 'Login', component: LoginSectionComponent},
   { path: 'Careers', component:CareerSectionComponent},
+
+  { path: 'Teacher-Registration', component:TeacherRegisterPortalComponent, 
+children:[
+  { path: 'Teacher-Application', component:TeacherRegisterFormComponent},
+
+]},
+
+  { path: 'Parent-Registration', component:ParentRegisterPortalComponent, 
+children:[
+  { path: 'Parent-Application', component:ParentRegisterFormComponent},
+]},
+
+
 
   //parent paths begin
 
@@ -127,6 +145,7 @@ children:[
   { path: 'Reports', component: ReportLearnersComponent},
   { path: 'Task', component: TeacherTaskComponent},
   { path: 'Attendence', component: AttendenceComponent},
+  
 ]},
   //Teacher Ends
   

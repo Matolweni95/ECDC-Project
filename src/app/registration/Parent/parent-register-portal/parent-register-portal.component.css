@@ -1,5 +1,5 @@
 mat-toolbar {
-    background: hsl(315, 97%, 46%);
+    background: #004a9f;
     color: white;
     height: 65px;
 }
@@ -12,7 +12,7 @@ mat-sidenav {
     margin:16px;
     width: 300px;
     border-right: none;
-    background: hsl(315, 97%, 46%);
+    background: #004a9f;
     color: white;
     padding: 16px;
     text-align: center;
@@ -22,7 +22,7 @@ mat-sidenav {
 
 button{
     color:white;
-    background-color: hsl(315, 97%, 46%);
+    background-color: #004a9f;
 }
 
 
@@ -62,7 +62,8 @@ mat-icon{
 }
 .avatar{
     border-radius: 50%;
-    width: 11rem;
+    width: 10rem;
+    height: 10rem;
 }
 .name {
     margin: 0;

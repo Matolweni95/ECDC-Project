@@ -1,1 +1,29 @@
-<p>report-learners works!</p>
+<router-outlet></router-outlet>
+<h1>Mountain View Learner Applications</h1>
+<table mat-table [dataSource] = "dataSource">
+
+  <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> NAME</th>
+      <th mat-cell *matCellDef="let post"> {{post.name}}</th>
+  </ng-container>
+  <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>SURNAME</th>
+      <th mat-cell *matCellDef="let post"> {{post.email}}</th>
+  </ng-container>
+
+ <ng-container matColumnDef="crudBtns">
+     <th mat-header-cell *matHeaderCellDef>
+     
+     </th>
+     
+     <td style="float: right;" mat-cell *matCellDef="let post">
+         <button [routerLink]="['/Teacher-Portal/View-Report']" style="margin:15px;" mat-raised-button color="accent">View Report</button>
+         <button [routerLink]="['/Teacher-Portal/View-Application']" style="margin:15px;" mat-raised-button color="accent">Edit Report</button>
+      </td>
+ </ng-container>
+ 
+
+  <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+  <tr mat-row *matRowDef="let post; columns: displayColumns;"></tr>
+</table>
+<mat-paginator [pageSizeOptions] = "[5,10,20]" showFirstLastButtons></mat-paginator>

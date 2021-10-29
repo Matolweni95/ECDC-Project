@@ -1,0 +1,51 @@
+<mat-toolbar>
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!sidenav.opened">
+        menu
+      </mat-icon>
+      <mat-icon *ngIf="sidenav.opened">
+        close
+      </mat-icon>
+    </button>
+    Mountain View Childcare Society
+  </mat-toolbar> 
+  
+  <!--
+  <nav mat-tab-nav-bar ngClass = "tabs">
+    <a mat-tab-link routerLink="/Parent-Portal/Parent-Home" routerLinkActive="active-link">Home</a>
+    <a mat-tab-link routerLink="/Parent-Portal/MyChildren" routerLinkActive="active-link">My Childern</a>
+    <a mat-tab-link routerLink="/Parent-Portal/Admissions" routerLinkActive="active-link">Applications</a>
+    <a mat-tab-link routerLink="/Parent-Portal/Payment" routerLinkActive="active-link">Payment</a>
+    <a mat-tab-link routerLink="/Parent-Portal/MyProfile" routerLinkActive="active-link">Mountain Chat</a>
+    <a mat-tab-link routerLink="/Parent-Portal/MyProfile" routerLinkActive="active-link">My Profile</a>
+  </nav>  -->
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav= "matSidenav">
+  
+      <img class="avatar mat-elevation-z8" src="assets/images/logoback.PNG">
+      <h4 class="name">Parent</h4>
+      <p class="designation">Application</p>
+  
+      <mat-divider></mat-divider>
+      
+      <br>
+      <button [routerLink]="['/Parent-Application/Application']" mat-button class="menu-button">
+        <mat-icon>insert_drive_file</mat-icon>
+        <span>Admissions</span>
+      </button>
+      <br>
+
+      <mat-divider></mat-divider>
+      <button [routerLink]="['/Login']" mat-button class="menu-button">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Go Home</span>
+      </button>
+      
+    </mat-sidenav>
+    <mat-sidenav-content>
+      
+      <div class="content mat-elevation-z4">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

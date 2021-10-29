@@ -95,8 +95,10 @@ import { AdminLiaisonComponent } from './adminPortal/Liaison/admin-liaison/admin
 import { LiaisonPortalComponent } from './liaisonPortal/liaison-portal/liaison-portal.component';
 import { LiaisonHomeComponent } from './liaisonPortal/liaison-home/liaison-home.component';
 import { LiaisonProfileComponent } from './liaisonPortal/liaison-profile/liaison-profile.component';
-
-
+import { TeacherRegisterPortalComponent } from './registration/Teacher/teacher-register-portal/teacher-register-portal.component';
+import { TeacherRegisterFormComponent } from './registration/Teacher/teacher-register-form/teacher-register-form.component';
+import { ParentRegisterPortalComponent } from './registration/Parent/parent-register-portal/parent-register-portal.component';
+import { ParentRegisterFormComponent } from './registration/Parent/parent-register-form/parent-register-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -168,6 +170,10 @@ import { LiaisonProfileComponent } from './liaisonPortal/liaison-profile/liaison
     LiaisonPortalComponent,
     LiaisonHomeComponent,
     LiaisonProfileComponent,
+    TeacherRegisterPortalComponent,
+    TeacherRegisterFormComponent,
+    ParentRegisterPortalComponent,
+    ParentRegisterFormComponent,
     
   ],
   imports: [
