@@ -26,7 +26,7 @@ export class AdminHomeComponent implements OnInit {
   }
 
   getNotifs(){
-    this.http.get<any>('http://localhost:8080/FinalProj/php/fetchNotifs.php').subscribe(
+    this.http.get<any>('http://localhost:8080/FinalProj/php/fetchChildReport.php').subscribe(
       response => {
         console.log(response);
         this.notifications = response;
