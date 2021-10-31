@@ -1,5 +1,10 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/api.service'; 
+import { first } from 'rxjs/operators';
+import { Router } from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { TeacherRegisterPortalComponent } from '../../Teacher/teacher-register-portal/teacher-register-portal.component';
 @Component({
   selector: 'app-parent-register-form',
   templateUrl: './parent-register-form.component.html',
@@ -41,15 +46,34 @@ if(this.myDiet === 'Other'){
                                 'Diabetic',
                                 'Other',
                               ];
-  constructor(private _formBuilder: FormBuilder) {}
+  myProgram!: string;
+  childClass!: string;
+  Pname!: string;
+  myPrograms: string[] = [
+    'After Care',
+    'Drop off',
+    'Special needs'
+  ];
+  myClasses: string[] = [
+    'Day Care',
+    'Play School',
+    'Pre School',
+    'Pre Grade R',
+    'Grade R'
 
-  ngOnInit() {
-    this.isShown = false;
-    this.firstFormGroup = this._formBuilder.group({
+    
+  ];
+
+  Form!: FormGroup;
+  
+  constructor(private _formBuilder: FormBuilder, private fb: FormBuilder, private dataService: ApiService,private router:Router) {
+  
+    
+    this.firstFormGroup = this.fb.group({
       Pname: ['', Validators.required],
       Psurname: ['', Validators.required],
       POccupation: ['', Validators.required],
-      PWork: ['', Validators.required],
+      PEmail: ['', Validators.required],
       PNumber: ['', Validators.required],
       Pid: ['', Validators.required],
       Padd1: ['', Validators.required],
@@ -65,7 +89,7 @@ if(this.myDiet === 'Other'){
       SPname: ['', Validators.required],
       SPsurname: ['', Validators.required],
       SPOccupation: ['', Validators.required],
-      SPWork: ['', Validators.required],
+      SPEmail: ['', Validators.required],
       SPNumber: ['', Validators.required],
       SPid: ['', Validators.required],
       SPadd1: ['', Validators.required],
@@ -87,41 +111,60 @@ if(this.myDiet === 'Other'){
     });
 
     this.forthFormGroup = this._formBuilder.group({
-      restrict1: ['', Validators.required],
-      restrict2: ['', Validators.required],
-      restrict3: ['', Validators.required],
-      restrict4: ['', Validators.required],
-      restrict5: ['', Validators.required],
-      ifOther: ['', Validators.required],
+      myDiet: ['', Validators.nullValidator],
+      ifOther: ['', Validators.nullValidator],
       
     });
 
     this.fifthFormGroup = this._formBuilder.group({
-      Cname: ['', Validators.required],
-      Csurname: ['', Validators.required],
-      CDOB: ['', Validators.required],
-      Cid: ['', Validators.required],
-      Cimage: ['', Validators.required],
-      Ccert: ['', Validators.required],
+      allergies: ['', Validators.required],
+      
       
     });
 
     this.sixthFormGroup = this._formBuilder.group({
-      Cname: ['', Validators.required],
-      Csurname: ['', Validators.required],
-      CDOB: ['', Validators.required],
-      Cid: ['', Validators.required],
-      Cimage: ['', Validators.required],
-      Ccert: ['', Validators.required],
-      
+      childClass: ['', Validators.nullValidator],
+      myProgram: ['', Validators.nullValidator],
+    
     });
 
   }
 
-  
+  ngOnInit() {
+   
+  }
+
+  postdata(firstFormGroup: { value: { Pname: any, Psurname: any; PEmail:any, }}, secondFormGroup:{ value:{SPname:any}}, _myDiet: any)
+{
+this.dataService.userregistration(firstFormGroup.value.Pname, firstFormGroup.value.Psurname, firstFormGroup.value.PEmail, secondFormGroup.value.SPname, this.myDiet)
+.pipe(first())
+.subscribe(
+data => {
+
+},
+
+error => {
+});
+}
 
   submit(){
-      
+    
+    const data = {
+
+      name: this.myDiet,
+      // Pname:this.firstFormGroup.get('Pname')?.value,
+      // Psurname: this.firstFormGroup.get('Psurname')?.value,
+      // POccupation: this.firstFormGroup.get('POccupation')?.value,
+      // PEmail: this.firstFormGroup.get('PEmail')?.value,
+      // PNumber: this.firstFormGroup.get('PNumber')?.value,
+      // Pid: this.firstFormGroup.get('Pid')?.value,
+      // Padd1: this.firstFormGroup.get('Padd1')?.value,
+      // Padd2: this.firstFormGroup.get('Padd2')?.value,
+      // Padd3: this.firstFormGroup.get('Padd3')?.value,
+      // Padd4: this.firstFormGroup.get('Padd4')?.value,
+      // Padd5:this.firstFormGroup.get('Padd5')?.value,
+    }
+    console.log(data)  
   }
 
 }

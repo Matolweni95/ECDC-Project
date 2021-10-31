@@ -16,20 +16,23 @@ export class Notification {
 })
 export class ParentHomeComponent implements OnInit {
 
+  parentId: any;
   notifications:any[] = [];
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient ,private dataService: ApiService) { }
 
   ngOnInit(): void {
-    this.getNotifs();
+    this.parentId = localStorage.getItem('token3');
+    this.getNotifs(this.parentId);
   }
 
-  getNotifs(){
-    this.http.get<any>('http://localhost:8080/FinalProj/php/fetchNotifs.php').subscribe(
+  getNotifs(id: number){
+    this.dataService.getLearners(id).subscribe(
       response => {
         console.log(response);
-        this.notifications = response;
+        return;
+        // this.children = response.items;
       }
     )
   }

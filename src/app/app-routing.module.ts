@@ -16,7 +16,7 @@ import { ParentApplicationComponent } from './parentPortal/parent-application/pa
 import { ParentHomeComponent } from './parentPortal/parent-home/parent-home.component';
 import { ParentPortalComponent } from './parentPortal/parent-portal/parent-portal.component';
 import { ParentProfileComponent } from './parentPortal/parent-profile/parent-profile.component';
-import { RegisterComponent } from './register/register.component';
+
 import { MountainChatComponent } from './mountainchat/mountain-chat/mountain-chat.component';
 import { Term1Component } from './parentPortal/progress/term1/term1.component';
 import { Term2Component } from './parentPortal/progress/term2/term2.component';
@@ -66,7 +66,7 @@ import { ParentRegisterFormComponent } from './registration/Parent/parent-regist
 const routes: Routes = [
   { path: '', component: HomeSectionComponent },
   { path: 'About', component: AboutPageComponent },
-  { path: 'Register', component: RegisterComponent },
+  
   { path: 'Curriculum', component: CurriculumSectionComponent},
   { path: 'Staff', component: StaffSectionComponent },
   { path: 'Fees', component: FeesSectionComponent },

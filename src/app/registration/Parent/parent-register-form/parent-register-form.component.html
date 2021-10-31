@@ -1,7 +1,7 @@
 <h1 style="text-align: center;">Applications for Mountain View Childcare Society 2022<br>Now Open</h1>
 <mat-horizontal-stepper [linear]="isLinear" #stepper>
-  <mat-step [stepControl]="firstFormGroup">
-    <form [formGroup]="firstFormGroup">
+  <mat-step [stepControl]="firstFormGroup" >
+    <form [formGroup]="firstFormGroup" >
       <ng-template matStepLabel>Primary Parent Details</ng-template>
       <mat-form-field>
         <mat-label>Name</mat-label>
@@ -27,8 +27,8 @@
         <input matInput placeholder="Occupation" formControlName="POccupation" required>
       </mat-form-field>
       <mat-form-field>
-        <mat-label>Work Number</mat-label>
-        <input matInput placeholder="Work Number" formControlName="PWork" required>
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="E.g Name@gmail.com" formControlName="PEmail" required>
       </mat-form-field><br>
       <mat-form-field>
         <mat-label>1<sup>st</sup> Line Address</mat-label>
@@ -90,8 +90,8 @@
         <input matInput placeholder="Occupation" formControlName="SPOccupation" required>
       </mat-form-field>
       <mat-form-field>
-        <mat-label>Work Number</mat-label>
-        <input matInput placeholder="Work Number" formControlName="SPWork" required>
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Work Number" formControlName="SPEmail" required>
       </mat-form-field><br>
       <mat-form-field>
         <mat-label>1<sup>st</sup> Line Address</mat-label>
@@ -158,33 +158,7 @@
         <mat-label>Certificate</mat-label>
         <input matInput placeholder="Work Number" formControlName="Ccert" required>
       </mat-form-field><br>
-      <!--
-      <mat-form-field>
-        <mat-label>1<sup>st</sup> Line Address</mat-label>
-        <input matInput placeholder="Address No and Street Name" formControlName="SPadd1" required>
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-        <mat-label>2<sup>nd</sup> Line Address</mat-label>
-        <input matInput placeholder="Town" formControlName="SPadd2" required>
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-        <mat-label>3<sup>rd</sup> Line Address</mat-label>
-        <input matInput placeholder="P.O Box(Optional)" formControlName="SPadd3">
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-        <mat-label>City</mat-label>
-        <input matInput placeholder="City" formControlName="SPadd4" required>
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-        <mat-label>Zip</mat-label>
-        <input matInput placeholder="Zip Code" formControlName="SPadd5" required>
-      </mat-form-field>-->
-      
-        
+    
       <div>
         <button mat-button (click)="stepper.reset()">Reset</button>
         <button mat-button matStepperNext>Next</button>      
@@ -194,24 +168,30 @@
   </mat-step>
 
 <mat-step [stepControl]="forthFormGroup">
-  <form [formGroup]="forthFormGroup">
+  <form [formGroup]="forthFormGroup" (ngSubmit)="postdata(firstFormGroup, secondFormGroup, forthFormGroup)">
    
       <ng-template matStepLabel>Dietary Restrictions</ng-template>
       <label id="example-radio-group-label">Please indicate if your child has any dietary Restrictions</label>
       <mat-radio-group
         aria-labelledby="example-radio-group-label"
         class="example-radio-group"
-        [(ngModel)]="myDiet" [ngModelOptions]="{standalone: true}"><br><br>
-      <mat-radio-button  (click)="toggleShow()" class="example-radio-button" *ngFor="let diet of dietRestrictions" [value]="diet"><br>
+        [(ngModel)]="myDiet" [ngModelOptions]="{standalone: true}" name="myDiet"><br><br>
+      <mat-radio-button  class="example-radio-button" *ngFor="let diet of dietRestrictions" [value]="diet"><br>
       {{diet}}
       
       </mat-radio-button>
+      
       </mat-radio-group>
-     
+      
       <mat-form-field>
         <mat-label>Dietary Specification</mat-label>
-        <input matInput placeholder="If Other" formControlName="ifOther" required>
+        <input matInput placeholder="If Other" formControlName="ifOther">
       </mat-form-field>
+      <div>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button matStepperNext>Next</button>   
+        <button mat-button (click)="submit()">Submit</button>   
+      </div>
     
     </form>
       
@@ -219,6 +199,10 @@
   <mat-step [stepControl]="fifthFormGroup">
     <form [formGroup]="fifthFormGroup">
       <ng-template matStepLabel>Allergies</ng-template>
+      <mat-form-field>
+        <mat-label>Pkease indicate any snd all allergies your child has</mat-label>
+        <input matInput placeholder="allergies" formControlName="allergies" required>
+      </mat-form-field>
     <div>
         <button mat-button (click)="stepper.reset()">Reset</button>
         <button mat-button matStepperNext>Next</button>      
@@ -226,8 +210,30 @@
       </form>
   </mat-step>
   <mat-step [stepControl]="sixthFormGroup">
-    <form [formGroup]="sixthFormGroup">
+    <form [formGroup]="sixthFormGroup" >
       <ng-template matStepLabel>Program</ng-template>
+      <mat-radio-group
+        aria-labelledby="example-radio-group-label"
+        class="example-radio-group"
+        [(ngModel)]="childClass" [ngModelOptions]="{standalone: true}" name="childClass"><br><br>
+      <mat-radio-button  class="example-radio-button" *ngFor="let class of myClasses" [value]="class"><br>
+      {{class}}
+      
+      </mat-radio-button>
+      
+      </mat-radio-group>
+
+      <mat-radio-group
+      aria-labelledby="example-radio-group-label"
+      class="example-radio-group"
+      [(ngModel)]="myProgram" [ngModelOptions]="{standalone: true}" name="myProgram"><br><br>
+    <mat-radio-button  class="example-radio-button" *ngFor="let program of myPrograms" [value]="program"><br>
+    {{program}}
+    
+    </mat-radio-button>
+    
+    </mat-radio-group>
+   
     <div>
         <button mat-button (click)="stepper.reset()">Reset</button>
         <button mat-button matStepperNext>Next</button>      

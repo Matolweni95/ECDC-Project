@@ -15,18 +15,26 @@ export class ApiService {
   return this.httpClient.post<any>(this.baseUrl + '/login.php', { username, password })
   .pipe(map(Users => {
   this.setToken(Users[0].name);
-  this.setTokens(Users[0].role)
+  this.setTokens(Users[0].role);
+  this.setToken3(Users[0].userId);
   
   this.getLoggedInName.emit(true);
   return Users;
   }));
   }
   
-  public userregistration(name: any,email: any,pwd: any) {
-  return this.httpClient.post<any>(this.baseUrl + '/register.php', { name,email, pwd })
+  public userregistration(name: any,surname: any,email: any,guardian: any, diet:any) {
+  return this.httpClient.post<any>(this.baseUrl + '/register.php', { name,surname, email, guardian, diet })
   .pipe(map(Users => {
   return Users;
   }));
+  }
+
+  public getLearners(id: number) {
+    return this.httpClient.get<any>(this.baseUrl + '/fetchLearners.php?id='+ id)
+      .pipe(map(Users => {
+        return Users;
+      }));
   }
   
   //token
@@ -37,11 +45,17 @@ export class ApiService {
   setTokens(token1: string) {
     localStorage.setItem('token1', token1);
   }
+
+  setToken3(token3: string) {
+    localStorage.setItem('token3', token3);
+  }
   getToken() {
   return localStorage.getItem('token');
   }
   deleteToken() {
   localStorage.removeItem('token');
+  localStorage.removeItem('token1');
+  localStorage.removeItem('token3');
   }
   isLoggedIn() {
   const usertoken = this.getToken();
