@@ -10,6 +10,8 @@ export class ApiService {
   baseUrl:string = "http://localhost:8080/FinalProj/php";
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
   constructor(private httpClient : HttpClient) { }
+
+  
   public userlogin(username: any, password: any) {
   alert(username)
   return this.httpClient.post<any>(this.baseUrl + '/login.php', { username, password })
@@ -23,6 +25,7 @@ export class ApiService {
   }));
   }
   
+
   public userregistration(name: any,surname: any,email: any,guardian: any, diet:any) {
   return this.httpClient.post<any>(this.baseUrl + '/register.php', { name,surname, email, guardian, diet })
   .pipe(map(Users => {
