@@ -1,13 +1,20 @@
 <?php
-include_once("database.php");
+header('Access-control-Allow-Origin: *');
+include_once("connect.php");
 
-$sql = "SELECT * FROM child;";
-$result = mysqli_query($conn,$sql);
-$resultCheck = mysqli_num_rows($result);
+$sql = "SELECT COUNT (*) From child";
+$result = $conn->query($sql);
+$myArr = array();
 
-if ($resultCheck > 0){
-    while($row = mysqli_fetch_assoc($result)){
-        echo $row['mananger_manangerId'] . "<br>";
+if ($result->num_rows > 0){
+    while($row = $result->fetch_assoc()){
+    $myArr[] = $row;
     }
+} else{
+    echo "0 results";
 }
+
+
+$myJSON = json_encode($myArr);
+echo $myJSON;
 ?>
