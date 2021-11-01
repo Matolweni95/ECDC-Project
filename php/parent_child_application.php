@@ -22,7 +22,7 @@ if(isset($postdata) && !empty($postdata))
     $parentEmailAddress = mysqli_real_escape_string($mysqli, trim($request->parentEmailAddress));
     $firstLineAddress = mysqli_real_escape_string($mysqli, trim($request->firstLineAddress));
 }
-}
+
 }
  $mysqli = "INSERT INTO parent_child_application(parentName , parentSurname, parentEmailAddress, 
  firstLineAddress, secondLineAddress, thirdLineAddress, zip, occupation,childRelation, idDocument,
