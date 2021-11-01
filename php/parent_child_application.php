@@ -1,7 +1,29 @@
 <?php
-
-
-
+include_once("database.php");
+$postdata = file_get_contents("php://input");
+if(isset($postdata) && !empty($postdata))
+{
+    $request = json_decode($postdata);
+    $parentName = trim($request -> ParentName);
+    $parentSurname = mysqli_real_escape_string($mysqli, trim($request->parentSurname));
+    $parentEmailAddress = mysqli_real_escape_string($mysqli, trim($request->parentEmailAddress));
+    $firstLineAddress = mysqli_real_escape_string($mysqli, trim($request->firstLineAddress));
+    $Se = mysqli_real_escape_string($mysqli, trim($request->parentSurname));
+    $parentEmailAddress = mysqli_real_escape_string($mysqli, trim($request->parentEmailAddress));
+    $firstLineAddress = mysqli_real_escape_string($mysqli, trim($request->firstLineAddress));
+    $parentEmailAddress = mysqli_real_escape_string($mysqli, trim($request->parentEmailAddress));
+    $firstLineAddress = mysqli_real_escape_string($mysqli, trim($request->firstLineAddress));
+    $parentSurname = mysqli_real_escape_string($mysqli, trim($request->parentSurname));
+    $parentEmailAddress = mysqli_real_escape_string($mysqli, trim($request->parentEmailAddress));
+    $firstLineAddress = mysqli_real_escape_string($mysqli, trim($request->firstLineAddress));
+    $parentEmailAddress = mysqli_real_escape_string($mysqli, trim($request->parentEmailAddress));
+    $firstLineAddress = mysqli_real_escape_string($mysqli, trim($request->firstLineAddress));
+    $parentSurname = mysqli_real_escape_string($mysqli, trim($request->parentSurname));
+    $parentEmailAddress = mysqli_real_escape_string($mysqli, trim($request->parentEmailAddress));
+    $firstLineAddress = mysqli_real_escape_string($mysqli, trim($request->firstLineAddress));
+}
+}
+}
  $mysqli = "INSERT INTO parent_child_application(parentName , parentSurname, parentEmailAddress, 
  firstLineAddress, secondLineAddress, thirdLineAddress, zip, occupation,childRelation, idDocument,
  parentImage, userPassword, childName, ChildSurname, dateOfBirth, certificateUpload, childImage, class,
