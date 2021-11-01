@@ -74,6 +74,7 @@ if(this.myDiet === 'Other'){
       Psurname: ['', Validators.required],
       POccupation: ['', Validators.required],
       PEmail: ['', Validators.required],
+      Password: ['', Validators.required],
       PNumber: ['', Validators.required],
       Pid: ['', Validators.required],
       Padd1: ['', Validators.required],

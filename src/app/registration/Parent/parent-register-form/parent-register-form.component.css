@@ -7,3 +7,13 @@
   .example-radio-button {
     margin: 5px;
   }
+
+  mat-form-field{
+    width: 50%;
+    padding-right: 20px;
+  }
+
+  .mat-stepper-horizontal, .mat-stepper-vertical {
+    background-color: #004a9f;
+    color: white;
+}

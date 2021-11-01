@@ -1,0 +1,9 @@
+mat-form-field{
+    width: 50%;
+    padding-right: 20px;
+  }
+
+  .mat-stepper-horizontal, .mat-stepper-vertical {
+    background-color: #ec6c03;
+    color: white;
+}
