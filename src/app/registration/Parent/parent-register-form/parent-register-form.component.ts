@@ -135,7 +135,7 @@ if(this.myDiet === 'Other'){
    
   }
 
-  postdata(firstFormGroup: { value: { Pname: any, Psurname: any; PEmail:any, POccupation: any,  }}, secondFormGroup:{ value:{SPname:any, }}, _myDiet: any)
+  postdata(firstFormGroup: { value: { Pname: any, Psurname: any; PEmail:any }}, secondFormGroup:{ value:{SPname:any, }}, _myDiet: any)
 {
 this.dataService.userregistration(firstFormGroup.value.Pname, firstFormGroup.value.Psurname, firstFormGroup.value.PEmail, secondFormGroup.value.SPname, this.myDiet)
 .pipe(first())
