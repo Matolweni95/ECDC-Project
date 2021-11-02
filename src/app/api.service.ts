@@ -18,7 +18,7 @@ export class ApiService {
   .pipe(map(Users => {
   this.setToken(Users[0].name);
   this.setTokens(Users[0].role);
-  this.setToken3(Users[0].userId);
+  this.setToken3(Users[0].parentId);
   
   this.getLoggedInName.emit(true);
   return Users;
