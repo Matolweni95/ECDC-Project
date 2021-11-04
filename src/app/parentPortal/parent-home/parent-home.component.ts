@@ -18,6 +18,12 @@ export class ParentHomeComponent implements OnInit {
 
   parentId: any;
   notifications:any[] = [];
+  fees: any[]=[];
+  additionalFees: any[]=[];
+  notifs:any[]=[];
+  childPrograms :any[]=[];
+  childClass:any[] = [];
+
 
 
   constructor(private http: HttpClient ,private dataService: ApiService) { }
@@ -25,6 +31,12 @@ export class ParentHomeComponent implements OnInit {
   ngOnInit(): void {
     this.parentId = localStorage.getItem('token3');
     this.getNotifs(this.parentId);
+    this.getFees();
+    this.getAddiionalFees();
+    this.getNotifications();
+    this.getChildPrograms();
+    this.getChildClass();
+    
   }
 
   getNotifs(id: number){
@@ -36,4 +48,48 @@ export class ParentHomeComponent implements OnInit {
       }
     )
   }
+
+  getFees(){
+    this.http.get<any>('http://localhost:8080//FinalProj/php/parent/fetchfees.php').subscribe(
+      response => {
+        console.log(response);
+        this.fees = response;
+      }
+    )
+  }
+  getAddiionalFees(){
+    this.http.get<any>('http://localhost:8080//FinalProj/php/parent/fetchAddFees.php').subscribe(
+      response => {
+        console.log(response);
+        this.additionalFees = response;
+      }
+    )
+  }
+
+  getNotifications(){
+    this.http.get<any>('http://localhost:8080//FinalProj/php/parent/fetchParentNotifs.php').subscribe(
+      response => {
+        console.log(response);
+        this.notifs = response;
+      }
+    )
+  }
+  
+  getChildPrograms(){
+    this.http.get<any>('http://localhost:8080//FinalProj/php/parent/fetchPrograms.php').subscribe(
+      response => {
+        console.log(response);
+        this.childPrograms = response;
+      }
+    )
+  }
+  getChildClass(){
+    this.http.get<any>('http://localhost:8080//FinalProj/php/parent/fetchChildClass.php').subscribe(
+      response => {
+        console.log(response);
+        this.childClass = response;
+      }
+    )
+  }
+ 
 }
