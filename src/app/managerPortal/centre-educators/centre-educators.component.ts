@@ -16,7 +16,7 @@ import { MatDialogConfig } from '@angular/material/dialog';
 })
 export class CentreEducatorsComponent implements OnInit {
 
-  displayColumns = ['id', 'type','name','email', 'password','crudBtns'];
+  displayColumns = ['teacherId','name','surname','crudBtns'];
   post:any[]  = [];
   dataSource!: MatTableDataSource<any>;
   angForm: FormGroup;
@@ -29,8 +29,9 @@ export class CentreEducatorsComponent implements OnInit {
       mobile: ['', Validators.required]
       });
 
-    this.http.get('http://localhost/angular-admin/php/fetch_data.php').subscribe(data => {
+    this.http.get('http://localhost:8080/FinalProj/php/Manager/fetchTeachers.php').subscribe(data => {
       this.post.push(data);
+      console.log(this.post);
       this.dataSource = new MatTableDataSource(this.post[0]);
     })
   }
@@ -43,16 +44,11 @@ export class CentreEducatorsComponent implements OnInit {
     setTimeout(() => this.dataSource.paginator = this.paginator);
   
   }
-  
-  // postlearner(angForm1: { value: { name: any; email: any; password: any; type:any}; })
-  // {
-  // this.dataService.userregistration(angForm1.value.name,angForm1.value.email,angForm1.value.password)
-  // .pipe(first())
-  // .subscribe(
-  
-  // error => {
-  // });
-  // }
+
+
+  getRec(teacherId: any){
+    alert(teacherId)
+  }
 
 
 
