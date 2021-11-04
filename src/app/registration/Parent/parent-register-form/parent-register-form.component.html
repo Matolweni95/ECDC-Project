@@ -173,7 +173,7 @@
   </mat-step>
 
 <mat-step [stepControl]="forthFormGroup">
-  <form [formGroup]="forthFormGroup" (ngSubmit)="postdata(firstFormGroup, secondFormGroup, forthFormGroup)">
+  <form [formGroup]="forthFormGroup" >
    
       <ng-template matStepLabel>Dietary Restrictions</ng-template>
       <label id="example-radio-group-label">Please indicate if your child has any dietary Restrictions</label>
@@ -214,7 +214,7 @@
       </div>
       </form>
   </mat-step>
-  <mat-step [stepControl]="sixthFormGroup">
+  <mat-step [stepControl]="sixthFormGroup" (ngSubmit)="postdata(firstFormGroup, secondFormGroup,thirdFormGroup, forthFormGroup, fifthFormGroup, sixthFormGroup, seventhFormGroup)">
     <form [formGroup]="sixthFormGroup" >
       <ng-template matStepLabel>Program</ng-template>
       <mat-radio-group
