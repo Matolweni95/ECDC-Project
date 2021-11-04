@@ -1,8 +1,8 @@
 <?php
 header('Access-control-Allow-Origin: *');
 include_once("connect.php");
-
-$sql = "SELECT (fees,additionalFees) FROM totalFees;";
+$childID = 1;
+$sql = "SELECT packageName from child where childID = $childID";
 $result = $conn->query($sql);
 $myArr = array();
 
