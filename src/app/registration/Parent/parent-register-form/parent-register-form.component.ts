@@ -4,7 +4,7 @@ import { ApiService } from 'src/app/api.service';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import { TeacherRegisterPortalComponent } from '../../Teacher/teacher-register-portal/teacher-register-portal.component';
+
 @Component({
   selector: 'app-parent-register-form',
   templateUrl: './parent-register-form.component.html',
@@ -66,10 +66,10 @@ if(this.myDiet === 'Other'){
 
   Form!: FormGroup;
   
-  constructor(private _formBuilder: FormBuilder, private fb: FormBuilder, private dataService: ApiService,private router:Router) {
+  constructor(private _formBuilder: FormBuilder, private dataService: ApiService,private router:Router) {
   
     
-    this.firstFormGroup = this.fb.group({
+    this.firstFormGroup = this._formBuilder.group({
       Pname: ['', Validators.required],
       Psurname: ['', Validators.required],
       POccupation: ['', Validators.required],

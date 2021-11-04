@@ -17,43 +17,63 @@ export class Notification {
 })
 export class FundingApplicationComponent implements OnInit {
 
-  angForm!: FormGroup;
-  notifications:any[] = [];
+  Forms!: FormGroup;
+  centre:[] = [];
+  liaison:[] = [];
 
   constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router, private http: HttpClient) {
 
-    this.angForm = this.fb.group({
-      email: ['', [Validators.required,Validators.minLength(1), Validators.email]],
-      password: ['', Validators.required]
+    this.Forms = this.fb.group({
+      amount: ['', [Validators.required]],
+      centres: ['', [Validators.required]],
+
+      
       });
 
    }
 
-   getNotifs(){
-    this.http.get<any>('http://localhost/angularproj/php/fetchNotifs.php').subscribe(
+   getCentre(){
+    this.http.get<any>('http://localhost:8080/FinalProj/php/Manager/fetchCentre.php').subscribe(
       response => {
         console.log(response);
-        this.notifications = response;
+        this.centre = response;
       }
     )
   }
 
-  ngOnInit(): void {
-    this.getNotifs();
+  getLiaison(){
+    this.http.get<any>('http://localhost:8080/FinalProj/php/Manager/fetchLiaison.php').subscribe(
+      response => {
+        console.log(response);
+        this.liaison = response;
+      }
+    )
   }
-  postdata(angForm1: { value: { email: any; password: any; }; })
+
+  submit(){
+    const data = {
+      name: this.liaison,
+      surname: this.centre,
+      amount: this.Forms.get('amount')?.value
+    }
+    console.log(data)
+  }
+
+  ngOnInit(): void {
+    this.getCentre();
+    this.getLiaison();
+  }
+
+  postdata(Forms: { value: { centres: any, amount: any}})
   {
-    this.dataService.userlogin(angForm1.value.email,angForm1.value.password)
-    .pipe(first())
-    .subscribe(
-    data => {
-    const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/dashboard';
-    this.router.navigate([redirect]);
-    },
-    error => {
-    alert("User name or password is incorrect")
-    });
-    }
-    get email() { return this.angForm.get('email'); }
-    get password() { return this.angForm.get('password'); }
-    }
+  this.dataService.getFunding(Forms.value.centres, Forms.value.amount)
+  .pipe(first())
+  .subscribe(
+  data => {
+  
+  },
+  
+  error => {
+  });
+  }
+}

@@ -33,6 +33,21 @@ export class ApiService {
   }));
   }
 
+  public profileUpdate (name: any,surname: any, cellno:any ,email: any,line1: any, line2:any, city:any, zip:any) {
+    return this.httpClient.post<any>(this.baseUrl + '/update.php', { name,surname,cellno, email, line1, line2, city,zip })
+    .pipe(map(Users => {
+    return Users;
+    }));
+    }
+
+    
+  public getFunding (centre: any, amount: any ) {
+    return this.httpClient.post<any>(this.baseUrl + '/Manager/funding.php', { centre, amount })
+    .pipe(map(Users => {
+    return Users;
+    }));
+    }
+
   public getLearners(id: number) {
     return this.httpClient.get<any>(this.baseUrl + '/fetchLearners.php?id='+ id)
       .pipe(map(Users => {
