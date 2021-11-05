@@ -4,4 +4,13 @@
 
 mat-tab-header {
     border-bottom: none;
+    color: black ;
+}
+
+.mat-tab-link {
+    color: black;
+}
+
+mat-tab-label{
+    color: black;
 }

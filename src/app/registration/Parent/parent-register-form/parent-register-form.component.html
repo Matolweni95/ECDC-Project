@@ -214,7 +214,7 @@
       </div>
       </form>
   </mat-step>
-  <mat-step [stepControl]="sixthFormGroup" (ngSubmit)="postdata(firstFormGroup, secondFormGroup,thirdFormGroup, forthFormGroup, fifthFormGroup, sixthFormGroup, seventhFormGroup)">
+  <mat-step [stepControl]="sixthFormGroup">
     <form [formGroup]="sixthFormGroup" >
       <ng-template matStepLabel>Program</ng-template>
       <mat-radio-group
@@ -251,7 +251,7 @@
     <div>
       <button mat-button matStepperPrevious>Back</button>
       <button mat-button (click)="stepper.reset()">Reset</button>
-      <button mat-button (click)="submit()">Submit</button>
+      <button mat-button (click)="postdata(firstFormGroup, secondFormGroup,thirdFormGroup, forthFormGroup, fifthFormGroup, sixthFormGroup, seventhFormGroup)">Submit</button>
     </div>
   </mat-step>
 </mat-horizontal-stepper>
