@@ -1,14 +1,6 @@
 <mat-tab-group>
     <mat-tab label="Progress" > 
-      <nav mat-tab-nav-bar ngClass = "tabs">
-        <a mat-tab-link routerLink="/Parent-Portal/MyChildren/Term1" routerLinkActive="activeLink">TERM 1</a>
-        <a mat-tab-link routerLink="/Parent-Portal/MyChildren/Term2" routerLinkActive="activeLink">TERM 2</a>
-        <a mat-tab-link routerLink="/Parent-Portal/MyChildren/Term3" routerLinkActive="activeLink">TERM 3</a>
-        <a mat-tab-link routerLink="/Parent-Portal/MyChildren/Term4" routerLinkActive="activeLink">TERM 4</a>
-      </nav>  
-      <div>	
-       <router-outlet></router-outlet>	
-      </div> 
+      
     </mat-tab><!--
     <mat-tab label="Homeworks"> Content 2 </mat-tab>
     <mat-tab label="Submissions"> Content 3 </mat-tab>-->
@@ -17,4 +9,12 @@
   </mat-tab-group>
   
   
-  
+  <nav mat-tab-nav-bar ngClass = "tabs">
+    <a mat-tab-link routerLink="/Parent-Portal/MyChildren/Term1" routerLinkActive="activeLink">TERM 1</a>
+    <a mat-tab-link routerLink="/Parent-Portal/MyChildren/Term2" routerLinkActive="activeLink">TERM 2</a>
+    <a mat-tab-link routerLink="/Parent-Portal/MyChildren/Term3" routerLinkActive="activeLink">TERM 3</a>
+    <a mat-tab-link routerLink="/Parent-Portal/MyChildren/Term4" routerLinkActive="activeLink">TERM 4</a>
+  </nav>  
+  <div>	
+   <router-outlet></router-outlet>	
+  </div> 
