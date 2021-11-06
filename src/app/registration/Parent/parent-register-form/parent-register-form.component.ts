@@ -136,22 +136,71 @@ if(this.myDiet === 'Other'){
    
   }
 
-  postdata(firstFormGroup: { value: { Pname: any, Psurname: any; PEmail:any ,Poccupation:any,Pnumber:any,Pid:any,Padd1:any,Padd2:any,Padd3:any,Padd4:any,Padd5:any}}, 
-    secondFormGroup:{ value:{SPname:any,SPsurname:any,SPoccupation:any,
-      SPemail:any, SPnumber:any,SPid:any,SPadd1:any,SPadd2:any,SPadd3:any, SPadd4:any, SPadd5:any }},
-      thirdFormGroup:{value: {Cname:any,Csurname:any,CDOB:any,Cid:any,Cimage:any,Ccert:any}},
-       forthFormGroup:{value:{allergies:any}},
+  postdata(firstFormGroup: { value: { 
+    Pname: any,
+    Psurname: any;
+    PEmail:any,
+    Pnumber:any,
+    Padd1:any, 
+    Poccupation:any, 
+    Pid:any,
+    Padd2:any,
+    Padd3:any,
+    Padd4:any,
+    Padd5:any}
+  }, 
+    secondFormGroup:{ value:{
+      SPname:any,
+      SPsurname:any,
+      SPoccupation:any,
+      SPemail:any, 
+      SPnumber:any,
+      SPid:any,
+      SPadd1:any,
+      SPadd2:any,
+      SPadd3:any, 
+      SPadd4:any, 
+      SPadd5:any }
+    },
+      thirdFormGroup:{value: {
+      Cname:any,
+      Csurname:any,
+      CDOB:any,
+      Cid:any,
+      Cimage:any,
+      Ccert:any}
+    },
+       forthFormGroup:{value:{
+        allergies:any}
+      },
       _myDiet: any, _childClass:any,_myProgram: any)
 {
-this.dataService.userregistration(firstFormGroup.value.Pname, firstFormGroup.value.Psurname, firstFormGroup.value.PEmail,
-  firstFormGroup.value.Poccupation, firstFormGroup.value.Pnumber, firstFormGroup.value.Pid,
-  firstFormGroup.value.Padd1, firstFormGroup.value.Padd2,
-  firstFormGroup.value.Padd3,firstFormGroup.value.Padd4, secondFormGroup.value.SPname,
-   secondFormGroup.value.SPsurname,secondFormGroup.value.SPnumber, secondFormGroup.value.SPid, 
-   secondFormGroup.value.SPadd1, secondFormGroup.value.SPadd2, secondFormGroup.value.SPadd3,
-    secondFormGroup.value.SPadd4,secondFormGroup.value.SPadd5,thirdFormGroup.value.Cname, 
-    thirdFormGroup.value.Csurname,thirdFormGroup.value.CDOB, forthFormGroup.value.allergies,
-   this.myDiet , this.childClass)
+this.dataService.userregistration(
+  firstFormGroup.value.Pname,
+  firstFormGroup.value.Psurname,
+  firstFormGroup.value.PEmail,
+  firstFormGroup.value.Pnumber,
+  firstFormGroup.value.Padd1, 
+  firstFormGroup.value.Poccupation, 
+  firstFormGroup.value.Pid,
+  firstFormGroup.value.Padd2,
+  firstFormGroup.value.Padd3,
+  firstFormGroup.value.Padd4, 
+  secondFormGroup.value.SPname,
+  secondFormGroup.value.SPsurname,
+  secondFormGroup.value.SPnumber, 
+  secondFormGroup.value.SPid, 
+  secondFormGroup.value.SPadd1, 
+  secondFormGroup.value.SPadd2, 
+  secondFormGroup.value.SPadd3,
+  secondFormGroup.value.SPadd4,
+  secondFormGroup.value.SPadd5,
+  thirdFormGroup.value.Cname, 
+  thirdFormGroup.value.Csurname,
+  thirdFormGroup.value.CDOB, 
+  forthFormGroup.value.allergies,
+   this.myDiet, 
+   this.childClass)
 .pipe(first())
 .subscribe(
 data => {

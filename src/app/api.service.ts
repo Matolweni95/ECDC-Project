@@ -32,18 +32,55 @@ export class ApiService {
     }));
     }
 
-  public userregistration(parentName: any,parentSurname: any,parentEmailAddress: any, 
-    parentContactNo:any,firstLineAddress:any ,secondLineAddress: any, thirdLineAddress:any,zip:any,
-    occupation:any,emergencyName:any,emergencySurname:any,emergencyContactNo:any,emergencyEmailAddress:any,
-    emergencyOccupation:any,emergencyLine1Address:any,emergencyLine2Address:any,emergencyLine3Address:any,
-    emergencyZip:any,childName:any,childSurname:any,dateOfBirth:any,childDiertaryRestriction:any,
-    allergies:any,progam:any,additionalprograms:any) {
-  return this.httpClient.post<any>(this.baseUrl + '/parent_child_application.php', { parentName,parentSurname,
-    parentEmailAddress,parentContactNo,firstLineAddress,secondLineAddress, thirdLineAddress,zip,
-    occupation,emergencyName,emergencySurname,emergencyContactNo,emergencyEmailAddress,
-    emergencyOccupation,emergencyLine1Address,emergencyLine2Address,emergencyLine3Address,
-    emergencyZip,childName,childSurname,dateOfBirth,childDiertaryRestriction,
-    allergies,progam,additionalprograms})
+  public userregistration(
+    parentName: any,
+    parentSurname: any,
+    parentEmailAddress: any, 
+    parentContactNo:any,
+    firstLineAddress:any ,
+    secondLineAddress: any, 
+    thirdLineAddress:any,
+    zip:any,
+    occupation:any,
+    emergencyName:any,
+    emergencySurname:any,
+    emergencyContactNo:any,
+    emergencyEmailAddress:any,
+    emergencyOccupation:any,
+    emergencyLine1Address:any,
+    emergencyLine2Address:any,
+    emergencyLine3Address:any,
+    emergencyZip:any,
+    childName:any,
+    childSurname:any,
+    dateOfBirth:any,
+    childDiertaryRestriction:any,
+    allergies:any,progam:any,
+    additionalprograms:any) {
+
+  return this.httpClient.post<any>(this.baseUrl + '/parent/parent_child_application.php', { 
+    parentName,parentSurname,
+    parentEmailAddress,
+    parentContactNo,
+    firstLineAddress,
+    secondLineAddress, 
+    thirdLineAddress,zip,
+    occupation,
+    emergencyName,
+    emergencySurname,
+    emergencyContactNo,
+    emergencyEmailAddress,
+    emergencyOccupation,
+    emergencyLine1Address,
+    emergencyLine2Address,
+    emergencyLine3Address,
+    emergencyZip,childName,
+    childSurname,dateOfBirth,
+    childDiertaryRestriction,
+    allergies,
+    progam,
+    additionalprograms
+  })
   .pipe(map(Users => {
   return Users;
   }));

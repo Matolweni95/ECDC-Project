@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -14,7 +15,7 @@ export class ParentProfileComponent implements OnInit {
   parent: any[] = [];
 
   FormGroup!: FormGroup;
-  constructor(private _formBuilder: FormBuilder, private dataService: ApiService,private router:Router) {
+  constructor(private http: HttpClient, private _formBuilder: FormBuilder, private dataService: ApiService,private router:Router) {
   
     
     this.FormGroup = this._formBuilder.group({
@@ -30,6 +31,7 @@ export class ParentProfileComponent implements OnInit {
     });
   }
   ngOnInit(): void {
+    this.getParent();
   }
   postdata(FormGroup: { value: { name: any, surname: any, cellno: any, email: any, line1: any,line2: any, city: any, zip: any}})
 {
@@ -43,6 +45,15 @@ data => {
 
 error => {
 });
+}
+
+getParent(){
+  this.http.get<any>('http://localhost:8080/FinalProj/php/parent/fetchParent.php').subscribe(
+    response => { 
+      console.log(response);
+      this.parent = response;
+    }
+  )
 }
 
 }

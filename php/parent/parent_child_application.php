@@ -4,7 +4,7 @@ $postdata = file_get_contents("php://input");
 if(isset($postdata) && !empty($postdata))
 {
     $request = json_decode($postdata);
-    $parentName = trim($request -> ParentName);
+    $parentName = mysqli_real_escape_string($mysqli, trim($request->parentName));
     $parentSurname = mysqli_real_escape_string($mysqli, trim($request->parentSurname));
     $parentEmailAddress = mysqli_real_escape_string($mysqli, trim($request->parentEmailAddress));
     $firstLineAddress = mysqli_real_escape_string($mysqli, trim($request->firstLineAddress));
