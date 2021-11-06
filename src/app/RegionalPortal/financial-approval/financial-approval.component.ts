@@ -38,9 +38,20 @@ export class FinancialApprovalComponent implements OnInit {
     )
   }
 
+  
+
   ngOnInit(): void {
     this.getNotifs();
+    this.getCentres();
   }
+
+  getCentres() {
+    this.http.get<any>('http://localhost/angularproj/php/regional/countCentres.php')
+      .subscribe(results => {
+        console.log(results);
+      });
+  }
+
   postdata(angForm1: { value: { email: any; password: any; }; })
   {
     this.dataService.userlogin(angForm1.value.email,angForm1.value.password)

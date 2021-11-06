@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+
 export class Notification {
   constructor (public id: number, 
               public title: string,
@@ -34,6 +35,7 @@ export class ManagerHomeComponent implements OnInit {
   getNotifs(){
     this.http.get<any>('http://localhost:8080/FinalProj/php/fetchNotifs.php').subscribe(
       response => {
+        console.log(response);
         this.notifications = response;
       }
     )
@@ -42,6 +44,7 @@ export class ManagerHomeComponent implements OnInit {
   getLearners(){
     this.http.get<any>('http://localhost:8080/FinalProj/php/Manager/countLearners.php').subscribe(
       response => { 
+        console.log(response);
         this.Learners = response;
       }
     )
@@ -50,6 +53,7 @@ export class ManagerHomeComponent implements OnInit {
   getTeacher(){
     this.http.get<any>('http://localhost:8080/FinalProj/php/Manager/countTeachers.php').subscribe(
       response => {
+        console.log(response);
         this.Teacher = response;
       }
     )
