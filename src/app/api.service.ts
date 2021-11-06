@@ -107,6 +107,13 @@ export class ApiService {
         return Users;
       }));
   }
+
+  public getCenters() {
+    return this.httpClient.get<any>(this.baseUrl + '/countCentre.php')
+      .subscribe(results => {
+        console.log(results);
+      });
+  }
   
   //token
   setToken(token: string) {

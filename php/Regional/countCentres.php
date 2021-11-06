@@ -16,4 +16,10 @@ while( $row = $result->fetch_assoc()) {
 
 $myJSON = json_encode($myArr);
 echo $myJSON;
+
+
+// $sql = mysqli_query($conn, "Select * from manager");
+// $result = mysqli_fetch_array($sql);
+
+// print_r($result);
 ?>
