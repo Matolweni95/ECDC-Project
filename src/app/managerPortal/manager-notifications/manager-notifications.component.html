@@ -37,12 +37,13 @@
     </div>
 
     <div class="display">
-        <div *ngFor="let note of notifications; let i = index">
-            <mat-card class="example-card">
-                <label>Title &nbsp;</label><input class="title" type="text" value="{{note.title}}"><br><br>
-                <label>Description &nbsp;</label> <textarea value="{{note.message}}"></textarea>
+        <div class="card" *ngFor="let note of notifications; let i = index">
+            <mat-card class="example-cards">
+                <label class="tit">Title &nbsp;</label><input class="title" type="text" value="{{note.title}}"><br><br>
+                <label class="tit">Description &nbsp;</label> <textarea class="desc" value="{{note.message}}"></textarea>
+                <input value="{{note.notificationId}}" type="text" class="dis">
                 <br>
-                <button mat-button color="primary">Edit</button>
+                <button mat-button color="primary" (click)="getTry(note.notificationId)">Edit</button>
                 <button mat-button color="warn">Delete</button>
             </mat-card>
             

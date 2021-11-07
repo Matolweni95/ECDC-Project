@@ -101,8 +101,36 @@ export class ApiService {
     }));
     }
 
+    public insertAssign (tid: any, classname: any, venue: any, desc: any ) {
+      return this.httpClient.post<any>(this.baseUrl + '/Manager/assignToClass.php', { tid, classname, venue, desc })
+      .pipe(map(Users => {
+      return Users;
+      }));
+      }
+
   public getLearners(id: number) {
     return this.httpClient.get<any>(this.baseUrl + '/fetchLearners.php?id='+ id)
+      .pipe(map(Users => {
+        return Users;
+      }));
+  }
+
+  public getTeacherProfile(id: number) {
+    return this.httpClient.get<any>(this.baseUrl + '/Manager/fetchTeacherProfile.php?id='+ id)
+      .pipe(map(Users => {
+        return Users;
+      }));
+  }
+
+  public getTeacherName(id: number) {
+    return this.httpClient.get<any>(this.baseUrl + '/Manager/getTeacherName.php?id='+ id)
+      .pipe(map(Users => {
+        return Users;
+      }));
+  }
+
+  public getChild(id: number) {
+    return this.httpClient.get<any>(this.baseUrl + '/Manager/fetchChild.php?id='+ id)
       .pipe(map(Users => {
         return Users;
       }));
@@ -124,9 +152,14 @@ export class ApiService {
   return localStorage.getItem('token');
   }
   deleteToken() {
-  localStorage.removeItem('token');
-  localStorage.removeItem('token1');
-  localStorage.removeItem('token3');
+  localStorage.removeItem('token');//name
+  localStorage.removeItem('token1');//role
+  localStorage.removeItem('token3');//parentid
+  localStorage.removeItem('token4');
+  localStorage.removeItem('token5');
+  localStorage.removeItem('token6');//childId
+  localStorage.removeItem('token7');//notification
+
   }
   isLoggedIn() {
   const usertoken = this.getToken();

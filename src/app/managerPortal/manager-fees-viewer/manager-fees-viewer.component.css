@@ -1,0 +1,15 @@
+table.mat-table{
+    background-color: #0d5301;
+    width: 678px;
+    color: white;
+}
+
+h1{
+    margin: 20px 0px;
+    text-align: center;
+}
+
+.add{
+    position: relative;
+    left: 175px;
+}

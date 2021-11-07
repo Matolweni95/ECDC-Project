@@ -29,14 +29,14 @@ export class ManagerProfileComponent implements OnInit {
   FormGroup!: FormGroup;
   constructor(private http: HttpClient, private _formBuilder: FormBuilder, private dataService: ApiService) {
     this.FormGroup = this._formBuilder.group({
-      name: ['', Validators.required],
-      surname: ['', Validators.required],
-      cellno: ['', Validators.required],
-      email: ['', Validators.required],
-      line1: ['', Validators.required],
-      line2: ['', Validators.required],
-      city: ['', Validators.required],
-      zip: ['', Validators.required],
+      firstName: ['', Validators.required],
+      Surname: ['', Validators.required],
+      CellNo: ['', Validators.required],
+      EmailAddress: ['', Validators.required],
+      Line1: ['', Validators.required],
+      Line2: ['', Validators.required],
+      City: ['', Validators.required],
+      Zip: ['', Validators.required],
 
       
 
@@ -58,6 +58,13 @@ export class ManagerProfileComponent implements OnInit {
   
   error => {
   });
+  }
+
+  submit(){
+    const data = {
+      name: this.FormGroup.get('name')?.value
+    }
+    console.log(data);
   }
 
   getManager(){

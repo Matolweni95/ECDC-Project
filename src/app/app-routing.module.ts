@@ -61,6 +61,10 @@ import { TeacherRegisterPortalComponent } from './registration/Teacher/teacher-r
 import { TeacherRegisterFormComponent } from './registration/Teacher/teacher-register-form/teacher-register-form.component';
 import { ParentRegisterPortalComponent } from './registration/Parent/parent-register-portal/parent-register-portal.component';
 import { ParentRegisterFormComponent } from './registration/Parent/parent-register-form/parent-register-form.component';
+import { ManagerAssignComponent } from './managerPortal/manager-assign/manager-assign.component';
+import { ChildViewerComponent } from './managerPortal/child-viewer/child-viewer.component';
+import { ManagerFeesViewerComponent } from './managerPortal/manager-fees-viewer/manager-fees-viewer.component';
+import { ManagerFeeEditComponent } from './managerPortal/manager-fee-edit/manager-fee-edit.component';
 
 
 const routes: Routes = [
@@ -122,13 +126,18 @@ children:[
     { path: 'Mountain-Funds', component: CentreFundsComponent},
     { path: 'Fund-Application', component: FundingApplicationComponent},
     { path: 'Mountain-Applications', component: CentreApplicationsComponent},
-    { path: 'View-Child', component: ManagerChildResultComponent},
+    { path: 'ViewChild', component: ManagerChildResultComponent},
     
     { path: 'Edit-Teacher', component: TeacherTemplateEditableComponent},
-    { path: 'View-Teacher', component: TeacherTemplateComponent},
+    { path: 'View-Teacher', component: TeacherTemplateComponent,},
     { path: 'View-Application', component: ApplicationViewComponent},
     { path: 'Notification', component: ManagerNotificationsComponent},
-    { path: 'Fees', component: ManagerCentreFeesComponent},
+    { path: 'Add-Class', component: ManagerCentreFeesComponent},
+    { path: 'Assign-Teacher', component: ManagerAssignComponent},
+    { path: 'Child-View', component: ChildViewerComponent},
+    { path: 'View-Fees', component: ManagerFeesViewerComponent},
+    { path: 'Edit-Fees', component: ManagerFeeEditComponent},
+
   
   ]},
   

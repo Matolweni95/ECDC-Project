@@ -45,9 +45,11 @@ export class CentreEducatorsComponent implements OnInit {
   
   }
 
+  
+
 
   getRec(teacherId: any){
-    alert(teacherId)
+    localStorage.setItem('token4', teacherId)
   }
 
 

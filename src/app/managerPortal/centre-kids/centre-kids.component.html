@@ -1,33 +1,27 @@
 <router-outlet></router-outlet>
 <h1>Mountain View Children</h1>
 <table mat-table [dataSource] = "dataSource">
-    <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef> ID</th>
-        <th style="padding-left: 24px;" mat-cell1 *matCellDef="let post"> {{post.id}} </th>
-    </ng-container><br>
-    <ng-container matColumnDef="type">
-      <th mat-header-cell *matHeaderCellDef> TYPE</th>
-      <th mat-cell *matCellDef="let post"> {{post.type}}</th>
-  </ng-container>
+    <ng-container matColumnDef="childID">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <th mat-cell *matCellDef="let post"> </th>
+    </ng-container>
+
   <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef> NAME</th>
-      <th mat-cell *matCellDef="let post"> {{post.name}}</th>
+      <th mat-cell *matCellDef="let post"> {{post.childName}}</th>
   </ng-container>
-  <ng-container matColumnDef="email">
-      <th mat-header-cell *matHeaderCellDef>EMAIL</th>
-      <th mat-cell *matCellDef="let post"> {{post.email}}</th>
+  <ng-container matColumnDef="surname">
+      <th mat-header-cell *matHeaderCellDef>SURNAME</th>
+      <th mat-cell *matCellDef="let post"> {{post.childSurname}}</th>
   </ng-container>
-  <ng-container matColumnDef="password">
-      <th mat-header-cell *matHeaderCellDef> PASSWORD</th>
-      <th mat-cell *matCellDef="let post"> {{post.password}}</th>
-  </ng-container>
+
  <ng-container matColumnDef="crudBtns">
      <th mat-header-cell *matHeaderCellDef>
      
      </th>
      
      <td style="float: right;" mat-cell *matCellDef="let post">
-         <button [routerLink]="['/Manager-Portal/View-Child']" style="margin:15px;" mat-raised-button color="accent">View Child</button>
+         <button  [routerLink]="['/Manager-Portal/Child-View']" style="margin:15px;" mat-raised-button color="accent" (click) = "getid(post.childID)">View Child</button>
          <button [routerLink]="['/Manager-Portal/View-Report']" style="margin:15px;" mat-raised-button color="warn">Results</button>
       </td>
  </ng-container>

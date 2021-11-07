@@ -10,7 +10,7 @@
     </mat-card-header>
     
     <mat-card-content>
-      <p>
+      <p class="num">
         {{Learners.length}}
       </p>
     </mat-card-content>
@@ -24,7 +24,7 @@
     </mat-card-header>
     
     <mat-card-content>
-      <p>
+      <p class="num">
       {{Teacher.length}}
       </p>
     </mat-card-content>
@@ -37,7 +37,7 @@
     </mat-card-header>
     
     <mat-card-content>
-      <p>
+      <p class="num">
         <li *ngFor="let amount of Funds">
       
           R{{amount['fundsAvailable']}}

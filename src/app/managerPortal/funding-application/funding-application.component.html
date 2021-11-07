@@ -6,34 +6,32 @@
 <mat-card class="example-card">
     <mat-card-content>
         <div>
-            <img src="assets/images/logo.png">
+            <img src="assets/images/logoback.PNG">
         </div>
         <div class="form">
-            <form [formGroup]="Forms"autocomplete="off" >
-                <label>Centre Name:</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="text" *ngFor = "let notifs of centre" value="{{notifs['centreName']}}" formControlName = "centres">
+          <form [formGroup]="FormGroup" class="example-form">
+           
+            <mat-form-field *ngFor="let item of centre" class="example" appearance="fill">
+                <mat-label>Centre Name</mat-label>
+                <input matInput value="{{item['centreName']}}" > 
+            </mat-form-field>
+            <br>
+            <mat-form-field *ngFor="let item of liaison" class="example" appearance="fill">
+              <mat-label>Regional Liaison</mat-label>
+              <input matInput value="{{item['firstName']}}"> 
+          </mat-form-field>
+          <br>
+          <mat-form-field class="example" appearance="fill">
+            <mat-label>Amount Request</mat-label>
+            <input matInput  formControlName="amount"> 
+        </mat-form-field>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <br>
+            <button mat-raised-button color="primary">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+            <button [routerLink]="['/Manager-Portal/Manager-Home']" mat-raised-button color="warn">Go Home</button>
+          
+          </form>
             
-                <input id="displays" type="text" *ngFor = "let notifs of centre" value="{{ notifs['centreId'] }}" >
-
-                 <br>
-
-                 <label>Coordinator:</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                 <input type="text" *ngFor = "let lia of liaison" value=" {{ lia['firstName'] }}" readonly>
-
-                  
-                  <select id="displays" class="liaison" name=notifs> Please select data below
-                    <option *ngFor="let lia of liaison" value="lia.regionalCoordinatorId">
-                  {{ lia['regionalCoordinatorId'] }}
-                </option>
-                
-                 </select> 
-                  <br>
-                  <label>Amount Requested:</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                  <input type="text" formControlName = "amount">
-                   <br>
-                   <input type="submit" value="Send" (click)="postdata(Forms)">
-                    
-            </form>
         </div>
       
     </mat-card-content>

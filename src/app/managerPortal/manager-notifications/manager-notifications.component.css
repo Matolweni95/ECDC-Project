@@ -6,6 +6,11 @@
     height: 70%;
 }
 
+.example-cards{
+    height: 240px;
+  
+}
+
 h1{
     padding-bottom: 45px;
     text-align: center;
@@ -13,9 +18,11 @@ h1{
 }
 
 .title{
-    margin-left: 44px;
+    margin-left: 4px;
     padding-bottom: 50px;
 }
+
+
 
 .tdesc, .tdest{
     margin-left: 60px;
@@ -27,16 +34,37 @@ h1{
     margin-bottom: 10px;
 }
 
+.desc{
+    position: relative;
+    bottom: 10px;
+}
+
 .display {
+   
+    height: 460px;
+    width: 600px;
+    display:grid ;
+    grid-template-columns: auto auto;
+    overflow:auto;
     
-    flex-wrap: wrap;
-    columns: 2;
-    gap: 10px;
+ 
 }
 
 mat-card{
     margin-bottom: 10px;
     color: black;
     background-color: white;
+}
+
+.card{
+    width: 260px;
+    columns: 3;
+    border: none;
+    
+   
+}
+
+.dis{
+    display: none;
 }
 

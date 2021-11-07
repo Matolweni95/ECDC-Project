@@ -17,15 +17,17 @@ export class Notification {
 })
 export class FundingApplicationComponent implements OnInit {
 
-  Forms!: FormGroup;
+  FormGroup!: FormGroup;
   centre:[] = [];
   liaison:[] = [];
 
   constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router, private http: HttpClient) {
 
-    this.Forms = this.fb.group({
+    this.FormGroup = this.fb.group({
       amount: ['', [Validators.required]],
       centres: ['', [Validators.required]],
+      liaison: ['', [Validators.required]],
+      tets: ['', [Validators.required]],
 
       
       });
@@ -54,7 +56,7 @@ export class FundingApplicationComponent implements OnInit {
     const data = {
       name: this.liaison,
       surname: this.centre,
-      amount: this.Forms.get('amount')?.value
+      amount: this.FormGroup.get('amount')?.value
     }
     console.log(data)
   }

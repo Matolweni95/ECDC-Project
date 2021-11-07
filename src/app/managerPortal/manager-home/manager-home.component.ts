@@ -32,7 +32,7 @@ export class ManagerHomeComponent implements OnInit {
   }
 
   getNotifs(){
-    this.http.get<any>('http://localhost:8080/FinalProj/php/fetchNotifs.php').subscribe(
+    this.http.get<any>('http://localhost:8080/FinalProj/php/Manager/fetchManagerNotifs.php').subscribe(
       response => {
         this.notifications = response;
       }
