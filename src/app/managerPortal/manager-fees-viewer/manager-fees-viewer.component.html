@@ -1,0 +1,35 @@
+<router-outlet></router-outlet>
+<h1>Mountain Centre Fees</h1>
+<table mat-table [dataSource] = "dataSource">
+    <ng-container matColumnDef="classId">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <th mat-cell *matCellDef="let post"> </th>
+    </ng-container>
+
+  <ng-container matColumnDef="className">
+      <th mat-header-cell *matHeaderCellDef>CLASS</th>
+      <th mat-cell *matCellDef="let post"> {{post.className}}</th>
+  </ng-container>
+  <ng-container matColumnDef="venue">
+      <th mat-header-cell *matHeaderCellDef>VENUE</th>
+      <th mat-cell *matCellDef="let post"> {{post.venue}}</th>
+  </ng-container>
+  <ng-container matColumnDef="classFees">
+    <th mat-header-cell *matHeaderCellDef>FEES</th>
+    <th mat-cell *matCellDef="let post"> {{post.classFees}}</th>
+    </ng-container>
+
+ <ng-container matColumnDef="crudBtns">
+     <th mat-header-cell *matHeaderCellDef> 
+        <button class="add" [routerLink]="['/Manager-Portal/Add-Class']" style="margin:15px;" mat-raised-button color="primary">+Add Class</button>
+     </th>     
+     <td style="float: right;" mat-cell *matCellDef="let post">
+         <button  [routerLink]="['/Manager-Portal/Edit-Fees']" style="margin:15px;" mat-raised-button color="primary" (click) = "getid(post.classId)">Edit Fees</button>
+      </td>
+ </ng-container>
+ 
+
+  <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+  <tr mat-row *matRowDef="let post; columns: displayColumns;"></tr>
+</table>
+<mat-paginator [pageSizeOptions] = "[5,10,20]" showFirstLastButtons></mat-paginator>

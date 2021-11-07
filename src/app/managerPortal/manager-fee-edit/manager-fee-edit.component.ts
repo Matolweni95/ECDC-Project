@@ -11,25 +11,13 @@ interface Venue {
   value: string;
   viewValue: string;
 } 
-export class Notification {
-  constructor (public id: number, 
-              public title: string,
-              public message: string){
-  
-  }
-}
 @Component({
-  selector: 'app-manager-centre-fees',
-  templateUrl: './manager-centre-fees.component.html',
-  styleUrls: ['./manager-centre-fees.component.css']
+  selector: 'app-manager-fee-edit',
+  templateUrl: './manager-fee-edit.component.html',
+  styleUrls: ['./manager-fee-edit.component.css']
 })
-export class ManagerCentreFeesComponent implements OnInit {
-  date =  new Date().getFullYear();
- 
-  serializedDate = new FormControl((new Date()).toISOString());
-  
-  notifications:any[] = [];
-  
+export class ManagerFeeEditComponent implements OnInit {
+
   FormGroup!: FormGroup;
   selectedClass!: string;
   selectedVenue!: string;
@@ -57,7 +45,7 @@ export class ManagerCentreFeesComponent implements OnInit {
     this.FormGroup = this.fb.group({
       grade: ['', [Validators.required,Validators.minLength(1), Validators.email]],
       fees: ['', Validators.required],
-      year: [this.date, Validators.required],
+      year: ['', Validators.required],
       
       });
    }
@@ -67,13 +55,5 @@ export class ManagerCentreFeesComponent implements OnInit {
     
   }
 
-  getNotifs(){
-    this.http.get<any>('http://localhost:8080/FinalProj/pmkhp/fetchNotifs.php').subscribe(
-      response => {
-        console.log(response);
-        this.notifications = response;
-      }
-    )
-  }
+ 
 }
-

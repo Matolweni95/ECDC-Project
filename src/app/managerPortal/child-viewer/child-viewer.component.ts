@@ -4,14 +4,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { ApiService } from 'src/app/api.service';
 @Component({
-  selector: 'app-teacher-template',
-  templateUrl: './teacher-template.component.html',
-  styleUrls: ['./teacher-template.component.css']
+  selector: 'app-child-viewer',
+  templateUrl: './child-viewer.component.html',
+  styleUrls: ['./child-viewer.component.css']
 })
-export class TeacherTemplateComponent implements OnInit {
+export class ChildViewerComponent implements OnInit {
 
-  TeacherProfile: any;
-  teacher:any[] = [];
+  child: any;
+  children:any[] = [];
   FormGroup!: FormGroup;
   constructor(private http: HttpClient, private _formBuilder: FormBuilder, private dataService: ApiService) {
     this.FormGroup = this._formBuilder.group({
@@ -29,20 +29,20 @@ export class TeacherTemplateComponent implements OnInit {
     });
    }
 
-  ngOnInit(): void {
-  this.TeacherProfile = localStorage.getItem('token4');
-  this.getProfile(this.TeacherProfile);
-  }
-
-  getProfile(id: number){
-    this.dataService.getTeacherProfile(id).subscribe(
-      response => {
-        console.log(response);
-        this.teacher = response;
-        return;
-        // this.children = response.items;
-      }
-    )
-  }
+   ngOnInit(): void {
+    this.child = localStorage.getItem('token6');
+    this.getChild(this.child);
+    }
+  
+    getChild(id: number){
+      this.dataService.getChild(id).subscribe(
+        response => {
+          console.log(response);
+          this.children = response;
+          return;
+          // this.children = response.items;
+        }
+      )
+    }
 
 }

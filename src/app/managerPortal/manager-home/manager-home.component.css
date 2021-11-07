@@ -1,5 +1,5 @@
 mat-card {
-    width: 225px;
+    width: 240px;
     height: 230px;
     color: white;
     background-color: #0d5301;
@@ -30,8 +30,19 @@ mat-card {
     border: none;
 }
 .example-cards{
-    width:520px;
+    width:420px;
     height: 75vh;
 }
 
-mat-card-content{}
+.num{
+    font-family: 'Bangers', cursive;
+    font-weight: 900;
+    font-size: 54px;
+    text-align: center;
+    position: relative;
+    top: 54px;
+}
+
+li {
+    list-style: none;
+}

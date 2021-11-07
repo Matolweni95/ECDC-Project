@@ -10,15 +10,16 @@ import { ApiService } from 'src/app/api.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatDialogConfig } from '@angular/material/dialog';
 @Component({
-  selector: 'app-centre-kids',
-  templateUrl: './centre-kids.component.html',
-  styleUrls: ['./centre-kids.component.css']
+  selector: 'app-manager-fees-viewer',
+  templateUrl: './manager-fees-viewer.component.html',
+  styleUrls: ['./manager-fees-viewer.component.css']
 })
-export class CentreKidsComponent implements OnInit {
-  displayColumns = ['childID','name','surname','crudBtns'];
+export class ManagerFeesViewerComponent implements OnInit {
+
+  displayColumns = ['classId','className','venue','classFees','crudBtns'];
   post:any[]  = [];
   dataSource!: MatTableDataSource<any>;
-  angForm: FormGroup;
+  angForm!: FormGroup;
   constructor(private http: HttpClient,private fb: FormBuilder,private dataService: ApiService,private router:Router, private dialog: MatDialog) { 
     this.angForm = this.fb.group({
       email: ['', [Validators.required,Validators.minLength(1), Validators.email]],
@@ -28,7 +29,7 @@ export class CentreKidsComponent implements OnInit {
       mobile: ['', Validators.required]
       });
 
-    this.http.get('http://localhost:8080/FinalProj/php/Manager/fetchLearners.php').subscribe(data => {
+    this.http.get('http://localhost:8080/FinalProj/php/Manager/getCentreFees.php').subscribe(data => {
       this.post.push(data);
       this.dataSource = new MatTableDataSource(this.post[0]);
     })
@@ -55,8 +56,8 @@ export class CentreKidsComponent implements OnInit {
 
 
 
-  getid(childID: any){
-    localStorage.setItem('token5', childID)
+  getid(classId: any){
+    localStorage.setItem('token6', classId)
   }
   
   get email() { return this.angForm.get('email'); }
@@ -75,4 +76,3 @@ export interface PeriodicElement {
   email:string;
   password:string;
 }
-

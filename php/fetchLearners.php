@@ -5,10 +5,10 @@ header("Access-Control-Allow-Methods: PUT, GET, POST, DELETE");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 header("Content-Type: application/json; charset=UTF-8");
 include_once("connect.php");
+	
+	$id = $_GET['id'];
 
-	$id = $_POST['id'];
-
-	$parentId = id;
+	$parentId =  $id;
 	$sql =  "SELECT * FROM child WHERE parentId = '$parentId'";
 	$result = $conn->query($sql);
 	$myArr = array();

@@ -1,57 +1,67 @@
+.example-card {
+  max-width: 900px;
+}
 
-  .example-card {
-    max-width: 1600px;
-  }
-
-  .container{
+mat-card-content{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 75%;
-  }
+}
 
-  mat-card-content{
-      display: flex;
-  }
+p{
+    margin-left: 15px;
+    padding-bottom: 20px;
+}
 
-  p{
-      margin-left: 15px;
-      padding-bottom: 20px;
-  }
+img{
+    width: 400px;
+    height: 310px;
+}
 
-  button{
-      margin-top: 30px;
-      margin-left: 10px;
-  }
-
-  .form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  select{
-    margin-bottom: 30px;
-  }
-
-  .liaison{
-    margin-left: 80px;
-  }
-
-  .centre{
-    margin-left: 43px;
-  }
-  
-  h1{
-    text-align: center;
+button{
     margin-top: 30px;
-  }
+    margin-left: 10px;
+}
 
-  mat-card {
-    background-color: white;
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+}
+
+
+h1{
+    text-align: center;
+    margin: 20px;
+}
+
+mat-card{
+    background-color: #0d5301;
     color: black;
-  }
+}
 
-  #displays{
-    display: none;
-  }
+
+
+.example-dis{
+  display: none;
+}
+
+form{
+  margin-left: 35px;
+  position: relative;
+  top:28px;
+}
+
+button{
+  position: relative;
+  right: 10px;
+  bottom:25px ;
+}
+
+mat-form-field{
+  width: 255px;
+  color: white;
+}
+
+li{
+  list-style: none;
+}

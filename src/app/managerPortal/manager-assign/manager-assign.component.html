@@ -1,0 +1,52 @@
+<router-outlet></router-outlet>
+<h1><li *ngFor = "let item of tname"> Assign: {{item['name']}} {{item['surname']}} to class</h1>
+<div class="container">
+
+<mat-card class="example-card">
+    <mat-card-content>
+        <div class="legend">
+            <img src="/assets/images/logoback.PNG">
+        </div>
+        
+            <form [formGroup]="FormGroup" class="example-form">
+                <mat-form-field appearance="fill">
+                    <mat-label>Grade:</mat-label>
+                    <mat-select [(ngModel)]="selectedClass" name="class" [ngModelOptions]="{standalone: true}">
+                      <mat-option *ngFor="let item of class" [value]="item.viewValue">
+                        {{item.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field> &nbsp;&nbsp;&nbsp;&nbsp;
+                  <br>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Venue:</mat-label>
+                    <mat-select [(ngModel)]="selectedVenue" name="class" [ngModelOptions]="{standalone: true}">
+                      <mat-option *ngFor="let item of venue" [value]="item.viewValue">
+                        {{item.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <br>
+                  <mat-form-field class="example" appearance="fill">
+                    <mat-label>Class Description</mat-label>
+                    <input matInput  formControlName="desc"> 
+                </mat-form-field>
+                <br>
+                <mat-form-field class="example-dis" appearance="fill">
+                    <mat-label>Cell No</mat-label>
+                    <input matInput  formControlName="tid"> 
+                </mat-form-field>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                
+                <button mat-raised-button color="primary" (click)="postdata(FormGroup, selectedClass, selectedVenue)">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                <button [routerLink]="['/Manager-Portal/Mountain-Teachers']" mat-raised-button color="warn">Go To Teacher List</button>
+              
+              </form>
+      
+      
+    </mat-card-content>
+  
+  </mat-card>
+  </div>
+  
+

@@ -1,0 +1,38 @@
+<router-outlet></router-outlet>
+<h1>Child Profile</h1>
+<div class="container">
+    <img src= "assets/images/tasha-staff9.png">
+    <mat-card>
+
+    <form [formGroup]="FormGroup" class="example-form" *ngFor = "let item of children">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>First Name</mat-label>
+          <input matInput value="{{item.childName}}">
+        </mat-form-field> &nbsp;&nbsp;&nbsp;&nbsp;
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Last Name</mat-label>
+            <input matInput value="{{item.childSurname}}">
+        </mat-form-field><br>
+    
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>D.O.B</mat-label>
+            <input matInput value="{{item.dateOfBirth}}">
+        </mat-form-field>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Parent</mat-label>
+            <input matInput value="{{item.parentName}} {{item.parentSurname}}">
+        </mat-form-field> <br>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Class</mat-label>
+            <input matInput value="{{item.className}}">
+        </mat-form-field>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        <button [routerLink]="['/Manager-Portal/Assign-Teacher']" mat-raised-button color="primary">View Progress</button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button  [routerLink]="['/Manager-Portal/Mountain-Kids']" mat-raised-button color="warn">Back</button>
+      
+      </form>
+      </mat-card>
+      
+    </div>
