@@ -8,7 +8,7 @@ import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { MatDialog } from '@angular/material/dialog';
-import { MatDialogConfig } from '@angular/material/dialog';
+
 @Component({
   selector: 'app-centre-kids',
   templateUrl: './centre-kids.component.html',
@@ -56,7 +56,7 @@ export class CentreKidsComponent implements OnInit {
 
 
   getid(childID: any){
-    localStorage.setItem('token5', childID)
+    localStorage.setItem('token6', childID)
   }
   
   get email() { return this.angForm.get('email'); }

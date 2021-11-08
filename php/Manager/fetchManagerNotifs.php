@@ -1,6 +1,6 @@
 <?php header('Access-Control-Allow-Origin: *');
 include_once("connect.php");
-$sql = "SELECT * FROM notifications WHERE role = 'Manager'";
+$sql = "SELECT * FROM notifications WHERE role = 'Regional Coordinator'";
 $result = $conn->query($sql);
 $myArr = array();
 

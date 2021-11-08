@@ -18,19 +18,9 @@
                     </mat-select>
                   </mat-form-field> &nbsp;&nbsp;&nbsp;&nbsp;
                   <br>
-                  <mat-form-field appearance="fill">
-                    <mat-label>Venue:</mat-label>
-                    <mat-select [(ngModel)]="selectedVenue" name="class" [ngModelOptions]="{standalone: true}">
-                      <mat-option *ngFor="let item of venue" [value]="item.viewValue">
-                        {{item.viewValue}}
-                      </mat-option>
-                    </mat-select>
-                  </mat-form-field>
+            
                   <br>
-                  <mat-form-field class="example" appearance="fill">
-                    <mat-label>Class Description</mat-label>
-                    <input matInput  formControlName="desc"> 
-                </mat-form-field>
+                  
                 <br>
                 <mat-form-field class="example-dis" appearance="fill">
                     <mat-label>Cell No</mat-label>
