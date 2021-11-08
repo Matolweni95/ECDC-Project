@@ -2,6 +2,7 @@
 header('Access-control-Allow-Origin: *');
 include_once("connect.php");
 
+
 $sql = "SELECT additionalFees FROM totalFees where feesId = '2';";
 $result = $conn->query($sql);
 $myArr = array();

@@ -6,7 +6,7 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 header("Content-Type: application/json; charset=UTF-8");
 include_once("connect.php");
 
-	$id = $_POST['id'];
+	$id = $_GET['id'];
 
 	$parentId = id;
 	$sql =  "SELECT * FROM child WHERE parentId = '$parentId'";

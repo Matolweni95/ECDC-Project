@@ -107,6 +107,12 @@ export class ApiService {
         return Users;
       }));
   }
+  public payment(firstName: any, lastName: any, nameOnCard: any,creditCardNumber: any, cvv: any) {
+    return this.httpClient.get<any>(this.baseUrl + '/fetchLearners.php?id='+ {firstName,lastName,nameOnCard,creditCardNumber,cvv})
+      .pipe(map(Users => {
+        return Users;
+      }));
+  }
   
   //token
   setToken(token: string) {
