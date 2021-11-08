@@ -57,7 +57,7 @@ export class ManagerFeesViewerComponent implements OnInit {
 
 
   getid(classId: any){
-    localStorage.setItem('token6', classId)
+    localStorage.setItem('token5', classId)
   }
   
   get email() { return this.angForm.get('email'); }

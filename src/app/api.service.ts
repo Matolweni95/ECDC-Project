@@ -155,8 +155,8 @@ export class ApiService {
   localStorage.removeItem('token');//name
   localStorage.removeItem('token1');//role
   localStorage.removeItem('token3');//parentid
-  localStorage.removeItem('token4');
-  localStorage.removeItem('token5');
+  localStorage.removeItem('token4');//teacherid
+  localStorage.removeItem('token5');//feeid
   localStorage.removeItem('token6');//childId
   localStorage.removeItem('token7');//notification
 

@@ -3,7 +3,8 @@ include_once("connect.php");
 
 $id = $_GET['id'];
 
-$sql = "SELECT child.childName, child.childSurname, parent.parentName, parent.parentSurname, child.className, child.dateOfBirth FROM child INNER JOIN parent ON parent.parentId = child.parentId WHERE childId = $id";
+$sql = "SELECT child.childName, child.childSurname, parent.parentName, parent.parentSurname, child.className, child.dateOfBirth 
+FROM child INNER JOIN parent ON parent.parentId = child.parentId WHERE childId = $id";
 $result = $conn->query($sql);
 $myArr = array();
 
