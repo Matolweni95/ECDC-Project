@@ -106,6 +106,7 @@ import { ManagerFeeEditComponent } from './managerPortal/manager-fee-edit/manage
 import { ManagerViewProgressComponent } from './managerPortal/manager-view-progress/manager-view-progress.component';
 import { TestComponent } from './managerPortal/test/test.component';
 import { ReportTemplateComponent } from './managerPortal/report-template/report-template.component';
+import { ParentChildProgressComponent } from './parentPortal/parent-child-progress/parent-child-progress.component';
 
 @NgModule({
   declarations: [
@@ -189,6 +190,7 @@ import { ReportTemplateComponent } from './managerPortal/report-template/report-
     ManagerViewProgressComponent,
     TestComponent,
     ReportTemplateComponent,
+    ParentChildProgressComponent,
     
     
   ],
