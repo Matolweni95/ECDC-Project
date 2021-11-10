@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./parent-payment.component.css']
 })
 export class ParentPaymentComponent implements OnInit {
+  parentPayment!: string;
+  payment: string[] = ['credit card', 'debit card', 'paypal'];
 
   constructor() { }
 
@@ -13,3 +15,5 @@ export class ParentPaymentComponent implements OnInit {
   }
 
 }
+
+

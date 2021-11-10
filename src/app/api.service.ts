@@ -150,19 +150,6 @@ export class ApiService {
       }));
   }
 
-  public getFeeUpdate(id: number) {
-    return this.httpClient.get<any>(this.baseUrl + '/Manager/updateFees.php?id='+ id)
-      .pipe(map(Users => {
-        return Users;
-      }));
-  }
-
-  public getChildProgress(child: number, term:string) {
-    return this.httpClient.get<any>(this.baseUrl + "/Manager/getProgress.php?child="+child+"&term="+ term)
-      .pipe(map(Users => {
-        return Users;
-      }));
-  }
   
   //token
   setToken(token: string) {
