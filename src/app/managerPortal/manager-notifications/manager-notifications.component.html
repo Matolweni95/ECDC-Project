@@ -5,31 +5,39 @@
             <mat-card-content>
                 <div>
                     <img src="assets/images/logo.png">
+                  
                 </div>
                 <div class="form">
-                    <form  autocomplete="off" >
-                        <label>Title:</label> 
-                  
-                        <input class="t-title" type="text">
-    
+                    <form [formGroup]="FormGroup" class="example-form">
+                        <mat-form-field class="example-ee" appearance="fill">
+                            <mat-label>Title</mat-label>
+                            <input matInput  formControlName="fees"> 
+                        </mat-form-field>
+                          <br>
+                          <mat-form-field class="venue" appearance="fill">
+                            <mat-label>Venue:</mat-label>
+                            <mat-select [(ngModel)]="selectedValue" name="class" [ngModelOptions]="{standalone: true}">
+                              <mat-option *ngFor="let item of value" [value]="item.viewValue">
+                                {{item.viewValue}}
+                              </mat-option>
+                            </mat-select>
+                          </mat-form-field>
                         <br>
-                        
-                        <label>Destination:</label>
-                 
-                        <select class="tdest">
-    
-                        </select>
-    
+                        <mat-form-field class="example-ee" appearance="fill">
+                            <mat-label>Description</mat-label>
+                            <input matInput  formControlName="fees"> 
+                        </mat-form-field>
+                       
                         <br>
+                      
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <div class="btn">
+                        <button mat-raised-button color="primary">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button [routerLink]="['/Manager-Portal/View-Fees']" mat-raised-button color="warn">Go Back</button> 
+                        </div>
                         
-                        <label>Description:</label>
-                        
-                        <input class="tdesc" type="text">
-                        <br>
-                        
-                        <input type="submit" value="Send">
-                        
-                </form>
+                      
+                      </form>
             </div>
           
         </mat-card-content>

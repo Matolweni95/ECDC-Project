@@ -101,12 +101,26 @@ export class ApiService {
     }));
     }
 
-    public insertAssign (tid: any, classname: any, venue: any, desc: any ) {
-      return this.httpClient.post<any>(this.baseUrl + '/Manager/assignToClass.php', { tid, classname, venue, desc })
+  public insertAssign (classname: any, tid:any ) {
+    return this.httpClient.post<any>(this.baseUrl + '/Manager/assignToClass.php', { classname, tid })
+    .pipe(map(Users => {
+    return Users;
+    }));
+    }
+
+    public insertFees (desc: any, fees:any, year:any, classes:any, venue:any  ) {
+      return this.httpClient.post<any>(this.baseUrl + '/Manager/insertFees.php', { desc, fees, year, classes, venue })
       .pipe(map(Users => {
       return Users;
       }));
-      }
+    }
+
+    public editFees (fees: any, desc:any, id:any, classes:any, venue:any  ) {
+      return this.httpClient.post<any>(this.baseUrl + '/Manager/UpdateFees.php', { fees, desc, id, classes, venue })
+      .pipe(map(Users => {
+      return Users;
+      }));
+    }
 
   public getLearners(id: number) {
     return this.httpClient.get<any>(this.baseUrl + '/fetchLearners.php?id='+ id)
@@ -136,13 +150,6 @@ export class ApiService {
       }));
   }
 
-   public getChildClass(id: number) {
-    return this.httpClient.get<any>(this.baseUrl + '/Parent/fetchChildClass.php?id='+ id)
-      .pipe(map(Users => {
-        return Users;
-      }));
-  }
- 
   
   //token
   setToken(token: string) {
@@ -167,6 +174,7 @@ export class ApiService {
   localStorage.removeItem('token5');//feeid
   localStorage.removeItem('token6');//childId
   localStorage.removeItem('token7');//notification
+  localStorage.removeItem('token8');//test
 
   }
   isLoggedIn() {

@@ -29,14 +29,14 @@ export class ManagerProfileComponent implements OnInit {
   FormGroup!: FormGroup;
   constructor(private http: HttpClient, private _formBuilder: FormBuilder, private dataService: ApiService) {
     this.FormGroup = this._formBuilder.group({
-      firstName: ['', Validators.required],
+      name: ['', Validators.required],
       Surname: ['', Validators.required],
-      CellNo: ['', Validators.required],
-      EmailAddress: ['', Validators.required],
-      Line1: ['', Validators.required],
-      Line2: ['', Validators.required],
-      City: ['', Validators.required],
-      Zip: ['', Validators.required],
+      email: ['', Validators.required],
+      cellno: ['', Validators.required],
+      city: ['', Validators.required],
+      line1: ['', Validators.required],
+      line2: ['', Validators.required],
+      zip: ['', Validators.required],
 
       
 
