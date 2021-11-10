@@ -172,6 +172,13 @@ export class ApiService {
         return Users;
       }));
   }
+  public getParentChildProgress(child: number, term:string) {
+    return this.httpClient.get<any>(this.baseUrl + "/parent/fetchChildReport.php?child="+child+"&term="+ term)
+
+      .pipe(map(Users => {
+        return Users;
+      }));
+  }
   //token
   setToken(token: string) {
   localStorage.setItem('token', token);

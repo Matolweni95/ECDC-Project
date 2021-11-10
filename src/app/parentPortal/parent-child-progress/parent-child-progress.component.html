@@ -1,0 +1,9 @@
+
+<nav>
+    <button value="{{item['value']}}" *ngFor = "let item of btns" style="margin:15px;" mat-raised-button color="primary" (click)="submit(item['value']) ">{{item['value2']}}</button>
+  
+</nav>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+  
