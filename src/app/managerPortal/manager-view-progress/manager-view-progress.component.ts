@@ -26,28 +26,31 @@ export class ManagerViewProgressComponent implements OnInit {
 
   ngOnInit(): void {
     this.child = localStorage.getItem('token6');
-    this.term = localStorage.getItem('token8')
+    this.term = localStorage.getItem('token8');
     
   }
   
 submit(term:any){
   localStorage.setItem('token8', term)
-
-  // this.getChild(this.child, this.term);
+  this.getChild(this.child, this.term);
   this.router.navigateByUrl('/Manager-Portal/View-Progress/Progress');
-  window.location.reload();
+  
+ 
 }
 
-// getChild(child: any, term:string){
-//   this.dataService.getChildProgress(child, term).subscribe(
-//     response => {
-//       console.log(response);
-//       this.childprogress = response;
-//       return;
-//       // this.children = response.items;
-//     }
-//   )
-// }
+getChild(child: any, term:string){
+  
+  this.dataService.getChildProgress(child, term).subscribe(
+    response => {
+      console.log(response);
+      this.childprogress = response;
+      window.location.reload();
+      return;
+      
+      // this.children = response.items;
+    }
+  )
+}
 
 
 }
