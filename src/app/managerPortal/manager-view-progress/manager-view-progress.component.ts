@@ -32,10 +32,10 @@ export class ManagerViewProgressComponent implements OnInit {
   
 submit(term:any){
   localStorage.setItem('token8', term)
-  window.location.reload();
+
   // this.getChild(this.child, this.term);
   this.router.navigateByUrl('/Manager-Portal/View-Progress/Progress');
- 
+  window.location.reload();
 }
 
 // getChild(child: any, term:string){
