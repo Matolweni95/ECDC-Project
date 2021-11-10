@@ -1,6 +1,7 @@
 <?php
 header('Access-control-Allow-Origin: *');
 include_once("connect.php");
+
 $childId = 1;
 $sql = "SELECT className FROM child WHERE childID = $childId;";
 $result = $conn->query($sql);

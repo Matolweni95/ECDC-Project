@@ -135,6 +135,14 @@ export class ApiService {
         return Users;
       }));
   }
+
+   public getChildClass(id: number) {
+    return this.httpClient.get<any>(this.baseUrl + '/Parent/fetchChildClass.php?id='+ id)
+      .pipe(map(Users => {
+        return Users;
+      }));
+  }
+ 
   
   //token
   setToken(token: string) {

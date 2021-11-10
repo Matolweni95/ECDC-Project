@@ -7,3 +7,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     color: #fff;
 }
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+.mat-radio-outer-circle {
+    border-color: black;
+}
