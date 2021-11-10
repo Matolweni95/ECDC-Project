@@ -25,7 +25,7 @@ export class FundingApplicationComponent implements OnInit {
 
     this.FormGroup = this.fb.group({
       amount: ['', [Validators.required]],
-      centres: ['', [Validators.required]],
+      centres: ['1', [Validators.required]],
       liaison: ['', [Validators.required]],
       tets: ['', [Validators.required]],
 

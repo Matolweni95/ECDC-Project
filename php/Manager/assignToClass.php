@@ -1,3 +1,4 @@
+
 <?php
 
 include_once("database.php");
@@ -5,20 +6,17 @@ $postdata = file_get_contents("php://input");
 if(isset($postdata) && !empty($postdata))
 {
 $request = json_decode($postdata);
+$classname = trim($request->classname);
+$tid = mysqli_real_escape_string($mysqli, trim($request->tid));
 
-$id = $_GET['id'];
-
-$grade = mysqli_real_escape_string($mysqli, trim($request->grade));
-$sql = "UPDATE teacher SET className = '$grade' WHERE (`teacherId` = '$id');";
+$sql = "UPDATE teacher SET className = '$classname' WHERE teacherId = '$tid'";
 if ($mysqli->query($sql) === TRUE) {
 $authdata = [
-'grade' => $grade,
+'classname' => $classname,
+'tid' => $tid,
 'Id' => mysqli_insert_id($mysqli)
 ];
 echo json_encode($authdata);
-}
-else {
-    echo 'fail';
 }
 }
 

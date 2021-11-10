@@ -1,0 +1,56 @@
+.example-card {
+    max-width: 900px;
+  }
+  mat-card-content{
+    display: flex;
+    gap: 50px;
+  }
+
+  label{
+      padding-bottom: 35px;
+      padding-right: 75px;
+  }
+
+  .abc{
+      margin-left: 85px;
+  }
+
+  .play{
+    margin-left: 74px;
+}
+
+
+.read{
+    margin-left: 70px;
+}
+
+.sign{
+    margin-top: 60px;
+    margin-left: 150px;
+}
+
+mat-card-actions{
+    display: flex;
+    gap: 200px;
+}
+
+.listen{
+    margin-left: 2px;
+}
+
+button{
+    height: 55px;
+    width: 100px;
+    padding-right: 10px;
+}
+
+.btns{
+    margin-left: 50px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.cont{
+    display: flex;
+}

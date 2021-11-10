@@ -11,6 +11,12 @@
   
 }
 
+img{
+    width: 280px;
+    position: relative;
+    top: 35px;
+}
+
 h1{
     padding-bottom: 45px;
     text-align: center;
@@ -67,4 +73,29 @@ mat-card{
 .dis{
     display: none;
 }
+form{
+    background-color: #0d5301;
+    
+    
+}
 
+mat-card-content{
+    display: flex;
+}
+
+.task {
+    width: 705px;
+}
+
+mat-form-field{
+    position: relative;
+    left: 13px;
+    top: 11px;
+    color: white;
+}
+
+.btn{
+    position: relative;
+    right: 9px;
+    padding-right: 15px;
+}

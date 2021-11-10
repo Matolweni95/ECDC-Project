@@ -1,0 +1,50 @@
+<div class="cont">
+
+    <mat-card class="example-card" *ngFor = "let item of childprogress">
+        <mat-card-header>
+        
+          <mat-card-title>{{item['childName']}} {{item['childSurname']}}</mat-card-title>
+          <mat-card-subtitle>{{item['className']}} {{item['term']}} </mat-card-subtitle>
+         
+        
+        </mat-card-header>
+        
+        <mat-card-content>
+            <div>
+                <mat-card class="example-card">
+                
+                    <mat-card-content>
+                        <p>
+                        <label>Reading</label><label class="read">{{item['reading']}}</label><br>
+                        <label>Counting</label> <label class="abc">{{item['counting']}}</label><br>
+                        <label>Playing</label> <label class="play">{{item['playing']}}</label><br>
+                        <label>Comprehension</label> <label class="listen">{{item['comprehension']}}</label><br>
+                        <label>Sleeping</label> <label>{{item['sleeping']}}</label><br>
+                        <label>Art</label> <label>{{item['art']}}</label><br>
+                            </p>
+                    </mat-card-content>
+                </mat-card> 
+            </div>
+            <div class="img">
+                <img src="assets/images/tisha-staff7.png">
+            </div> 
+        </mat-card-content>
+        <mat-card-actions>
+        <div>
+         <p class="comment">
+             Comments<br>
+             <textarea>{{item['comment']}}</textarea>
+         </p>
+        </div>
+        <div>
+        <p class="sign">
+            Signed By: A.Tyesi
+        </p>
+        </div>
+    
+        </mat-card-actions>
+      </mat-card>
+  
+      
+    </div>
+    

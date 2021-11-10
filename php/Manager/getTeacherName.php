@@ -3,7 +3,7 @@ include_once("connect.php");
 
 $id = $_GET['id'];
 $teacherId = $id;
-$sql = "SELECT name, surname FROM teacher WHERE teacherId = '$teacherId'";
+$sql = "SELECT teacherId, name, surname FROM teacher WHERE teacherId = '$teacherId'";
 $result = $conn->query($sql);
 $myArr = array();
 

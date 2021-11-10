@@ -14,6 +14,11 @@ h1{
     margin-left: 100px;
 }
 
+.example-full-width{
+    position: relative;
+    bottom: 140px;
+}
+
 .title{
     margin-left: 44px;
 }
@@ -50,7 +55,8 @@ mat-card{
     position: relative;
     display: flex;
     gap: 10px;
-    bottom: 10px;
+    bottom: 80px;
+    right: 15px;
     
 }
 
@@ -87,7 +93,12 @@ button{
 
 .example-ee{
     position: relative;
-    bottom: 83px;
+    bottom: 140px;
+}
+
+.venue{
+    position: relative;
+    top: 11px;
 }
 
 mat-card-content{

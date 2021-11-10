@@ -58,9 +58,10 @@ export class ManagerAssignComponent implements OnInit {
   }
 
    
-  postdata(FormGroup: { value: { tid: any, desc: any }}, _selectedClass: any, _selectedVenue: any)
+  postdata( _selectedClass: any, FormGroup: { value:{ tid:any }})
   {
-  this.dataService.insertAssign(FormGroup.value.tid, FormGroup.value.desc, this.selectedClass, this.selectedVenue)
+
+  this.dataService.insertAssign(this.selectedClass, FormGroup.value.tid, )
   .pipe(first())
   .subscribe(
   data => {
@@ -83,6 +84,8 @@ export class ManagerAssignComponent implements OnInit {
       }
     )
   }
+
+  
 
   submit(){
     const data = {
