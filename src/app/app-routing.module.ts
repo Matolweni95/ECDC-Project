@@ -65,8 +65,9 @@ import { ManagerAssignComponent } from './managerPortal/manager-assign/manager-a
 import { ChildViewerComponent } from './managerPortal/child-viewer/child-viewer.component';
 import { ManagerFeesViewerComponent } from './managerPortal/manager-fees-viewer/manager-fees-viewer.component';
 import { ManagerFeeEditComponent } from './managerPortal/manager-fee-edit/manager-fee-edit.component';
-
-
+import { ManagerViewProgressComponent } from './managerPortal/manager-view-progress/manager-view-progress.component';
+import { ReportTemplateComponent } from './managerPortal/report-template/report-template.component';
+import { TestComponent } from './managerPortal/test/test.component';
 const routes: Routes = [
   { path: '', component: HomeSectionComponent },
   { path: 'About', component: AboutPageComponent },
@@ -137,6 +138,10 @@ children:[
     { path: 'Child-View', component: ChildViewerComponent},
     { path: 'View-Fees', component: ManagerFeesViewerComponent},
     { path: 'Edit-Fees', component: ManagerFeeEditComponent},
+    { path: 'View-Progress', component: ManagerViewProgressComponent,
+  children:[
+    { path: 'Progress', component: ReportTemplateComponent},
+  ]},
 
   
   ]},

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ApiService } from 'src/app/api.service';
+import { first } from 'rxjs/operators';
 
 interface Class {
   value: string;
@@ -53,10 +55,11 @@ export class ManagerCentreFeesComponent implements OnInit {
   ];
 
 
-  constructor(private http: HttpClient, private fb: FormBuilder,) {
+  constructor(private http: HttpClient, private fb: FormBuilder,private dataService: ApiService) {
     this.FormGroup = this.fb.group({
       grade: ['', [Validators.required,Validators.minLength(1), Validators.email]],
       fees: ['', Validators.required],
+      desc: ['', Validators.required],
       year: [this.date, Validators.required],
       
       });
@@ -66,6 +69,21 @@ export class ManagerCentreFeesComponent implements OnInit {
     
     
   }
+
+  postdata(FormGroup: { value:{ desc:any, fees:any, year:any }}, _selectedClass: any, _selectedVenue: any)
+  {
+
+  this.dataService.insertFees(FormGroup.value.desc, FormGroup.value.fees, FormGroup.value.year, this.selectedClass, this.selectedVenue )
+  .pipe(first())
+  .subscribe(
+  _data => {
+  
+  },
+  
+  _error => {
+  });
+  }
+
 
   getNotifs(){
     this.http.get<any>('http://localhost:8080/FinalProj/pmkhp/fetchNotifs.php').subscribe(

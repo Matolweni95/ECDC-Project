@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ApiService } from 'src/app/api.service';
 
+interface Value {
+  value: string;
+  viewValue: string;
+}
 export class Notification {
   constructor (public id: number, 
               public title: string,
@@ -13,8 +19,25 @@ export class Notification {
 })
 export class ManagerNotificationsComponent implements OnInit {
 
+  FormGroup!: FormGroup;
+  selectedValue!: string;
   notifications:any[] = [];
-  constructor(private http: HttpClient) { }
+
+  value: Value[] = [
+    {value: 'dest1', viewValue: 'Teacher'},
+    {value: 'dest2', viewValue: 'Parent'},
+  
+  ];
+
+  constructor(private http: HttpClient, private fb: FormBuilder, private dataService: ApiService) {
+    this.FormGroup = this.fb.group({
+      grade: ['', [Validators.required,Validators.minLength(1), Validators.email]],
+      desc: ['', Validators.required],
+      fees: ['', Validators.required],
+
+      });
+   }
+
 
   ngOnInit(): void {
     this.getNotifs();

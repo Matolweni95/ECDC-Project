@@ -33,7 +33,7 @@
                             </mat-form-field>
                             <mat-form-field class="example-full-width" appearance="fill">
                                 <mat-label>Class Description</mat-label>
-                                <textarea rows="6" matInput placeholder="learning outcomes are..."></textarea>
+                                <textarea rows="6" matInput placeholder="learning outcomes are..." formControlName="desc"></textarea>
                               </mat-form-field>
                            
                             <br>
@@ -44,7 +44,7 @@
                             <br>
                             &nbsp;&nbsp;&nbsp;&nbsp;
                             <div class="btn">
-                            <button mat-raised-button color="primary">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button mat-raised-button color="primary" (click)="postdata(FormGroup, selectedClass, selectedVenue) ">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
                             <button [routerLink]="['/Manager-Portal/View-Fees']" mat-raised-button color="warn">Go Back</button> 
                             </div>
                             

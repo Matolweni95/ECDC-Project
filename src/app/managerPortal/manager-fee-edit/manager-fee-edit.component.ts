@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ApiService } from 'src/app/api.service';
+import { first } from 'rxjs/operators';
 
 interface Class {
   value: string;
@@ -21,6 +23,10 @@ export class ManagerFeeEditComponent implements OnInit {
   FormGroup!: FormGroup;
   selectedClass!: string;
   selectedVenue!: string;
+  fee:any;
+  fees:any[] = [];
+  currentYear = new Date().getFullYear();
+  id = localStorage.getItem('token5');
   
 
   class: Class[] = [
@@ -41,11 +47,12 @@ export class ManagerFeeEditComponent implements OnInit {
   ];
 
 
-  constructor(private http: HttpClient, private fb: FormBuilder,) {
+  constructor(private http: HttpClient, private fb: FormBuilder, private dataService: ApiService) {
     this.FormGroup = this.fb.group({
       grade: ['', [Validators.required,Validators.minLength(1), Validators.email]],
+      desc: ['', Validators.required],
       fees: ['', Validators.required],
-      year: ['', Validators.required],
+      id: [this.id, Validators.required],
       
       });
    }
@@ -54,6 +61,27 @@ export class ManagerFeeEditComponent implements OnInit {
     
     
   }
+
+  postdata(FormGroup: { value:{ fees:any, desc:any, id:any }}, _selectedClass: any, _selectedVenue: any)
+  {
+
+  this.dataService.editFees(FormGroup.value.fees, FormGroup.value.desc, FormGroup.value.id, this.selectedClass, this.selectedVenue )
+  .pipe(first())
+  .subscribe(
+  _data => {
+  
+  },
+  
+  _error => {
+  });
+  }
+
+submit(){
+  const data = {
+    name: this.id,
+  }
+  console.log(data);
+}
 
  
 }
