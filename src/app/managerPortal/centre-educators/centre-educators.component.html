@@ -13,6 +13,10 @@
       <th mat-header-cell *matHeaderCellDef>SURNAME</th>
       <th mat-cell *matCellDef="let post"> {{post.surname}}</th>
   </ng-container>
+  <ng-container matColumnDef="className">
+    <th mat-header-cell *matHeaderCellDef>CLASS</th>
+    <th mat-cell *matCellDef="let post"> {{post.className}}</th>
+</ng-container>
 
  <ng-container matColumnDef="crudBtns">
      <th mat-header-cell *matHeaderCellDef>

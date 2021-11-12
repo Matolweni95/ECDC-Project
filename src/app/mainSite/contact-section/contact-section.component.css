@@ -2,7 +2,7 @@
 .contact-us{
     display: flex;
     justify-content: space-evenly;
-    gap: 100px;
+    gap: 20px;
     align-items: center;
     padding: 15px;
 }

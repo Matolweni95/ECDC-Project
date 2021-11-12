@@ -11,25 +11,25 @@
         </div>
     </div>
 
-    <form class="contact-info">
+    <form [formGroup]="FormGroup" class="contact-info">
         <div class="split">
         <label for="name"> Full Name:<br>
-            <input type="text" size="28" required>
+            <input type="text" size="28" formControlName="name" required>
         </label>
         <label for="number">Cell No:<br>
-            <input type="text" size="28" required>
+            <input type="text" size="28"  formControlName="cellno" required>
         </label>
         </div>
         <br>
         <label for="email">Email:<br>
-            <input type="email" size="60px" required>
+            <input type="email" size="60px"  formControlName="email" required>
         </label>
         <br><br>
-        <textarea cols="68" rows="6" required>
+        <textarea cols="68" rows="6"  formControlName="message" required>
 
         </textarea>
         <br>
-        <button class="btn" type="submit">Send &nbsp;<fa-icon [icon] ="faPaperPlane"></fa-icon></button>
+        <button class="btn" type="submit" (click)="postdata(FormGroup)">Send &nbsp;<fa-icon [icon] ="faPaperPlane"></fa-icon></button>
     </form>
 </section>
 <app-footer></app-footer>

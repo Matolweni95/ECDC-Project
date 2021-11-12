@@ -2,6 +2,7 @@ import { Injectable, Output, EventEmitter } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Users } from './users';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,7 +10,7 @@ export class ApiService {
   redirectUrl: string | undefined;
   baseUrl:string = "http://localhost:8080/FinalProj/php";
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
-  constructor(private httpClient : HttpClient) { }
+  constructor(private httpClient : HttpClient, private router:Router) { }
 
   
   public userlogin(username: any, password: any) {
@@ -104,6 +105,7 @@ export class ApiService {
   public insertAssign (classname: any, tid:any ) {
     return this.httpClient.post<any>(this.baseUrl + '/Manager/assignToClass.php', { classname, tid })
     .pipe(map(Users => {
+      this.router.navigateByUrl('/Manager-Portal/Mountain-Teachers');
     return Users;
     }));
     }
@@ -165,6 +167,13 @@ export class ApiService {
       }));
   }
 
+  public deleteNotifs(id: number) {
+    return this.httpClient.get<any>(this.baseUrl + '/Manager/deleteNotif.php?id='+ id)
+      .pipe(map(Users => {
+        return Users;
+      }));
+  }
+
   public getChildProgress(child: number, term:string) {
     return this.httpClient.get<any>(this.baseUrl + "/Manager/getProgress.php?child="+child+"&term="+ term)
 
@@ -172,13 +181,8 @@ export class ApiService {
         return Users;
       }));
   }
-  public getParentChildProgress(child: number, term:string) {
-    return this.httpClient.get<any>(this.baseUrl + "/parent/fetchChildReport.php?child="+child+"&term="+ term)
 
-      .pipe(map(Users => {
-        return Users;
-      }));
-  }
+
   //token
   setToken(token: string) {
   localStorage.setItem('token', token);

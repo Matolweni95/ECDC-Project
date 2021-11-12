@@ -1,10 +1,6 @@
-
 <?php header('Access-Control-Allow-Origin: *');
 include_once("connect.php");
-
-$id = $_GET['id'];
-
-$sql = "DELETE FROM notifications WHERE (`notificationId` = '$id');";
+$sql = "SELECT * FROM notifications WHERE role = 'Manager'";
 $result = $conn->query($sql);
 $myArr = array();
 

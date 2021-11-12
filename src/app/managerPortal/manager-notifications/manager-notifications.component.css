@@ -1,6 +1,6 @@
 .container{
     display: flex;
-    gap: 80px;
+    
     align-items: center;
     justify-content: center;
     height: 70%;
@@ -51,7 +51,7 @@ h1{
     width: 600px;
     display:grid ;
     grid-template-columns: auto auto;
-    overflow:auto;
+   
     
  
 }
@@ -70,6 +70,10 @@ mat-card{
    
 }
 
+.example-car{
+    width: 230px;
+}
+
 .dis{
     display: none;
 }
@@ -84,7 +88,9 @@ mat-card-content{
 }
 
 .task {
-    width: 705px;
+    width: 725px;
+    position: relative;
+    right: 60px;
 }
 
 mat-form-field{

@@ -7,7 +7,7 @@
     <form [formGroup]="FormGroup" class="example-form" *ngFor = "let item of manager">
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>First Name</mat-label>
-          <input matInput value="{{item.firstName}}" formControlName="name">
+          <input matInput  formControlName="name"  value="{{item.firstName}}">
         </mat-form-field> &nbsp;&nbsp;&nbsp;&nbsp;
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Last Name</mat-label>
@@ -41,8 +41,8 @@
             <mat-label>Postal Code</mat-label>
             <input matInput value="{{item.zip}}" formControlName="zip">
         </mat-form-field> <br>
-        <button mat-raised-button color="primary" (click)="postdata(FormGroup)">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
-        <button mat-raised-button color="warn" (click)="submit()">Reset</button>
+        <button mat-raised-button color="primary" (click)="postdata(FormGroup)">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+
       
       </form>
       </mat-card>
