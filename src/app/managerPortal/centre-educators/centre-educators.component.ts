@@ -16,7 +16,7 @@ import { MatDialogConfig } from '@angular/material/dialog';
 })
 export class CentreEducatorsComponent implements OnInit {
 
-  displayColumns = ['teacherId','name','surname','crudBtns'];
+  displayColumns = ['teacherId','name','surname','className','crudBtns'];
   post:any[]  = [];
   dataSource!: MatTableDataSource<any>;
   angForm: FormGroup;

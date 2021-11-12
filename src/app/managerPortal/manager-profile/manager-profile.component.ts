@@ -30,7 +30,7 @@ export class ManagerProfileComponent implements OnInit {
   constructor(private http: HttpClient, private _formBuilder: FormBuilder, private dataService: ApiService) {
     this.FormGroup = this._formBuilder.group({
       name: ['', Validators.required],
-      Surname: ['', Validators.required],
+      surname: ['', Validators.required],
       email: ['', Validators.required],
       cellno: ['', Validators.required],
       city: ['', Validators.required],

@@ -11,11 +11,11 @@
                     <form [formGroup]="FormGroup" class="example-form">
                         <mat-form-field class="example-ee" appearance="fill">
                             <mat-label>Title</mat-label>
-                            <input matInput  formControlName="fees"> 
+                            <input matInput  formControlName="title"> 
                         </mat-form-field>
                           <br>
                           <mat-form-field class="venue" appearance="fill">
-                            <mat-label>Venue:</mat-label>
+                            <mat-label>Role:</mat-label>
                             <mat-select [(ngModel)]="selectedValue" name="class" [ngModelOptions]="{standalone: true}">
                               <mat-option *ngFor="let item of value" [value]="item.viewValue">
                                 {{item.viewValue}}
@@ -25,14 +25,14 @@
                         <br>
                         <mat-form-field class="example-ee" appearance="fill">
                             <mat-label>Description</mat-label>
-                            <input matInput  formControlName="fees"> 
+                            <input matInput  formControlName="desc"> 
                         </mat-form-field>
                        
                         <br>
                       
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <div class="btn">
-                        <button mat-raised-button color="primary">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button mat-raised-button color="primary" (click)="postdata(FormGroup, selectedValue)">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
                         <button [routerLink]="['/Manager-Portal/View-Fees']" mat-raised-button color="warn">Go Back</button> 
                         </div>
                         
@@ -46,13 +46,13 @@
 
     <div class="display">
         <div class="card" *ngFor="let note of notifications; let i = index">
-            <mat-card class="example-cards">
-                <label class="tit">Title &nbsp;</label><input class="title" type="text" value="{{note.title}}"><br><br>
+            <mat-card class="example-car">
+                <label class="tit">Title &nbsp;</label><br><input class="title" type="text" value="{{note.title}}"><br><br>
                 <label class="tit">Description &nbsp;</label> <textarea class="desc" value="{{note.message}}"></textarea>
                 <input value="{{note.notificationId}}" type="text" class="dis">
                 <br>
-                <button mat-button color="primary" (click)="getTry(note.notificationId)">Edit</button>
-                <button mat-button color="warn">Delete</button>
+                <button mat-button color="primary" (click)="getTry(note.notificationId)">Delete</button>
+            
             </mat-card>
             
         </div>
