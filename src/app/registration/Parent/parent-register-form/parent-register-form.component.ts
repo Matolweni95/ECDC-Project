@@ -4,6 +4,7 @@ import { ApiService } from 'src/app/api.service';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-parent-register-form',
@@ -11,6 +12,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./parent-register-form.component.css']
 })
 export class ParentRegisterFormComponent implements OnInit {
+  
 
   showDiv = {
     previous : false,
@@ -66,6 +68,8 @@ if(this.myDiet === 'Other'){
   ];
 
   Form!: FormGroup;
+  
+  
   
   constructor(private _formBuilder: FormBuilder, private dataService: ApiService,private router:Router) {
   
@@ -131,6 +135,7 @@ if(this.myDiet === 'Other'){
     });
 
   }
+  
 
   ngOnInit() {
    
