@@ -107,6 +107,7 @@ import { ManagerViewProgressComponent } from './managerPortal/manager-view-progr
 import { TestComponent } from './managerPortal/test/test.component';
 import { ReportTemplateComponent } from './managerPortal/report-template/report-template.component';
 import { ParentChildProgressComponent } from './parentPortal/parent-child-progress/parent-child-progress.component';
+import { FileUploadComponent } from './parentPortal/file-upload/file-upload.component';
 
 @NgModule({
   declarations: [
@@ -191,6 +192,7 @@ import { ParentChildProgressComponent } from './parentPortal/parent-child-progre
     TestComponent,
     ReportTemplateComponent,
     ParentChildProgressComponent,
+    FileUploadComponent,
     
     
   ],
