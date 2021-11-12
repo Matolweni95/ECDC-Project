@@ -182,22 +182,7 @@ export class ApiService {
       }));
   }
 
-  public sendContact(name: string, cellno:string, message:any, email:any) {
-    return this.httpClient.post<any>(this.baseUrl + '/Manager/sendcontact.php', { name, cellno, message, email})
-      .pipe(map(Users => {
-      return Users;
-      }));
-    }
 
-    public addManagerNotif(title: string, desc:string, dest:any) {
-      return this.httpClient.post<any>(this.baseUrl + '/Manager/addNotif.php', { title, desc, dest})
-        .pipe(map(Users => {
-          window.location.reload();
-        return Users;
-        }));
-      }
-
-  
   //token
   setToken(token: string) {
   localStorage.setItem('token', token);

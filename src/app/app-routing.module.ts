@@ -68,6 +68,8 @@ import { ManagerFeeEditComponent } from './managerPortal/manager-fee-edit/manage
 import { ManagerViewProgressComponent } from './managerPortal/manager-view-progress/manager-view-progress.component';
 import { ReportTemplateComponent } from './managerPortal/report-template/report-template.component';
 import { TestComponent } from './managerPortal/test/test.component';
+import { ParentChildProgressComponent } from './parentPortal/parent-child-progress/parent-child-progress.component';
+
 const routes: Routes = [
   { path: '', component: HomeSectionComponent },
   { path: 'About', component: AboutPageComponent },
@@ -99,10 +101,7 @@ children: [
   { path: 'Parent-home', component: ParentHomeComponent},
   { path: 'MyChildren', component: MychildrenComponent,
 children:[
-  { path: 'Term1', component: Term1Component },
-  { path: 'Term2', component: Term2Component },
-  { path: 'Term3', component: Term3Component },
-  { path: 'Term4', component: Term4Component}
+  { path: 'Mychild-Progress', component: ParentChildProgressComponent },
 
 ]},
   { path: 'Admissions', component: ParentApplicationComponent},
