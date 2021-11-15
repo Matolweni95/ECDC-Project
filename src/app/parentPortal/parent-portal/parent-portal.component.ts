@@ -18,6 +18,7 @@ export class ParentPortalComponent implements OnInit {
  logoutbtn:boolean;
  name = localStorage.getItem("token");
  type = localStorage.getItem("token1");
+ surname = localStorage.getItem('token9');
  
 constructor(private dataService: ApiService, private observer:BreakpointObserver ) {
 dataService.getLoggedInName.subscribe(name => this.changeName(name));

@@ -145,9 +145,9 @@ if(this.myDiet === 'Other'){
     Pname: any,
     Psurname: any;
     PEmail:any,
-    Pnumber:any,
+    PNumber:any,
     Padd1:any, 
-    Poccupation:any, 
+    POccupation:any, 
     Pid:any,
     Padd2:any,
     Padd3:any,
@@ -158,8 +158,8 @@ if(this.myDiet === 'Other'){
       SPname:any,
       SPsurname:any,
       SPoccupation:any,
-      SPemail:any, 
-      SPnumber:any,
+      SPEmail:any, 
+      SPNumber:any,
       SPid:any,
       SPadd1:any,
       SPadd2:any,
@@ -175,37 +175,40 @@ if(this.myDiet === 'Other'){
       Cimage:any,
       Ccert:any}
     },
-       forthFormGroup:{value:{
-        allergies:any}
-      },
+      //  fifthFormGroup:{value:{
+      //   allergies:any}
+      // },
       _myDiet: any, _childClass:any,_myProgram: any)
 {
 this.dataService.userregistration(
   firstFormGroup.value.Pname,
   firstFormGroup.value.Psurname,
   firstFormGroup.value.PEmail,
-  firstFormGroup.value.Pnumber,
+  firstFormGroup.value.PNumber,
   firstFormGroup.value.Padd1, 
-  firstFormGroup.value.Poccupation, 
+  firstFormGroup.value.POccupation, 
   firstFormGroup.value.Pid,
   firstFormGroup.value.Padd2,
   firstFormGroup.value.Padd3,
   firstFormGroup.value.Padd4, 
+
   secondFormGroup.value.SPname,
   secondFormGroup.value.SPsurname,
-  secondFormGroup.value.SPnumber, 
+  secondFormGroup.value.SPNumber, 
+  secondFormGroup.value.SPEmail,
   secondFormGroup.value.SPid, 
   secondFormGroup.value.SPadd1, 
   secondFormGroup.value.SPadd2, 
   secondFormGroup.value.SPadd3,
   secondFormGroup.value.SPadd4,
-  secondFormGroup.value.SPadd5,
+ 
   thirdFormGroup.value.Cname, 
   thirdFormGroup.value.Csurname,
   thirdFormGroup.value.CDOB, 
-  forthFormGroup.value.allergies,
+
+  // fifthFormGroup.value.allergies,
    this.myDiet, 
-   this.childClass)
+   this.childClass, this.myProgram)
 .pipe(first())
 .subscribe(
 data => {

@@ -62,7 +62,8 @@ mat-icon{
 }
 .avatar{
     border-radius: 50%;
-    width: 11rem;
+    width: 10rem;
+    height: 9rem;
 }
 .name {
     margin: 0;

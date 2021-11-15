@@ -1,45 +1,45 @@
 <router-outlet></router-outlet>
 <h1>My Profile</h1>
 <div class="container">
-    <img src= "assets/images/tasha-staff9.png">
+   
     <mat-card>
 
     <form [formGroup]="FormGroup" class="example-form" *ngFor = "let item of manager">
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>First Name</mat-label>
-          <input matInput  formControlName="name"  value="{{item.firstName}}">
+          <input matInput  formControlName="name"  placeholder="{{item.firstName}}">
         </mat-form-field> &nbsp;&nbsp;&nbsp;&nbsp;
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Last Name</mat-label>
-            <input matInput value="{{item.surname}}" formControlName="surname">
+            <input matInput placeholder="{{item.surname}}" formControlName="surname">
         </mat-form-field><br>
     
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Cell No</mat-label>
-            <input matInput value="{{item.cellNo}}" formControlName="email">
+            <input matInput placeholder="{{item.cellNo}}" formControlName="email">
         </mat-form-field>
         &nbsp;&nbsp;&nbsp;&nbsp;
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Email</mat-label>
-            <input matInput value="{{item.emailAddress}}" formControlName="cellno">
+            <input matInput placeholder="{{item.emailAddress}}" formControlName="cellno">
         </mat-form-field> <br>
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>1<sup>st</sup> Line of Address</mat-label>
-            <input matInput value="{{item.line1Address}}" formControlName="city">
+            <input matInput placeholder="{{item.line1Address}}" formControlName="city">
         </mat-form-field>
         &nbsp;&nbsp;&nbsp;&nbsp;
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>2<sup>nd</sup> Line of Address</mat-label>
-            <input matInput value="{{item.line2Address}}" formControlName="line1">
+            <input matInput placeholder="{{item.line2Address}}" formControlName="line1">
         </mat-form-field> <br>
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>3<sup>rd</sup> Line of Address</mat-label>
-            <input matInput value="{{item.City}}" formControlName="line2">
+            <input matInput placeholder="{{item.City}}" formControlName="line2">
         </mat-form-field>
         &nbsp;&nbsp;&nbsp;&nbsp;
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Postal Code</mat-label>
-            <input matInput value="{{item.zip}}" formControlName="zip">
+            <input matInput placeholder="{{item.zip}}" formControlName="zip">
         </mat-form-field> <br>
         <button mat-raised-button color="primary" (click)="postdata(FormGroup)">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;
 

@@ -18,6 +18,7 @@ export class ManagerPortalComponent implements OnInit {
   loginbtn:boolean;
  logoutbtn:boolean;
  name = localStorage.getItem("token");
+ surname = localStorage.getItem("token9")
  type = localStorage.getItem("token1");
  
 constructor(private dataService: ApiService, private observer:BreakpointObserver ) {
