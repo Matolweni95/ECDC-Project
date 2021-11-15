@@ -18,6 +18,7 @@ export class ApiService {
   return this.httpClient.post<any>(this.baseUrl + '/login.php', { username, password })
   .pipe(map(Users => {
   this.setToken(Users[0].name);
+  this.setToken1(Users[0].surname);
   this.setTokens(Users[0].role);
   this.setToken3(Users[0].parentId);
   
@@ -39,47 +40,58 @@ export class ApiService {
     parentEmailAddress: any, 
     parentContactNo:any,
     firstLineAddress:any ,
+    occupation:any,
+    parentId: any,
     secondLineAddress: any, 
     thirdLineAddress:any,
     zip:any,
-    occupation:any,
+    
     emergencyName:any,
     emergencySurname:any,
     emergencyContactNo:any,
     emergencyEmailAddress:any,
-    emergencyOccupation:any,
+    emergencyId: any,
     emergencyLine1Address:any,
     emergencyLine2Address:any,
     emergencyLine3Address:any,
     emergencyZip:any,
+
     childName:any,
     childSurname:any,
     dateOfBirth:any,
-    childDiertaryRestriction:any,
-    allergies:any,progam:any,
+
+    // allergies:any,
+    diet:any,
+    classes:any,
     additionalprograms:any) {
 
   return this.httpClient.post<any>(this.baseUrl + '/parent/parent_child_application.php', { 
-    parentName,parentSurname,
+    parentName,
+    parentSurname,
     parentEmailAddress,
     parentContactNo,
     firstLineAddress,
-    secondLineAddress, 
-    thirdLineAddress,zip,
     occupation,
+    parentId,
+    secondLineAddress, 
+    thirdLineAddress,
+    zip, 
     emergencyName,
     emergencySurname,
     emergencyContactNo,
     emergencyEmailAddress,
-    emergencyOccupation,
+    emergencyId,
     emergencyLine1Address,
     emergencyLine2Address,
     emergencyLine3Address,
-    emergencyZip,childName,
-    childSurname,dateOfBirth,
-    childDiertaryRestriction,
-    allergies,
-    progam,
+    emergencyZip,
+    childName,
+    childSurname,
+    dateOfBirth,
+
+    // allergies,
+    diet,
+    classes,
     additionalprograms
   })
   .pipe(map(Users => {
@@ -190,6 +202,14 @@ export class ApiService {
       }));
     }
 
+    public filetest(file: object, name: any) {
+      console.log(file)
+      return this.httpClient.post<any>(this.baseUrl + '/Manager/upload.php', { file, name})
+        .pipe(map(Users => {
+        return Users;
+        }));
+      }
+
     public addManagerNotif(title: string, desc:string, dest:any) {
       return this.httpClient.post<any>(this.baseUrl + '/Manager/addNotif.php', { title, desc, dest})
         .pipe(map(Users => {
@@ -214,6 +234,9 @@ export class ApiService {
   setToken(token: string) {
   localStorage.setItem('token', token);
   }
+  setToken1(token1: string) {
+    localStorage.setItem('token9', token1);
+  }
 
   setTokens(token1: string) {
     localStorage.setItem('token1', token1);
@@ -234,6 +257,7 @@ export class ApiService {
   localStorage.removeItem('token6');//childId
   localStorage.removeItem('token7');//notification
   localStorage.removeItem('token8');//test
+  localStorage.removeItem('token9');//surname
 
   }
   isLoggedIn() {
