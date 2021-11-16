@@ -136,6 +136,7 @@ children:[
     { path: 'Child-View', component: ChildViewerComponent},
     { path: 'View-Fees', component: ManagerFeesViewerComponent},
     { path: 'Edit-Fees', component: ManagerFeeEditComponent},
+    { path: 'View-applicant', component: ApplicationViewComponent},
     { path: 'View-Progress', component: ManagerViewProgressComponent,
   children:[
     { path: 'Progress', component: ReportTemplateComponent},

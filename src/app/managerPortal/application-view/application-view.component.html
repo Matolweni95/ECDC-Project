@@ -1,1 +1,38 @@
-<p>application-view works!</p>
+<router-outlet></router-outlet>
+<h1>Funding Request</h1>
+<div class="container">
+
+
+<mat-card class="example-card">
+    <mat-card-content>
+
+        <div class="form">
+          <form [formGroup]="FormGroup" class="example-form">
+           
+            <mat-form-field  class="example" appearance="fill">
+                <mat-label>Centre Name</mat-label>
+                <input matInput  > 
+            </mat-form-field>
+            <br>
+            <mat-form-field  class="example" appearance="fill">
+              <mat-label>Regional Liaison</mat-label>
+              <input matInput value=""> 
+          </mat-form-field>
+          <br>
+          <mat-form-field class="example" appearance="fill">
+            <mat-label>Amount Request</mat-label>
+            <input matInput  formControlName="amount"> 
+        </mat-form-field>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <br>
+            <button mat-raised-button color="primary">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+            <button  mat-raised-button color="warn">Go Home</button>
+          
+          </form>
+            
+        </div>
+      
+    </mat-card-content>
+  
+  </mat-card>
+  </div>

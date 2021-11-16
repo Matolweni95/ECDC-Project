@@ -262,6 +262,7 @@ export class ApiService {
   localStorage.removeItem('token7');//notification
   localStorage.removeItem('token8');//test
   localStorage.removeItem('token9');//surname
+  localStorage.removeItem('token10');//applicationId
 
   }
   isLoggedIn() {
