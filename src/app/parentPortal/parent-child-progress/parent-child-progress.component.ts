@@ -42,7 +42,7 @@ submit(term:any){
   // this.getChild(this.child, this.term);
   
   this.router.navigateByUrl('/Parent-Portal/Mychild-Progress/Report');
-  window.location.reload();
+  
 }
 
 getChild(child: any, term:string){
@@ -50,6 +50,7 @@ getChild(child: any, term:string){
     response => {
       console.log(response);
       this.childprogress = response; 
+      window.location.reload();
       return;
       // this.children = response.items;
     }
