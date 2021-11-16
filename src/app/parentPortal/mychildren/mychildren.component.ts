@@ -28,7 +28,6 @@ export class MychildrenComponent implements OnInit {
       response => {
         console.log(response);
         this.childprogress = response;
-        
         return;
   
         // this.children = response.items;

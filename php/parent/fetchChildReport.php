@@ -5,7 +5,7 @@ $child = $_GET['child'];
 $term = $_GET['term'];
 
 $sql = "SELECT child.childName, child.childSurname, report.comment ,child.className, report.term, report.reading, report.counting, report.playing, report.comprehension, report.sleeping, report.art
-FROM child INNER JOIN report ON child.childID = report.childID WHERE term = '$term' AND child.childID = '$child';";
+FROM child INNER JOIN report ON child.childID = report.childID WHERE term = '$term' AND child.childID = '$child'";
 $result = $conn->query($sql);
 $myArr = array();
 

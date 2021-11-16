@@ -40,9 +40,9 @@ submit(term:any){
   localStorage.setItem('token8', term);
   this.getChild(this.child,this.term);
   // this.getChild(this.child, this.term);
-  window.location.reload();
+  
   this.router.navigateByUrl('/Parent-Portal/Mychild-Progress/Report');
- 
+  window.location.reload();
 }
 
 getChild(child: any, term:string){
