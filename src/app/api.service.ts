@@ -225,13 +225,8 @@ export class ApiService {
         }));
       }
 
-    
-
-  
-
   public getParentChildProgress(child: number, term:string) {
     return this.httpClient.get<any>(this.baseUrl + "/parent/fetchChildReport.php?child="+child+"&term="+ term)
-
       .pipe(map(Users => {
         return Users;
       }));
