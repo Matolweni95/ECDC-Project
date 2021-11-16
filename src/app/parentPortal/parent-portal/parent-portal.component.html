@@ -32,12 +32,16 @@
         <span>Home</span>
       </button>
       <br>
-      <button [routerLink]="['/Parent-Portal/MyChildren/Mychild-Progress']" mat-button class="menu-button">
+      <button [routerLink]="['/Parent-Portal/Mychild-Progress']" mat-button class="menu-button">
         <mat-icon>child_care</mat-icon>
-        <span>My Children</span>
+        <span>My Child Progress</span>
       </button>
       <br>
-
+      <button [routerLink]="['/Parent-Portal/MyProfile']" mat-button class="menu-button">
+        <mat-icon>child_care</mat-icon>
+        <span>My Child Profile</span>
+      </button>
+      <br>
       <button [routerLink]="['/Parent-Portal/PayPortal']"mat-button class="menu-button">
         <mat-icon>payment</mat-icon>
         <span>Payment</span>
@@ -52,6 +56,7 @@
         <mat-icon>person</mat-icon>
         <span>My Profile</span>
       </button>
+     
     
       <mat-divider></mat-divider>
       <button *ngIf="logoutbtn" mat-button class="menu-button" (click)="logout()">
