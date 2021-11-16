@@ -99,10 +99,9 @@ children:[
 { path: 'Parent-Portal', component: ParentPortalComponent,
 children: [
   { path: 'Parent-home', component: ParentHomeComponent},
-  { path: 'MyChildren', component: MychildrenComponent,
+  { path: 'Mychild-Progress', component: ParentChildProgressComponent,
 children:[
-  { path: 'Mychild-Progress', component: ParentChildProgressComponent },
-
+  { path: 'Report', component: MychildrenComponent},
 ]},
   { path: 'Admissions', component: ParentApplicationComponent},
   { path: 'PayPortal', component: ParentPaymentComponent},

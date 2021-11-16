@@ -179,6 +179,13 @@ export class ApiService {
       }));
   }
 
+  public fetchChildId(id: number) {
+    return this.httpClient.get<any>(this.baseUrl + '/parent/getchildId.php?id='+ id)
+      .pipe(map(Users => {
+        return Users;
+      }));
+  }
+
   public deleteNotifs(id: number) {
     return this.httpClient.get<any>(this.baseUrl + '/Manager/deleteNotif.php?id='+ id)
       .pipe(map(Users => {
@@ -217,6 +224,8 @@ export class ApiService {
         return Users;
         }));
       }
+
+    
 
   
 
