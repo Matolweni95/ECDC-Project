@@ -11,13 +11,14 @@ $classes = mysqli_real_escape_string($mysqli, trim($request->classes));
 $venue = mysqli_real_escape_string($mysqli, trim($request->venue));
 $id = mysqli_real_escape_string($mysqli, trim($request->id));
 
-$sql = "UPDATE class SET className = '$classes', venue = '$venue', description = '$desc' WHERE classId = '$id'";
+$sql = "UPDATE class SET className = '$classes', venue = '$venue', description = '$desc' ,classFees = '$fees' WHERE classId = '$id'";
 
 if ($mysqli->query($sql) === TRUE) {
 $authdata = [
 'classes' => $classes,
 'fees' => $fees,
 'venue' => $venue,
+'fees' => $fees,
 'Id' => mysqli_insert_id($mysqli)
 ];
 echo json_encode($authdata);

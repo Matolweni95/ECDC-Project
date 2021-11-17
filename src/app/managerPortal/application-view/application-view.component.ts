@@ -83,15 +83,7 @@ export class ApplicationViewComponent implements OnInit {
     )
  
 
-    this.dataService.updateChildParent(test).subscribe(
-      response => {
-          console.log(response);
-          this.parentvalue = response;
-          return;
-      
-        // this.children = response.items;
-      }
-    )
+   
 
     this.dataService.setUser(test).subscribe(
       response => {
@@ -103,7 +95,21 @@ export class ApplicationViewComponent implements OnInit {
       }
     )
 
+   
+  }
 
+  trick(test:any){
+    this.dataService.updateChildParent(test).subscribe(
+      response => {
+          console.log(response);
+          this.parentvalue = response;  
+          return;
+      
+        // this.children = response.items;
+      }
+      
+    )
+    this.router.navigateByUrl('/Manager-Portal/Mountain-Applications');
   }
 
 
