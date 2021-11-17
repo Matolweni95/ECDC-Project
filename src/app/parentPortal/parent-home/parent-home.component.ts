@@ -20,6 +20,7 @@ export class ParentHomeComponent implements OnInit {
   notifications:any[] = [];
   fees: any[]=[];
   additionalFees: any[]=[];
+  totalDue: any[]=[];
   notifs:any[]=[];
   childPrograms :any[]=[];
   childClass:any[] = [];
@@ -33,6 +34,7 @@ export class ParentHomeComponent implements OnInit {
     this.getNotifs(this.parentId);
     this.getFees();
     this.getAddiionalFees();
+    this.getTotalDue();
     this.getNotifications();
     this.getChildPrograms();
     this.getChildClass();
@@ -62,6 +64,15 @@ export class ParentHomeComponent implements OnInit {
       response => {
         console.log(response);
         this.additionalFees = response;
+      }
+    )
+  }
+
+  getTotalDue(){
+    this.http.get<any>('http://localhost:8080//FinalProj/php/parent/getTotalfees.php').subscribe(
+      response => {
+        console.log(response);
+        this.totalDue = response;
       }
     )
   }

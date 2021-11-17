@@ -114,6 +114,14 @@ export class ApiService {
     }));
     }
 
+    public payment (firstName: any, lastName: any, nameOnCard:any, cardNumber:any, expiryDate:any, cvv:any, paymentOption: any ) {
+      return this.httpClient.post<any>(this.baseUrl + '/parent/payment.php', { firstName, lastName , nameOnCard, 
+        cardNumber, expiryDate, cvv, paymentOption})
+      .pipe(map(Users => {
+      return Users;
+      }));
+      }
+
   public insertAssign (classname: any, tid:any ) {
     return this.httpClient.post<any>(this.baseUrl + '/Manager/assignToClass.php', { classname, tid })
     .pipe(map(Users => {

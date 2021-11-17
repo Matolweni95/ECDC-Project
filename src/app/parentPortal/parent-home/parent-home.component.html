@@ -33,7 +33,24 @@
       </p>
     </mat-card-content>
    
-  </mat-card><mat-card class="example-card">
+  </mat-card>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Total Due</mat-card-title>
+  
+    </mat-card-header>
+    
+    <mat-card-content>
+      <p>
+        <li *ngFor="let amount of totalDue"> 
+          {{amount['totalDue']}}
+        </li>
+      </p>
+    </mat-card-content>
+   
+  </mat-card>
+  <mat-card class="example-card">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title>My Child's Programs</mat-card-title>
