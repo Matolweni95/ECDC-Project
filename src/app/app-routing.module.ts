@@ -69,6 +69,7 @@ import { ManagerViewProgressComponent } from './managerPortal/manager-view-progr
 import { ReportTemplateComponent } from './managerPortal/report-template/report-template.component';
 import { TestComponent } from './managerPortal/test/test.component';
 import { ParentChildProgressComponent } from './parentPortal/parent-child-progress/parent-child-progress.component';
+import { MychildProfileComponent } from './parentPortal/mychild-profile/mychild-profile.component';
 
 const routes: Routes = [
   { path: '', component: HomeSectionComponent },
@@ -103,10 +104,13 @@ children: [
 children:[
   { path: 'Report', component: MychildrenComponent},
 ]},
+  { path:'childProfile', component: MychildProfileComponent},
   { path: 'Admissions', component: ParentApplicationComponent},
   { path: 'PayPortal', component: ParentPaymentComponent},
   { path: 'MountainChat', component: MountainChatComponent},
   { path: 'MyProfile', component: ParentProfileComponent}
+
+
 ]},
 
 //parent paths end

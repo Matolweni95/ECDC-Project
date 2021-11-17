@@ -1,7 +1,10 @@
 <?php header('Access-Control-Allow-Origin: *');
 include_once("connect.php");
 
-$sql = "SELECT * FROM parent WHERE parentId = 59";
+
+
+$sql = "SELECT child.childName, child.childSurname, child.parentName, child.parentSurname,className, child.dateOfBirth 
+FROM child  WHERE childID = 39";
 $result = $conn->query($sql);
 $myArr = array();
 

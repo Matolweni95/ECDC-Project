@@ -1,8 +1,8 @@
 <?php
 header('Access-control-Allow-Origin: *');
 include_once("connect.php");
-$childID = 1;
-$sql = "SELECT packageName from child where childID = $childID";
+$childID = 39;
+$sql = "SELECT additionalPrograms from child where childID = $childID";
 $result = $conn->query($sql);
 $myArr = array();
 

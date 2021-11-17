@@ -1,4 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { first } from 'rxjs/operators';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-mychild-profile',
@@ -7,9 +12,47 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MychildProfileComponent implements OnInit {
 
-  constructor() { }
+  child: any[] = [];
 
-  ngOnInit(): void {
+  FormGroup!: FormGroup;
+  constructor(private http: HttpClient, private _formBuilder: FormBuilder, private dataService: ApiService,private router:Router) {
+  
+    
+    this.FormGroup = this._formBuilder.group({
+      name: ['', Validators.required],
+      surname: ['', Validators.required],
+      parentName: ['', Validators.required],
+      parentSurname: ['', Validators.required],
+      className: ['', Validators.required],
+      dateOfBirth: ['', Validators.required],
+      
+    
+    });
   }
+  ngOnInit(): void {
+    this.getchildprofile();
+  }
+  postdata(FormGroup: { value: { name: any, surname: any, parentName: any, parentSurname: any,className: any, dateOfBirth: any}})
+{
+this.dataService.childprofile(FormGroup.value.name, FormGroup.value.surname, 
+  FormGroup.value.parentName,FormGroup.value.parentSurname,FormGroup.value.className ,FormGroup.value.dateOfBirth)
+.pipe(first())
+.subscribe(
+data => {
+
+},
+
+error => {
+});
+}
+
+getchildprofile(){
+  this.http.get<any>('http://localhost:8080/FinalProj/php/parent/fetchchild.php').subscribe(
+    response => { 
+      console.log(response);
+      this.child = response;
+    }
+  )
+}
 
 }

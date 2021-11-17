@@ -34,6 +34,14 @@ export class ApiService {
     }));
     }
 
+    public childprofile(childName: any, childSurname: any, parentName: any, parentSurname: any,className: any, dateOfBirth: any) {
+      return this.httpClient.post<any>(this.baseUrl + '/parent/fetchchild.php', {childName, childSurname, parentName, parentSurname,className, dateOfBirth})
+      .pipe(map(Users => {
+      return Users;
+      }));
+      }
+  
+
   public userregistration(
     parentName: any,
     parentSurname: any,
