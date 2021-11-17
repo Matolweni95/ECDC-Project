@@ -61,7 +61,7 @@ export class CentreApplicationsComponent implements OnInit {
   }
 
   getRec(ApplicationID: any){
-    alert(ApplicationID)
+    localStorage.setItem('token10', ApplicationID)
    
   }
   

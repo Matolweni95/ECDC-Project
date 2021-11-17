@@ -17,6 +17,7 @@ $parentId = mysqli_real_escape_string($mysqli, trim($request->parentId));
 $secondLineAddress = mysqli_real_escape_string($mysqli, trim($request->secondLineAddress));
 $thirdLineAddress = mysqli_real_escape_string($mysqli, trim($request->thirdLineAddress));
 $zip = mysqli_real_escape_string($mysqli, trim($request->zip));
+$password = mysqli_real_escape_string($mysqli, trim($request->password));
 
 //second form
 $emergencyName = mysqli_real_escape_string($mysqli, trim($request->emergencyName));
@@ -37,7 +38,7 @@ $dateOfBirth = mysqli_real_escape_string($mysqli, trim($request->dateOfBirth));
 
 // forth form
 
-// $allergies = mysqli_real_escape_string($mysqli, trim($request->allergies));
+$relation = mysqli_real_escape_string($mysqli, trim($request->relation));
 $diet = mysqli_real_escape_string($mysqli, trim($request->diet));
 $classes = mysqli_real_escape_string($mysqli, trim($request->classes));
 $additionalprograms = mysqli_real_escape_string($mysqli, trim($request->additionalprograms));
@@ -53,6 +54,7 @@ firstLineAddress,
 secondLineAddress, 
 thirdLineAddress, 
 zip, 
+secretkey,
 occupation, 
 
 emergencyName, 
@@ -68,9 +70,10 @@ childSurname,
 dateOfBirth, 
 
 ChildDietaryRequirements, 
-allergies, 
+childRelation, 
 class, 
-additionalPrograms) 
+additionalPrograms
+,type) 
 
 VALUES (
 '$parentName',
@@ -82,6 +85,7 @@ VALUES (
 '$secondLineAddress',
 '$thirdLineAddress',
 '$zip',
+'$password',
 '$occupation',
 
 '$emergencyName',
@@ -97,9 +101,10 @@ VALUES (
 '$dateOfBirth',
 
 '$diet',
-'bees',
+'$relation',
 '$classes',
-'$additionalprograms')";
+'$additionalprograms',
+'Parent')";
 if ($mysqli->query($sql) === TRUE) {
 $authdata = [
 'parentName' => $parentName,
@@ -112,6 +117,7 @@ $authdata = [
 'secondLineAddress' => $secondLineAddress,
 'thirdLineAddress' => $thirdLineAddress,
 'zip' => $zip,
+'password' => $password,
 'emergencyName' => $emergencyName,
 'emergencySurname' => $emergencySurname,
 'emergencyContactNo' => $emergencyContactNo,
@@ -124,7 +130,7 @@ $authdata = [
 'childName' => $childName,
 'childSurname' => $childSurname,
 'dateOfBirth' => $dateOfBirth,
-// 'allergies' => $allergies,
+'relation' => $relation,
 'diet' => $diet,
 'classes' => $classes,
 'additionalprograms' => $additionalprograms,

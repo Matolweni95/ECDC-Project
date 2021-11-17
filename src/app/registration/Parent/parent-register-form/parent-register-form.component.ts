@@ -78,6 +78,7 @@ if(this.myDiet === 'Other'){
       Pname: ['', Validators.required],
       Psurname: ['', Validators.required],
       POccupation: ['', Validators.required],
+      Relation: ['', Validators.required],
       PEmail: ['', Validators.required],
       Password: ['', Validators.required],
       PNumber: ['', Validators.required],
@@ -110,8 +111,7 @@ if(this.myDiet === 'Other'){
       Csurname: ['', Validators.required],
       CDOB: ['', Validators.required],
       Cid: ['', Validators.required],
-      Cimage: ['', Validators.required],
-      Ccert: ['', Validators.required],
+    
       
       
     });
@@ -148,11 +148,14 @@ if(this.myDiet === 'Other'){
     PNumber:any,
     Padd1:any, 
     POccupation:any, 
+    Relation:any,
+    Password:any,
     Pid:any,
     Padd2:any,
     Padd3:any,
     Padd4:any,
-    Padd5:any}
+    Padd5:any
+   }
   }, 
     secondFormGroup:{ value:{
       SPname:any,
@@ -187,11 +190,12 @@ this.dataService.userregistration(
   firstFormGroup.value.PNumber,
   firstFormGroup.value.Padd1, 
   firstFormGroup.value.POccupation, 
+  firstFormGroup.value.Relation,
+  firstFormGroup.value.Password,
   firstFormGroup.value.Pid,
   firstFormGroup.value.Padd2,
   firstFormGroup.value.Padd3,
   firstFormGroup.value.Padd4, 
-
   secondFormGroup.value.SPname,
   secondFormGroup.value.SPsurname,
   secondFormGroup.value.SPNumber, 

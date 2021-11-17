@@ -12,6 +12,18 @@ import { HttpClient } from '@angular/common/http';
 export class ApplicationViewComponent implements OnInit {
 
   FormGroup!: FormGroup;
+  test1:any;
+  test2:any;
+  test3: any;
+  id:any;
+  appId = localStorage.getItem('temp');
+  childSet: any[] = [];
+  parentvalue: any[] =[];
+  test:any;
+  user:any[] = [];
+  value:any [] = [];
+  notifications: any[] = [];
+  application: any;
   constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router, private http: HttpClient) {
 
     this.FormGroup = this.fb.group({
@@ -25,7 +37,74 @@ export class ApplicationViewComponent implements OnInit {
 
    }
 
+
   ngOnInit(): void {
+    this.test = localStorage.getItem('token10');
+    this.getChild(this.test);
   }
+
+  // getNotifs(){
+  //   this.http.get<any>('http://localhost:8080/FinalProj/php/Manager/fetchApplication.php').subscribe(
+  //     response => {
+  //       console.log(response);
+  //       this.notifications = response;
+  //     }
+  //   )
+  // }
+
+  
+  getChild(id: number){
+    this.dataService.getApplication(id).subscribe(
+      response => {
+        console.log(response);
+        this.notifications = response;
+        return;
+        // this.children = response.items;
+      }
+    )
+  }
+
+  onSubmit(test: any){
+    this.dataService.setStatus(test).subscribe(
+      response => {
+        console.log(response);
+        this.value = response;
+        return;
+        // this.children = response.items;
+      }
+    )
+
+    this.dataService.setChild(test).subscribe(
+      response => {
+        this.childSet = response;
+        return;
+        // this.children = response.items;
+      }
+    )
+ 
+
+    this.dataService.updateChildParent(test).subscribe(
+      response => {
+          console.log(response);
+          this.parentvalue = response;
+          return;
+      
+        // this.children = response.items;
+      }
+    )
+
+    this.dataService.setUser(test).subscribe(
+      response => {
+          console.log(response);
+          this.user = response;
+          return;
+      
+        // this.children = response.items;
+      }
+    )
+
+
+  }
+
 
 }

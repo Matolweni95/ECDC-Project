@@ -12,6 +12,9 @@ export class ParentPortalComponent implements OnInit {
   sidenav!:MatSidenav;
 
   ngOnInit(): void {
+    this.test = localStorage.getItem('token');
+    this.test1 = localStorage.getItem('token9');
+    this.onload(this.test, this.test1);
   }
 
  loginbtn:boolean;
@@ -19,6 +22,13 @@ export class ParentPortalComponent implements OnInit {
  name = localStorage.getItem("token");
  type = localStorage.getItem("token1");
  surname = localStorage.getItem('token9');
+
+ test:any;
+ test1:any;
+ test3: any;
+ test4:any;
+ value:any[] = [];
+
  
 constructor(private dataService: ApiService, private observer:BreakpointObserver ) {
 dataService.getLoggedInName.subscribe(name => this.changeName(name));
@@ -58,5 +68,17 @@ logout()
 {
 this.dataService.deleteToken();
 window.location.href = "/";
+}
+
+onload(test: any, test1:any){
+  this.dataService.FindChild(test, test1).subscribe(
+    response => {
+      this.value = response;
+      this.test3 = this.value[0];
+      this.test4 = this.test3['parentId'];
+      localStorage.setItem('token3', this.test4);
+      console.log(this.test4)
+      return;
+})
 }
 }

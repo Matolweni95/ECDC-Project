@@ -1,36 +1,145 @@
 <router-outlet></router-outlet>
-<h1>Funding Request</h1>
+<h1>View Application</h1>
 <div class="container">
 
 
 <mat-card class="example-card">
-    <mat-card-content>
+    <mat-card-content> 
+          <form [formGroup]="FormGroup" id="albums" *ngFor = "let items of notifications">
 
-        <div class="form">
-          <form [formGroup]="FormGroup" class="example-form">
-           
-            <mat-form-field  class="example" appearance="fill">
-                <mat-label>Centre Name</mat-label>
-                <input matInput  > 
-            </mat-form-field>
+            <table>
+            
+              <tr>
+                <td>Child Name</td>
+                <td>{{items.childName}}</td>
+               
+              </tr>
+              <tr>
+                <td>Child Surname</td>
+                <td>{{items.childSurname}}</td>
+                
+              </tr>
+              <tr>
+                <td>Child DOB</td>
+                <td>{{items.dateOfBirth}}</td>
+                
+              </tr>
+              <tr>
+                <td>Child Class:</td>
+                <td>{{items.class}}</td>
+                
+              </tr>
+              <tr>
+                <td>Additional Programs:</td>
+                <td>{{items.additionalPrograms}}</td>
+                
+              </tr>
+              <tr>
+                <td>Child Dietary Requirements:</td>
+                <td>{{items.ChildDietaryRequirements}}</td>
+                
+              </tr>
+              <tr>
+                <td>Parent Name</td>
+                <td>{{items.parentName}}</td>
+                
+              </tr>
+              <tr>
+                <td>Parent Surname:</td>
+                <td>{{items.parentSurname}}</td>
+                
+              </tr>
+              <tr>
+                <td>Parent Contact No:</td>
+                <td>{{items.parentContactNo}}</td>
+                
+              </tr>
+              <tr>
+                <td>Parent Occupation:</td>
+                <td>{{items.occupation}}</td>
+                
+              </tr>
+              <tr>
+                <td>Parent Email:</td>
+                <td>{{items.parentEmailAddress}}</td>
+                
+              </tr>
+              <tr>
+                <td>Parent ID:</td>
+                <td>{{items.parentIdNo}}</td>
+                
+              </tr>
+              <tr>
+                <td>Parent Address:</td>
+                <td>{{items.firstLineAddress}}</td>
+                
+              </tr>
+              <tr>
+                <td></td>
+                <td>{{items.secondLineAddress}}</td>
+                
+              </tr>
+              <tr>
+                <td></td>
+                <td>{{items.secondLineAddress}}</td>
+                
+              </tr>
+              <tr>
+                <td></td>
+                <td>{{items.thirdLineAddress}}</td>
+                
+              </tr>
+              <tr>
+                <td></td>
+                <td>{{items.zip}}</td>
+                
+              </tr>
+              <tr>
+                <td>Emergency Name:</td>
+                <td>{{items.emergencyName}}</td>
+                
+              </tr>
+
+              <tr>
+                <td>Emergency Surname:</td>
+                <td>{{items.emergencySurname}}</td>
+                
+              </tr>
+              <tr>
+                <td>Emergency No:</td>
+                <td>{{items.emergencyNo}}</td>
+                
+              </tr>
+              <tr>
+                <td>Emergency Address:</td>
+                <td>{{items.emergencyLine1Address}}</td>
+                
+              </tr>
+              <tr>
+                <td></td>
+                <td>{{items.emergencyLine2Address}}</td>
+                
+              </tr>
+              <tr>
+                <td></td>
+                <td>{{items.emergencyLine3Address}}</td>
+                
+              </tr>
+              <tr>
+                <td></td>
+                <td>{{items.emergencyZip}}</td>
+                
+              </tr>
+            
+            </table>
+
             <br>
-            <mat-form-field  class="example" appearance="fill">
-              <mat-label>Regional Liaison</mat-label>
-              <input matInput value=""> 
-          </mat-form-field>
-          <br>
-          <mat-form-field class="example" appearance="fill">
-            <mat-label>Amount Request</mat-label>
-            <input matInput  formControlName="amount"> 
-        </mat-form-field>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <br>
-            <button mat-raised-button color="primary">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
-            <button  mat-raised-button color="warn">Go Home</button>
+            <button mat-raised-button color="primary" (click) = "onSubmit(test)">Accept</button>&nbsp;&nbsp;&nbsp;&nbsp;
+            <button  mat-raised-button color="warn">Reject</button>
           
           </form>
             
-        </div>
+     
       
     </mat-card-content>
   
