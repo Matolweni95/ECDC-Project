@@ -1,9 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\php",
+    "\\php\\Manager",
     "\\src",
     "\\src\\app"
   ],
-  "SelectedNode": "\\php",
   "PreviewInSolutionExplorer": false
 }

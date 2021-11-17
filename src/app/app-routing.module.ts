@@ -73,6 +73,7 @@ import { MychildProfileComponent } from './parentPortal/mychild-profile/mychild-
 
 const routes: Routes = [
   { path: '', component: HomeSectionComponent },
+  { path: 'index', component: HomeSectionComponent },
   { path: 'About', component: AboutPageComponent },
   
   { path: 'Curriculum', component: CurriculumSectionComponent},
