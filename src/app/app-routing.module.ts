@@ -69,9 +69,11 @@ import { ManagerViewProgressComponent } from './managerPortal/manager-view-progr
 import { ReportTemplateComponent } from './managerPortal/report-template/report-template.component';
 import { TestComponent } from './managerPortal/test/test.component';
 import { ParentChildProgressComponent } from './parentPortal/parent-child-progress/parent-child-progress.component';
+import { MychildProfileComponent } from './parentPortal/mychild-profile/mychild-profile.component';
 
 const routes: Routes = [
   { path: '', component: HomeSectionComponent },
+  { path: 'index', component: HomeSectionComponent },
   { path: 'About', component: AboutPageComponent },
   
   { path: 'Curriculum', component: CurriculumSectionComponent},
@@ -99,15 +101,17 @@ children:[
 { path: 'Parent-Portal', component: ParentPortalComponent,
 children: [
   { path: 'Parent-home', component: ParentHomeComponent},
-  { path: 'MyChildren', component: MychildrenComponent,
+  { path: 'Mychild-Progress', component: ParentChildProgressComponent,
 children:[
-  { path: 'Mychild-Progress', component: ParentChildProgressComponent },
-
+  { path: 'Report', component: MychildrenComponent},
 ]},
+  { path:'childProfile', component: MychildProfileComponent},
   { path: 'Admissions', component: ParentApplicationComponent},
   { path: 'PayPortal', component: ParentPaymentComponent},
   { path: 'MountainChat', component: MountainChatComponent},
   { path: 'MyProfile', component: ParentProfileComponent}
+
+
 ]},
 
 //parent paths end
@@ -137,6 +141,7 @@ children:[
     { path: 'Child-View', component: ChildViewerComponent},
     { path: 'View-Fees', component: ManagerFeesViewerComponent},
     { path: 'Edit-Fees', component: ManagerFeeEditComponent},
+    { path: 'View-applicant', component: ApplicationViewComponent},
     { path: 'View-Progress', component: ManagerViewProgressComponent,
   children:[
     { path: 'Progress', component: ReportTemplateComponent},

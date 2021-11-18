@@ -1,0 +1,36 @@
+#display{
+    display: none;
+}
+
+button{
+    margin-right: 15px;
+}
+
+h1{
+    text-align: center;
+    margin-top: 20px;
+}
+
+label{
+    padding-right: 200px;
+}
+
+mat-card {
+    width: 650px;
+}
+
+th {
+    padding: 18px;
+}
+
+tr{
+    padding: 28px;
+}
+
+table{
+    width: 550px;
+    padding: 28px;
+    align-items: center;
+
+}
+

@@ -15,8 +15,8 @@ import { MatDialogConfig } from '@angular/material/dialog';
   styleUrls: ['./centre-applications.component.css']
 })
 export class CentreApplicationsComponent implements OnInit {
-
-  displayColumns = ['id', 'type','name','email', 'password','crudBtns'];
+  
+  displayColumns = ['ApplicationID','childName','childSurname','crudBtns'];
   post:any[]  = [];
   dataSource!: MatTableDataSource<any>;
   angForm: FormGroup;
@@ -29,7 +29,7 @@ export class CentreApplicationsComponent implements OnInit {
       mobile: ['', Validators.required]
       });
 
-    this.http.get('http://localhost/angular-admin/php/fetch_data.php').subscribe(data => {
+    this.http.get('http://sict-iis.mandela.ac.za/12/assets/php/Manager/fetchApplication.php').subscribe(data => {
       this.post.push(data);
       this.dataSource = new MatTableDataSource(this.post[0]);
     })
@@ -58,6 +58,11 @@ export class CentreApplicationsComponent implements OnInit {
 
   onEdit(){
     
+  }
+
+  getRec(ApplicationID: any){
+    localStorage.setItem('token10', ApplicationID)
+   
   }
   
   get email() { return this.angForm.get('email'); }

@@ -21,7 +21,7 @@
         <fa-icon [icon] = "faInbox"></fa-icon>
         mountainview@gmail.com
       </p>
-      <button class="btn-login" onclick="location.href='/Login';">
+      <button class="btn-login" [routerLink]="['/Login']">
           <fa-icon [icon] ="faLock"></fa-icon>
           <span class="login-text">&nbsp;&nbsp;Login Portal</span>
       </button>

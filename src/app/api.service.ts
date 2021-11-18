@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class ApiService {
   redirectUrl: string | undefined;
-  baseUrl:string = "http://localhost:8080/FinalProj/php";
+  baseUrl:string = "http://sict-iis.mandela.ac.za/12/assets/php";
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
   constructor(private httpClient : HttpClient, private router:Router) { }
 
@@ -20,7 +20,7 @@ export class ApiService {
   this.setToken(Users[0].name);
   this.setToken1(Users[0].surname);
   this.setTokens(Users[0].role);
-  this.setToken3(Users[0].parentId);
+ 
   
   this.getLoggedInName.emit(true);
   return Users;
@@ -34,6 +34,14 @@ export class ApiService {
     }));
     }
 
+    public childprofile(childName: any, childSurname: any, parentName: any, parentSurname: any,className: any, dateOfBirth: any) {
+      return this.httpClient.post<any>(this.baseUrl + '/parent/fetchchild.php', {childName, childSurname, parentName, parentSurname,className, dateOfBirth})
+      .pipe(map(Users => {
+      return Users;
+      }));
+      }
+  
+
   public userregistration(
     parentName: any,
     parentSurname: any,
@@ -41,6 +49,8 @@ export class ApiService {
     parentContactNo:any,
     firstLineAddress:any ,
     occupation:any,
+    relation:any,
+    password:any,
     parentId: any,
     secondLineAddress: any, 
     thirdLineAddress:any,
@@ -72,6 +82,8 @@ export class ApiService {
     parentContactNo,
     firstLineAddress,
     occupation,
+    relation,
+    password,
     parentId,
     secondLineAddress, 
     thirdLineAddress,
@@ -114,6 +126,14 @@ export class ApiService {
     }));
     }
 
+    public payment (firstName: any, lastName: any, nameOnCard:any, cardNumber:any, expiryDate:any, cvv:any, paymentOption: any ) {
+      return this.httpClient.post<any>(this.baseUrl + '/parent/payment.php', { firstName, lastName , nameOnCard, 
+        cardNumber, expiryDate, cvv, paymentOption})
+      .pipe(map(Users => {
+      return Users;
+      }));
+      }
+
   public insertAssign (classname: any, tid:any ) {
     return this.httpClient.post<any>(this.baseUrl + '/Manager/assignToClass.php', { classname, tid })
     .pipe(map(Users => {
@@ -136,8 +156,30 @@ export class ApiService {
       }));
     }
 
+    
   public getLearners(id: number) {
     return this.httpClient.get<any>(this.baseUrl + '/fetchLearners.php?id='+ id)
+      .pipe(map(Users => {
+        return Users;
+      }));
+  }
+
+  public setUser(id: number) {
+    return this.httpClient.get<any>(this.baseUrl + '/Manager/setUser.php?id='+ id)
+      .pipe(map(Users => {
+        return Users;
+      }));
+  }
+
+  public FindChild(id: number, id2:any) {
+    return this.httpClient.get<any>(this.baseUrl + "/Manager/findChild.php?id="+id+"&id2="+ id2)
+      .pipe(map(Users => {
+        return Users;
+      }));
+  }
+
+  public fetchParentValue(id: number) {
+    return this.httpClient.get<any>(this.baseUrl + '/Manager/fetchApplicationParent.php?id='+ id)
       .pipe(map(Users => {
         return Users;
       }));
@@ -157,8 +199,29 @@ export class ApiService {
       }));
   }
 
+  public setStatus(id: number) {
+    return this.httpClient.get<any>(this.baseUrl + '/Manager/setStatus.php?id='+ id)
+      .pipe(map(Users => {
+        return Users;
+      }));
+  }
+
+  public setChild(id: number) {
+    return this.httpClient.get<any>(this.baseUrl + '/Manager/setChild.php?id='+ id)
+      .pipe(map(Users => {
+        return Users;
+      }));
+  }
+
   public getChild(id: number) {
     return this.httpClient.get<any>(this.baseUrl + '/Manager/fetchChild.php?id='+ id)
+      .pipe(map(Users => {
+        return Users;
+      }));
+  }
+
+  public getApplication(id: number) {
+    return this.httpClient.get<any>(this.baseUrl + '/Manager/fetchApplications.php?id='+ id)
       .pipe(map(Users => {
         return Users;
       }));
@@ -179,6 +242,13 @@ export class ApiService {
       }));
   }
 
+  public fetchChildId(id: number) {
+    return this.httpClient.get<any>(this.baseUrl + '/parent/getchildId.php?id='+ id)
+      .pipe(map(Users => {
+        return Users;
+      }));
+  }
+
   public deleteNotifs(id: number) {
     return this.httpClient.get<any>(this.baseUrl + '/Manager/deleteNotif.php?id='+ id)
       .pipe(map(Users => {
@@ -189,6 +259,12 @@ export class ApiService {
   public getChildProgress(child: number, term:string) {
     return this.httpClient.get<any>(this.baseUrl + "/Manager/getProgress.php?child="+child+"&term="+ term)
 
+      .pipe(map(Users => {
+        return Users;
+      }));
+  }
+  public updateChildParent(id: number) {
+    return this.httpClient.get<any>(this.baseUrl + "/Manager/updatechildParent.php?id="+id)
       .pipe(map(Users => {
         return Users;
       }));
@@ -218,11 +294,8 @@ export class ApiService {
         }));
       }
 
-  
-
   public getParentChildProgress(child: number, term:string) {
     return this.httpClient.get<any>(this.baseUrl + "/parent/fetchChildReport.php?child="+child+"&term="+ term)
-
       .pipe(map(Users => {
         return Users;
       }));
@@ -258,6 +331,8 @@ export class ApiService {
   localStorage.removeItem('token7');//notification
   localStorage.removeItem('token8');//test
   localStorage.removeItem('token9');//surname
+  localStorage.removeItem('token10');//applicationId
+  localStorage.removeItem('temp');//tempParentId
 
   }
   isLoggedIn() {

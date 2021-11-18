@@ -9,8 +9,11 @@ import { ApiService } from 'src/app/api.service';
 })
 export class ParentChildProgressComponent implements OnInit {
 
-  id:any;
+  id: any;
+  test: any;
+  test2: any;
   term: any;
+  childId: any;
   child: any;
   childprogress:any [] = [];
   btns:any[] = [
@@ -27,29 +30,49 @@ export class ParentChildProgressComponent implements OnInit {
   ngOnInit(): void {
     this.child = localStorage.getItem('token6');
     this.term = localStorage.getItem('token8')
+    this.id = localStorage.getItem('token3');
+    this.getChildId(this.id);
+    
     
   }
   
 submit(term:any){
-  localStorage.setItem('token8', term)
+  localStorage.setItem('token8', term);
   this.getChild(this.child,this.term);
   // this.getChild(this.child, this.term);
-  this.router.navigateByUrl('/parentPortal/parent-child-progress/parent-child-progress');
- 
+  
+  this.router.navigateByUrl('/Parent-Portal/Mychild-Progress/Report');
+  
 }
 
 getChild(child: any, term:string){
   this.dataService.getParentChildProgress(child, term).subscribe(
     response => {
       console.log(response);
-      this.childprogress = response;
+      this.childprogress = response; 
       window.location.reload();
       return;
-
       // this.children = response.items;
     }
   )
 } 
+
+getChildId(id:any){
+  this.dataService.fetchChildId(id).subscribe(
+    response => {
+      console.log(response);
+      this.childprogress = response; 
+      this.childId = response;
+      this.test = this.childId[0];
+      this.test2 = this.test['childID']
+      this.test2 = localStorage.setItem('token6', this.test2)
+      return;
+      // this.children = response.items;
+    }
+  )
+} 
+
+
 
 
   

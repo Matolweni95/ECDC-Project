@@ -35,7 +35,7 @@ export class FundingApplicationComponent implements OnInit {
    }
 
    getCentre(){
-    this.http.get<any>('http://localhost:8080/FinalProj/php/Manager/fetchCentre.php').subscribe(
+    this.http.get<any>('http://sict-iis.mandela.ac.za/12/assets/php/Manager/fetchCentre.php').subscribe(
       response => {
         console.log(response);
         this.centre = response;
@@ -44,7 +44,7 @@ export class FundingApplicationComponent implements OnInit {
   }
 
   getLiaison(){
-    this.http.get<any>('http://localhost:8080/FinalProj/php/Manager/fetchLiaison.php').subscribe(
+    this.http.get<any>('http://sict-iis.mandela.ac.za/12/assets/php/Manager/fetchLiaison.php').subscribe(
       response => {
         console.log(response);
         this.liaison = response;

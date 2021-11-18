@@ -1,25 +1,17 @@
 <router-outlet></router-outlet>
 <h1>Mountain View Learner Applications</h1>
 <table mat-table [dataSource] = "dataSource">
-    <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef> ID</th>
-        <th style="padding-left: 24px;" mat-cell1 *matCellDef="let post"> {{post.id}} </th>
+    <ng-container matColumnDef="ApplicationID">
+        <th mat-header-cell *matHeaderCellDef> </th>
+        <th mat-cell1 *matCellDef="let post"></th>
     </ng-container><br>
-    <ng-container matColumnDef="type">
-      <th mat-header-cell *matHeaderCellDef> TYPE</th>
-      <th mat-cell *matCellDef="let post"> {{post.type}}</th>
+    <ng-container matColumnDef="childName">
+      <th mat-header-cell *matHeaderCellDef> Child Name</th>
+      <th mat-cell *matCellDef="let post"> {{post.childName}}</th>
   </ng-container>
-  <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> NAME</th>
-      <th mat-cell *matCellDef="let post"> {{post.name}}</th>
-  </ng-container>
-  <ng-container matColumnDef="email">
-      <th mat-header-cell *matHeaderCellDef>EMAIL</th>
-      <th mat-cell *matCellDef="let post"> {{post.email}}</th>
-  </ng-container>
-  <ng-container matColumnDef="password">
-      <th mat-header-cell *matHeaderCellDef> PASSWORD</th>
-      <th mat-cell *matCellDef="let post"> {{post.password}}</th>
+  <ng-container matColumnDef="childSurname">
+      <th mat-header-cell *matHeaderCellDef> Child Surname</th>
+      <th mat-cell *matCellDef="let post"> {{post.childSurname}}</th>
   </ng-container>
  <ng-container matColumnDef="crudBtns">
      <th mat-header-cell *matHeaderCellDef>
@@ -27,7 +19,7 @@
      </th>
      
      <td style="float: right;" mat-cell *matCellDef="let post">
-         <button [routerLink]="['/Manager-Portal/View-Application']" style="margin:15px;" mat-raised-button color="accent">View Application</button>
+         <button [routerLink]="['/Manager-Portal/View-applicant']" style="margin:15px;" mat-raised-button color="accent" (click) = "getRec(post.ApplicationID)">View Application</button>
       </td>
  </ng-container>
  

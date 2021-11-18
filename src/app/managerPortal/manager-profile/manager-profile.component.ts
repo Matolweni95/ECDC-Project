@@ -68,7 +68,7 @@ export class ManagerProfileComponent implements OnInit {
   }
 
   getManager(){
-    this.http.get<any>('http://localhost:8080/FinalProj/php/Manager/fetchManager.php').subscribe(
+    this.http.get<any>('http://sict-iis.mandela.ac.za/12/assets/php/Manager/fetchManager.php').subscribe(
       response => { 
         console.log(response);
         this.manager = response;
