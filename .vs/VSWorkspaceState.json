@@ -2,9 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\php",
-    "\\php\\Manager",
     "\\src",
-    "\\src\\app"
+    "\\src\\app",
+    "\\src\\app\\mainSite",
+    "\\src\\app\\mainSite\\home-section"
   ],
+  "SelectedNode": "\\src\\app\\mainSite\\home-section\\home-section.component.css",
   "PreviewInSolutionExplorer": false
 }

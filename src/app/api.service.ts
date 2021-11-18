@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class ApiService {
   redirectUrl: string | undefined;
-  baseUrl:string = "http://localhost:8080/FinalProj/php";
+  baseUrl:string = "http://sict-iis.mandela.ac.za/12/assets/php";
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
   constructor(private httpClient : HttpClient, private router:Router) { }
 

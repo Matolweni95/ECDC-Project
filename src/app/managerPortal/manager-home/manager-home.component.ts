@@ -32,7 +32,7 @@ export class ManagerHomeComponent implements OnInit {
   }
 
   getNotifs(){
-    this.http.get<any>('http://localhost:8080/FinalProj/php/Manager/fetchManagerNotifs.php').subscribe(
+    this.http.get<any>('http://sict-iis.mandela.ac.za/12/assets/php/Manager/fetchManagerNotifs.php').subscribe(
       response => {
         this.notifications = response;
       }
@@ -40,7 +40,7 @@ export class ManagerHomeComponent implements OnInit {
   }
 
   getLearners(){
-    this.http.get<any>('http://localhost:8080/FinalProj/php/Manager/countLearners.php').subscribe(
+    this.http.get<any>('http://sict-iis.mandela.ac.za/12/assets/php/Manager/countLearners.php').subscribe(
       response => { 
         this.Learners = response;
       }
@@ -48,7 +48,7 @@ export class ManagerHomeComponent implements OnInit {
   }
 
   getTeacher(){
-    this.http.get<any>('http://localhost:8080/FinalProj/php/Manager/countTeachers.php').subscribe(
+    this.http.get<any>('http://sict-iis.mandela.ac.za/12/assets/php/Manager/countTeachers.php').subscribe(
       response => {
         this.Teacher = response;
       }
@@ -56,7 +56,7 @@ export class ManagerHomeComponent implements OnInit {
   }
 
   getFunds(){
-    this.http.get<any>('http://localhost:8080/FinalProj/php/Manager/getFunds.php').subscribe(
+    this.http.get<any>('http://sict-iis.mandela.ac.za/12/assets/php/Manager/getFunds.php').subscribe(
       response => {
         console.log(response)
         this.Funds = response;

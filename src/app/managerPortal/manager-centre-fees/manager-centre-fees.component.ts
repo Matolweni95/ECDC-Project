@@ -86,7 +86,7 @@ export class ManagerCentreFeesComponent implements OnInit {
 
 
   getNotifs(){
-    this.http.get<any>('http://localhost:8080/FinalProj/pmkhp/fetchNotifs.php').subscribe(
+    this.http.get<any>('http://sict-iis.mandela.ac.za/12/assets/php/fetchNotifs.php').subscribe(
       response => {
         console.log(response);
         this.notifications = response;

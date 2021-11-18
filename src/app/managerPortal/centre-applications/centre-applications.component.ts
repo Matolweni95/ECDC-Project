@@ -29,7 +29,7 @@ export class CentreApplicationsComponent implements OnInit {
       mobile: ['', Validators.required]
       });
 
-    this.http.get('http://localhost:8080/FinalProj/php/Manager/fetchApplication.php').subscribe(data => {
+    this.http.get('http://sict-iis.mandela.ac.za/12/assets/php/Manager/fetchApplication.php').subscribe(data => {
       this.post.push(data);
       this.dataSource = new MatTableDataSource(this.post[0]);
     })

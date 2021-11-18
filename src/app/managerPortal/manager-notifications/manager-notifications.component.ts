@@ -59,7 +59,7 @@ export class ManagerNotificationsComponent implements OnInit {
   }
 
   getNotifs(){
-    this.http.get<any>('http://localhost:8080/FinalProj/php/Manager/viewNotif.php').subscribe(
+    this.http.get<any>('http://sict-iis.mandela.ac.za/12/assets/php/Manager/viewNotif.php').subscribe(
       response => {
         console.log(response);
         this.notifications = response;
