@@ -48,7 +48,7 @@ error => {
 }
 
 getParent(){
-  this.http.get<any>('http://localhost:8080/FinalProj/php/parent/fetchParent.php').subscribe(
+  this.http.get<any>('http://sict-iis.mandela.ac.za/12/assets/php/parent/fetchParent.php').subscribe(
     response => { 
       console.log(response);
       this.parent = response;

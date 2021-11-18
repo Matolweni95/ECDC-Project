@@ -52,7 +52,7 @@ export class ParentHomeComponent implements OnInit {
   }
 
   getFees(){
-    this.http.get<any>('http://localhost:8080//FinalProj/php/parent/fetchfees.php').subscribe(
+    this.http.get<any>('http://sict-iis.mandela.ac.za/12/assets/php/parent/fetchfees.php').subscribe(
       response => {
         console.log(response);
         this.fees = response;
@@ -60,7 +60,7 @@ export class ParentHomeComponent implements OnInit {
     )
   }
   getAddiionalFees(){
-    this.http.get<any>('http://localhost:8080//FinalProj/php/parent/fetchAddFees.php').subscribe(
+    this.http.get<any>('http://sict-iis.mandela.ac.za/12/assets/php/parent/fetchAddFees.php').subscribe(
       response => {
         console.log(response);
         this.additionalFees = response;
@@ -69,7 +69,7 @@ export class ParentHomeComponent implements OnInit {
   }
 
   getTotalDue(){
-    this.http.get<any>('http://localhost:8080//FinalProj/php/parent/getTotalfees.php').subscribe(
+    this.http.get<any>('http://sict-iis.mandela.ac.za/12/assets/php/parent/getTotalfees.php').subscribe(
       response => {
         console.log(response);
         this.totalDue = response;
@@ -78,7 +78,7 @@ export class ParentHomeComponent implements OnInit {
   }
 
   getNotifications(){
-    this.http.get<any>('http://localhost:8080//FinalProj/php/parent/fetchParentNotifs.php').subscribe(
+    this.http.get<any>('http://sict-iis.mandela.ac.za/12/assets/php/parent/fetchParentNotifs.php').subscribe(
       response => {
         console.log(response);
         this.notifs = response;
@@ -87,7 +87,7 @@ export class ParentHomeComponent implements OnInit {
   }
   
   getChildPrograms(){
-    this.http.get<any>('http://localhost:8080//FinalProj/php/parent/fetchPrograms.php').subscribe(
+    this.http.get<any>('http://sict-iis.mandela.ac.za/12/assets/php/parent/fetchPrograms.php').subscribe(
       response => {
         console.log(response);
         this.childPrograms = response;
@@ -95,7 +95,7 @@ export class ParentHomeComponent implements OnInit {
     )
   }
   getChildClass(){
-    this.http.get<any>('http://localhost:8080//FinalProj/php/parent/fetchChildClass.php').subscribe(
+    this.http.get<any>('http://sict-iis.mandela.ac.za/12/assets/php/parent/fetchChildClass.php').subscribe(
       response => {
         console.log(response);
         this.childClass = response;
