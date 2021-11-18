@@ -5,55 +5,57 @@ import { ApiService } from 'src/app/api.service';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-export class Notification {
-  constructor (public id: number, 
-              public title: string,
-              public message: string){
-            }}
-  
+export interface PeriodicElement {
+  "Centre Name": string;
+  "Requested Funds": string;
+  "Available Funds": string;
+  Äctions: string;
+}
+
+let ELEMENT_DATA: PeriodicElement[] = [
+
+];
+
 @Component({
   selector: 'app-financial-approval',
   templateUrl: './financial-approval.component.html',
   styleUrls: ['./financial-approval.component.css']
 })
 export class FinancialApprovalComponent implements OnInit {
-  angForm!: FormGroup;
-  notifications:any[] = [];
-
-  constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router, private http: HttpClient) {
-
-    this.angForm = this.fb.group({
-      email: ['', [Validators.required,Validators.minLength(1), Validators.email]],
-      password: ['', Validators.required]
-      });
-
-   }
-
-   getNotifs(){
-    this.http.get<any>('http://localhost/angularproj/php/fetchNotifs.php').subscribe(
-      response => {
-        console.log(response);
-        this.notifications = response;
-      }
-    )
-  }
+  displayedColumns: string[] = ['position', 'name', 'weight','status','symbol'];
+  dataSource = ELEMENT_DATA;
+  results : any[]= []; 
+  constructor(
+    private router: Router,
+    private http: HttpClient
+  ) { }
 
   ngOnInit(): void {
-    this.getNotifs();
+    this.getRequestedFunds();
+
   }
-  postdata(angForm1: { value: { email: any; password: any; }; })
-  {
-    this.dataService.userlogin(angForm1.value.email,angForm1.value.password)
-    .pipe(first())
-    .subscribe(
-    data => {
-    const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/dashboard';
-    this.router.navigate([redirect]);
-    },
-    error => {
-    alert("User name or password is incorrect")
-    });
-    }
-    get email() { return this.angForm.get('email'); }
-    get password() { return this.angForm.get('password'); }
-    }
+
+  getRequestedFunds() {
+    this.http.get<any>('http://localhost:8080/https---github.com-Matolweni95-Project/php/fetchRequestedFunds.php').subscribe(
+      response => {
+        this.results = response;
+      }
+    );
+  }
+
+  approve(id: number) {
+    this.http.get<any>(`http://localhost:8080/https---github.com-Matolweni95-Project/php/approveFunds.php?id=${id}`).subscribe(
+      response => {
+        this.results = response;
+      }
+    );
+  }
+
+  decline(id: number) {
+    this.http.get<any>(`http://localhost:8080/https---github.com-Matolweni95-Project/php/declineFunds.php?id=${id}`).subscribe(
+      response => {
+        this.results = response;
+      }
+    );
+  }
+}

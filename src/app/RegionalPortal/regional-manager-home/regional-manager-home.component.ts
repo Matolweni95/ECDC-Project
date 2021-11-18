@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 export class Notification {
-  constructor (public id: number, 
-              public title: string,
-              public message: string){
-            }}
+  constructor(public id: number,
+    public title: string,
+    public message: string) {
+  }
+}
 
 @Component({
   selector: 'app-regional-manager-home',
@@ -13,22 +14,41 @@ export class Notification {
   styleUrls: ['./regional-manager-home.component.css']
 })
 export class RegionalManagerHomeComponent implements OnInit {
+  centers: any[] = [];
+  managers: any[] = [];
+  funds: any[] = [];
+  notifications: any[] = [];
+  size = 5;
 
-  notifications:any[] = [];
+  constructor(private http: HttpClient) { }
 
+  ngOnInit(): void {
+    this.getCentres();
+    this.getManagers();
+    this.getFunds();
+  }
 
-constructor(private http: HttpClient) { }
+  getCentres() {
+    this.http.get<any>('http://localhost:8080/https---github.com-Matolweni95-Project/php/fetchCenters.php').subscribe(
+      response => {
+        this.centers = response.slice(0, this.size);
+      }
+    );
+  }
 
-ngOnInit(): void {
-  this.getNotifs();
-}
+  getManagers() {
+    this.http.get<any>('http://localhost:8080/https---github.com-Matolweni95-Project/php/fetchManagers.php').subscribe(
+      response => {
+        this.managers = response.slice(0, this.size);
+      }
+    );
+  }
 
-getNotifs(){
-  this.http.get<any>('http://localhost/angularproj/php/fetchNotifs.php').subscribe(
-    response => {
-      console.log(response);
-      this.notifications = response;
-    }
-  )
-}
+  getFunds() {
+    this.http.get<any>('http://localhost:8080/https---github.com-Matolweni95-Project/php/fetchFunds.php').subscribe(
+      response => {
+        this.funds = response.slice(0, this.size);
+      }
+    );
+  }
 }
