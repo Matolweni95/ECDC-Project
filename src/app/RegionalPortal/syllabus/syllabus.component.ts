@@ -45,7 +45,7 @@ export class SyllabusComponent implements OnInit {
   }
 
   getCentres() {
-    this.http.get<any>(`${environment.baseUrl}/fetchCenters.php`).subscribe(
+    this.http.get<any>('http://sict-iis.mandela.ac.za/12/assets/php/fetchCenters.php').subscribe(
       response => {
         this.centers = response;
       }

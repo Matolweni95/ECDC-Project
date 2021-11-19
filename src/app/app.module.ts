@@ -109,6 +109,10 @@ import { ReportTemplateComponent } from './managerPortal/report-template/report-
 import { ParentChildProgressComponent } from './parentPortal/parent-child-progress/parent-child-progress.component';
 import { FileUploadComponent } from './parentPortal/file-upload/file-upload.component';
 import { MychildProfileComponent } from './parentPortal/mychild-profile/mychild-profile.component';
+import { ManagerTerm1Component } from './managerPortal/Progress/manager-term1/manager-term1.component';
+import { ManagerTerm2Component } from './managerPortal/Progress/manager-term2/manager-term2.component';
+import { ManagerTerm3Component } from './managerPortal/Progress/manager-term3/manager-term3.component';
+import { ManagerTerm4Component } from './managerPortal/Progress/manager-term4/manager-term4.component';
 
 @NgModule({
   declarations: [
@@ -195,6 +199,10 @@ import { MychildProfileComponent } from './parentPortal/mychild-profile/mychild-
     ParentChildProgressComponent,
     FileUploadComponent,
     MychildProfileComponent,
+    ManagerTerm1Component,
+    ManagerTerm2Component,
+    ManagerTerm3Component,
+    ManagerTerm4Component,
     
     
   ],

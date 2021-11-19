@@ -200,6 +200,13 @@ export class ApiService {
   }
 
   public setStatus(id: number) {
+    return this.httpClient.get<any>(this.baseUrl + '/Manager/setReject.php?id='+ id)
+      .pipe(map(Users => {
+        return Users;
+      }));
+  }
+
+  public setReject(id: number) {
     return this.httpClient.get<any>(this.baseUrl + '/Manager/setStatus.php?id='+ id)
       .pipe(map(Users => {
         return Users;
@@ -289,7 +296,6 @@ export class ApiService {
     public addManagerNotif(title: string, desc:string, dest:any) {
       return this.httpClient.post<any>(this.baseUrl + '/Manager/addNotif.php', { title, desc, dest})
         .pipe(map(Users => {
-          window.location.reload();
         return Users;
         }));
       }

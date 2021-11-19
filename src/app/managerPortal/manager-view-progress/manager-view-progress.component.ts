@@ -33,7 +33,17 @@ export class ManagerViewProgressComponent implements OnInit {
 submit(term:any){
   localStorage.setItem('token8', term)
   this.getChild(this.child, this.term);
-  this.router.navigateByUrl('/Manager-Portal/View-Progress/Progress');
+
+  if(localStorage.getItem('token8') == 'term1'){
+    this.router.navigateByUrl('/Manager-Portal/View-Progress/term1');
+  }else if(localStorage.getItem('token8')== 'term2'){
+    this.router.navigateByUrl('/Manager-Portal/View-Progress/term2');
+  }else if(localStorage.getItem('token8')== 'term3'){
+    this.router.navigateByUrl('/Manager-Portal/View-Progress/term3');
+  }else if(localStorage.getItem('token8')== 'term4'){
+    this.router.navigateByUrl('/Manager-Portal/View-Progress/term4');
+  }
+  
   
  
 }
@@ -44,7 +54,7 @@ getChild(child: any, term:string){
     response => {
       console.log(response);
       this.childprogress = response;
-      window.location.reload();
+      
       return;
       
       // this.children = response.items;

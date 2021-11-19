@@ -10,9 +10,9 @@
     </mat-card-header>
     
     <mat-card-content>
-      <p>
+      <p class="num">
         <li *ngFor="let amount of fees"> 
-          {{amount['fees']}}
+          R{{amount['fees']}}
         </li>
       </p>
     </mat-card-content>
@@ -26,9 +26,9 @@
     </mat-card-header>
     
     <mat-card-content>
-      <p>
+      <p class="num3">
         <li *ngFor="let amount of additionalFees"> 
-          {{amount['additionalFees']}}
+          R{{amount['additionalFees']}}
         </li>
       </p>
     </mat-card-content>
@@ -42,9 +42,9 @@
     </mat-card-header>
     
     <mat-card-content>
-      <p>
+      <p class="num">
         <li *ngFor="let amount of totalDue"> 
-          {{amount['totalDue']}}
+          R{{amount['totalDue']}}
         </li>
       </p>
     </mat-card-content>
@@ -58,7 +58,7 @@
     </mat-card-header>
     
     <mat-card-content>
-      <p>
+      <p class="num2">
         <li *ngFor="let item of childClass"> 
           {{item['className']}}
         </li>
@@ -81,11 +81,11 @@
         </mat-card-header>
         
         <mat-card-content>
-          <p>
+          <p class="txt">
             <li *ngFor="let item of notifs">
-              {{item.title}}<br>
+              -{{item.title}}<br>
               {{item.message}}
-              {{item.Id}}<br><br>
+              {{item.Id}}<br><br><br>
             </li>
           </p>
         </mat-card-content>

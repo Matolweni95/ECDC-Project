@@ -70,6 +70,11 @@ import { ReportTemplateComponent } from './managerPortal/report-template/report-
 import { TestComponent } from './managerPortal/test/test.component';
 import { ParentChildProgressComponent } from './parentPortal/parent-child-progress/parent-child-progress.component';
 import { MychildProfileComponent } from './parentPortal/mychild-profile/mychild-profile.component';
+import { ManagerTerm1Component } from './managerPortal/Progress/manager-term1/manager-term1.component';
+import { ManagerTerm2Component } from './managerPortal/Progress/manager-term2/manager-term2.component';
+import { ManagerTerm3Component } from './managerPortal/Progress/manager-term3/manager-term3.component';
+import { ManagerTerm4Component } from './managerPortal/Progress/manager-term4/manager-term4.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeSectionComponent },
@@ -103,7 +108,10 @@ children: [
   { path: 'Parent-home', component: ParentHomeComponent},
   { path: 'Mychild-Progress', component: ParentChildProgressComponent,
 children:[
-  { path: 'Report', component: MychildrenComponent},
+  { path: 'term1', component: MychildrenComponent},
+  { path: 'term2', component: Term2Component},
+  { path: 'term3', component: Term3Component},
+  { path: 'term4', component: Term4Component},
 ]},
   { path:'childProfile', component: MychildProfileComponent},
   { path: 'Admissions', component: ParentApplicationComponent},
@@ -144,7 +152,11 @@ children:[
     { path: 'View-applicant', component: ApplicationViewComponent},
     { path: 'View-Progress', component: ManagerViewProgressComponent,
   children:[
-    { path: 'Progress', component: ReportTemplateComponent},
+    { path: 'term1', component: ReportTemplateComponent},
+    { path: 'term2', component: ManagerTerm2Component},
+    { path: 'term3', component: ManagerTerm3Component},
+    { path: 'term4', component: ManagerTerm4Component},
+
   ]},
 
   

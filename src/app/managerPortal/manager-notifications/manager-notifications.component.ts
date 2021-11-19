@@ -70,7 +70,7 @@ export class ManagerNotificationsComponent implements OnInit {
   getTry(notificationId: any){
     localStorage.setItem('token7', notificationId)
     this.deleteNotif(notificationId);
-    window.location.reload();
+    
   }
   
   deleteNotif(id: number){

@@ -40,8 +40,15 @@ submit(term:any){
   localStorage.setItem('token8', term);
   this.getChild(this.child,this.term);
   // this.getChild(this.child, this.term);
-  
-  this.router.navigateByUrl('/Parent-Portal/Mychild-Progress/Report');
+  if(localStorage.getItem('token8') == 'term1'){
+    this.router.navigateByUrl('/Parent-Portal/Mychild-Progress/term1');
+  }else if(localStorage.getItem('token8') == 'term2'){
+    this.router.navigateByUrl('/Parent-Portal/Mychild-Progress/term2')
+  }else if(localStorage.getItem('token8') == 'term3'){
+    this.router.navigateByUrl('/Parent-Portal/Mychild-Progress/term3')
+  }else if(localStorage.getItem('token8') == 'term4'){
+    this.router.navigateByUrl('/Parent-Portal/Mychild-Progress/term4')
+  }
   
 }
 
@@ -50,7 +57,7 @@ getChild(child: any, term:string){
     response => {
       console.log(response);
       this.childprogress = response; 
-      window.location.reload();
+      this.ngOnInit();
       return;
       // this.children = response.items;
     }

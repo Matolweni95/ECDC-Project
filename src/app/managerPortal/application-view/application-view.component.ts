@@ -112,5 +112,17 @@ export class ApplicationViewComponent implements OnInit {
     this.router.navigateByUrl('/Manager-Portal/Mountain-Applications');
   }
 
+  reject(test:any){
+    this.dataService.setReject(test).subscribe(
+      response => {
+        console.log(response);
+        this.value = response;
+        return;
+        // this.children = response.items;
+      }
+    )
+
+  }
+
 
 }
