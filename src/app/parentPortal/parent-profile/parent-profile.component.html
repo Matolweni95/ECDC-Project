@@ -4,7 +4,7 @@
     <form [formGroup]="FormGroup" class="example-form"  *ngFor = "let item of parent">
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>First Name</mat-label>
-          <input matInput value="{{item.parentName}}">
+          <input matInput formControlName="name"  placeholder="{{item.parentName}}">
         </mat-form-field> &nbsp;&nbsp;&nbsp;&nbsp;
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Last Name</mat-label>
@@ -37,9 +37,7 @@
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Postal Code</mat-label>
             <input matInput value="{{item.zip}}">
-        </mat-form-field> <br>
-        <button mat-raised-button color="primary">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
-        <button mat-raised-button color="warn">Reset</button>
+        </mat-form-field> 
       
       </form>
       </mat-card>
