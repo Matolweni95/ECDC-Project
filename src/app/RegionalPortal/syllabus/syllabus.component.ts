@@ -4,7 +4,7 @@ import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { HttpClient } from '@angular/common/http';
-
+import { environment } from 'src/environments/environment';
 export class Notification {
   constructor (public id: number, 
               public title: string,
@@ -34,7 +34,7 @@ export class SyllabusComponent implements OnInit {
     this.getCentres();
     this.getNotifs();
   }
-  
+
    getNotifs(){
     this.http.get<any>('http://localhost/angularproj/php/fetchNotifs.php').subscribe(
       response => {
@@ -45,7 +45,7 @@ export class SyllabusComponent implements OnInit {
   }
 
   getCentres() {
-    this.http.get<any>('http://localhost:8080/https---github.com-Matolweni95-Project/php/fetchCenters.php').subscribe(
+    this.http.get<any>(`${environment.baseUrl}/fetchCenters.php`).subscribe(
       response => {
         this.centers = response;
       }

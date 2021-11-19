@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { environment } from 'src/environments/environment';
 export class Notification {
   constructor(public id: number,
     public title: string,
@@ -29,7 +29,7 @@ export class RegionalManagerHomeComponent implements OnInit {
   }
 
   getCentres() {
-    this.http.get<any>('http://localhost:8080/https---github.com-Matolweni95-Project/php/fetchCenters.php').subscribe(
+    this.http.get<any>(`${environment.baseUrl}/fetchCenters.php`).subscribe(
       response => {
         this.centers = response.slice(0, this.size);
       }
@@ -37,7 +37,7 @@ export class RegionalManagerHomeComponent implements OnInit {
   }
 
   getManagers() {
-    this.http.get<any>('http://localhost:8080/https---github.com-Matolweni95-Project/php/fetchManagers.php').subscribe(
+    this.http.get<any>(`${environment.baseUrl}/fetchManagers.php`).subscribe(
       response => {
         this.managers = response.slice(0, this.size);
       }
@@ -45,7 +45,7 @@ export class RegionalManagerHomeComponent implements OnInit {
   }
 
   getFunds() {
-    this.http.get<any>('http://localhost:8080/https---github.com-Matolweni95-Project/php/fetchFunds.php').subscribe(
+    this.http.get<any>(`${environment.baseUrl}/fetchFunds.php`).subscribe(
       response => {
         this.funds = response.slice(0, this.size);
       }

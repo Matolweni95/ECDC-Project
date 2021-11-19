@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { environment } from 'src/environments/environment';
 
 export interface PeriodicElement {
   "Centre Name": string;
@@ -36,7 +37,7 @@ export class FinancialApprovalComponent implements OnInit {
   }
 
   getRequestedFunds() {
-    this.http.get<any>('http://localhost:8080/https---github.com-Matolweni95-Project/php/fetchRequestedFunds.php').subscribe(
+    this.http.get<any>(`${environment.baseUrl}/fetchRequestedFunds.php`).subscribe(
       response => {
         this.results = response;
       }
@@ -44,7 +45,7 @@ export class FinancialApprovalComponent implements OnInit {
   }
 
   approve(id: number) {
-    this.http.get<any>(`http://localhost:8080/https---github.com-Matolweni95-Project/php/approveFunds.php?id=${id}`).subscribe(
+    this.http.get<any>(`${environment.baseUrl}/approveFunds.php?id=${id}`).subscribe(
       response => {
         this.results = response;
       }
@@ -52,7 +53,7 @@ export class FinancialApprovalComponent implements OnInit {
   }
 
   decline(id: number) {
-    this.http.get<any>(`http://localhost:8080/https---github.com-Matolweni95-Project/php/declineFunds.php?id=${id}`).subscribe(
+    this.http.get<any>(`${environment.baseUrl}/declineFunds.php?id=${id}`).subscribe(
       response => {
         this.results = response;
       }
