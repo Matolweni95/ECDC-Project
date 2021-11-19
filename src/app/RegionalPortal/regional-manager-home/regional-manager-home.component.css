@@ -16,6 +16,14 @@ mat-card {
     gap: 15px;
     flex-wrap: wrap;
     border: none;
+    position: relative;
+    right: 250px;
+}
+
+.card3{
+  position: relative;
+  bottom: 446px;
+  left: 320px;
 }
 .example-cards{
     width:520px;

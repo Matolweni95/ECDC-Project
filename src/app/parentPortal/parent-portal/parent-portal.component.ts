@@ -67,7 +67,7 @@ this.loginbtn = !name;
 logout()
 {
 this.dataService.deleteToken();
-window.location.href = "/";
+window.location.href = "/index.html";
 }
 
 onload(test: any, test1:any){

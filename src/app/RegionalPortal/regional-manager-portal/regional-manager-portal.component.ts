@@ -56,6 +56,6 @@ export class RegionalManagerPortalComponent implements OnInit {
  logout()
  {
  this.dataService.deleteToken();
- window.location.href = "/";
+ window.location.href = "/index.html";
  }
  }
