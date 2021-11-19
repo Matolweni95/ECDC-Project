@@ -36,16 +36,18 @@ button{
 }
 .content {
     height: calc(100vh - 98px);
-    margin: 16px;
-    margin-left: 34px;
-    display: flex;
-    justify-content: center;
+    margin: 16px !important;
+    padding-top: 2rem;
+    padding-left: 20rem;
+    padding-right: 20rem;
+    /* display: flex; */
+    justify-content: center !important;
     color: black;
     border-radius: 10px;
     overflow: auto;
     background-color: rgb(255, 255, 255);
     flex-wrap: nowrap;
-    
+
 }
 
 .menu-button {

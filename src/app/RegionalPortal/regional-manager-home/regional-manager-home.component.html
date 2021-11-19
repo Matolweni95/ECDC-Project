@@ -1,78 +1,83 @@
 <router-outlet></router-outlet>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <div class="cont">
-    <div class="card">
-<mat-card class="example-card">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Total Learners</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-    </mat-card-header>
-    
-    <mat-card-content>
-      <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-        bred for hunting.
-      </p>
-    </mat-card-content>
-   
-  </mat-card>
-  <mat-card class="example-card">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Total Teachers</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-    </mat-card-header>
-    
-    <mat-card-content>
-      <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-        bred for hunting.
-      </p>
-    </mat-card-content>
-   
-  </mat-card><mat-card class="example-card">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Centre Funds</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-    </mat-card-header>
-    
-    <mat-card-content>
-      <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-        bred for hunting.
-      </p>
-    </mat-card-content>
-   
-  </mat-card>
+  <div class="card">
+    <mat-card class="counts-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Managers</mat-card-title>
+        <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+      </mat-card-header>
+
+      <mat-card-content>
+        <ul>
+          <li *ngFor="let manager of managers">{{ manager.firstName }} {{ manager.surname }}</li>
+        </ul>
+      </mat-card-content>
+
+      <mat-card-footer>
+        <!-- <h4>Total Managers: {{ centers.length }}</h4> -->
+        <button mat-button color="primary">See All</button>
+      </mat-card-footer>
+    </mat-card>
+    <mat-card class="counts-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Centers</mat-card-title>
+        <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+      </mat-card-header>
+
+      <mat-card-content>
+        <ul>
+          <li *ngFor="let center of centers">{{ center.centreName }}</li>
+        </ul>
+      </mat-card-content>
+
+      <mat-card-footer>
+        <!-- <h5>Total Centers: {{ centers.length }}</h5> -->
+        <button mat-button color="primary">See All</button>
+      </mat-card-footer>
+
+    </mat-card>
+    <mat-card class="counts-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Funds</mat-card-title>
+        <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+      </mat-card-header>
+
+      <mat-card-content>
+        <ul>
+          <li *ngFor="let fund of funds">{{ fund.centreName }}</li>
+        </ul>
+      </mat-card-content>
+
+      <mat-card-footer>
+        <!-- <h5>Total Funds: {{ centers.length }}</h5> -->
+        <button mat-button color="primary">See All</button>
+      </mat-card-footer>
+
+    </mat-card>
 
   </div>
 
   <div class="card3">
     <mat-card class="example-cards">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Mountain Dash</mat-card-title>
-          <mat-card-subtitle>Notice Board</mat-card-subtitle>
-        </mat-card-header>
-        
-        <mat-card-content>
-          <p>
-            <li *ngFor="let item of notifications">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Mountain Dash</mat-card-title>
+        <mat-card-subtitle>Notice Board</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <p>
+          <!-- <li *ngFor="let item of notifications">
               {{item.Message}}
               {{item.Id}}
-            </li>
-          </p>
-        </mat-card-content>
-       
-      </mat-card> 
+            </li> -->
+        </p>
+      </mat-card-content>
+
+    </mat-card>
+  </div>
 </div>
-</div>
-
-
-
-  

@@ -1,6 +1,5 @@
 mat-card {
     width: 225px;
-    height: 230px;
     color: white;
     background-color: #8b0903;
 }
@@ -9,7 +8,7 @@ mat-card {
     margin: 16px 16px;
     display: flex;
     gap: 35px;
-    
+
 }
 .card{
     display: flex;
@@ -23,3 +22,19 @@ mat-card {
     height: 75vh;
 }
 
+.counts-card {
+  height: 32vh !important;
+  /* padding-left: 10px; */
+}
+.mat-button {
+  color: #fff;
+  background-color: black;
+  margin-left: 3.5rem;
+  margin-top: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+ul > li {
+  margin-bottom: 5px;
+}

@@ -12,8 +12,9 @@
             <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off" >
                 <label>Centre Name:</label> &nbsp;&nbsp;&nbsp;&nbsp;
                 <select class="centre" name=notifs> Please select data below
-                    <option *ngFor="let notifs of notifications" value="notifs.Message">
-                  {{ notifs.Message }}
+                  <option>Select option</option>
+                    <option *ngFor="let center of centers" value="center.centreId">
+                  {{ center.centreName }}
                 </option>
                 
                  </select>

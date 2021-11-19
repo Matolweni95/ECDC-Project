@@ -18,7 +18,7 @@ export class Notification {
   styleUrls: ['./syllabus.component.css']
 })
 export class SyllabusComponent implements OnInit {
-
+  centers: any[] = [];
   angForm!: FormGroup;
   notifications:any[] = [];
 
@@ -30,7 +30,11 @@ export class SyllabusComponent implements OnInit {
       });
 
    }
-
+   ngOnInit(): void {
+    this.getCentres();
+    this.getNotifs();
+  }
+  
    getNotifs(){
     this.http.get<any>('http://localhost/angularproj/php/fetchNotifs.php').subscribe(
       response => {
@@ -40,9 +44,15 @@ export class SyllabusComponent implements OnInit {
     )
   }
 
-  ngOnInit(): void {
-    this.getNotifs();
+  getCentres() {
+    this.http.get<any>('http://localhost:8080/https---github.com-Matolweni95-Project/php/fetchCenters.php').subscribe(
+      response => {
+        this.centers = response;
+      }
+    );
   }
+
+  
   postdata(angForm1: { value: { email: any; password: any; }; })
   {
     this.dataService.userlogin(angForm1.value.email,angForm1.value.password)
