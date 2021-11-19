@@ -37,7 +37,7 @@ export class FinancialApprovalComponent implements OnInit {
   }
 
   getRequestedFunds() {
-    this.http.get<any>(`${environment.baseUrl}/fetchRequestedFunds.php`).subscribe(
+    this.http.get<any>('http://sict-iis.mandela.ac.za/12/assets/php/fetchRequestedFunds.php').subscribe(
       response => {
         this.results = response;
       }
@@ -45,7 +45,7 @@ export class FinancialApprovalComponent implements OnInit {
   }
 
   approve(id: number) {
-    this.http.get<any>(`${environment.baseUrl}/approveFunds.php?id=${id}`).subscribe(
+    this.http.get<any>('http://sict-iis.mandela.ac.za/12/assets/php/approveFunds.php?id=${id}').subscribe(
       response => {
         this.results = response;
       }
@@ -53,7 +53,7 @@ export class FinancialApprovalComponent implements OnInit {
   }
 
   decline(id: number) {
-    this.http.get<any>(`${environment.baseUrl}/declineFunds.php?id=${id}`).subscribe(
+    this.http.get<any>('http://sict-iis.mandela.ac.za/12/assets/php/declineFunds.php?id=${id}').subscribe(
       response => {
         this.results = response;
       }

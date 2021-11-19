@@ -30,7 +30,7 @@ export class ApplicationApprovalComponent implements OnInit {
       mobile: ['', Validators.required]
       });
 
-    this.http.get('http://localhost/angular-admin/php/fetch_data.php').subscribe(data => {
+    this.http.get('http://sict-iis.mandela.ac.za/12/assets/php/fetch_data.php').subscribe(data => {
       this.post.push(data);
       this.dataSource = new MatTableDataSource(this.post[0]);
     })

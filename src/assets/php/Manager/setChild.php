@@ -3,8 +3,8 @@ include_once("connect.php");
 
 $id = $_GET['id'];
 
-$sql = "INSERT INTO child (childName, childSurname, dateOfBirth, className, additionalPrograms, ApplicationID)
-SELECT childName, childSurname, dateOfBirth, class,additionalPrograms, ApplicationID FROM parent_child_application
+$sql = "INSERT INTO child (childName, childSurname, dateOfBirth, className, additionalPrograms, ApplicationID, parentName, parentSurname)
+SELECT childName, childSurname, dateOfBirth, class,additionalPrograms, ApplicationID, parentName, parentSurname FROM parent_child_application
 WHERE Application_status = 'Accepted' and ApplicationID = '$id'";
 
 

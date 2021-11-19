@@ -29,7 +29,7 @@ export class RegionalManagerHomeComponent implements OnInit {
   }
 
   getCentres() {
-    this.http.get<any>(`${environment.baseUrl}/fetchCenters.php`).subscribe(
+    this.http.get<any>('http://sict-iis.mandela.ac.za/12/assets/php/fetchCenters.php').subscribe(
       response => {
         this.centers = response.slice(0, this.size);
       }
@@ -37,7 +37,7 @@ export class RegionalManagerHomeComponent implements OnInit {
   }
 
   getManagers() {
-    this.http.get<any>(`${environment.baseUrl}/fetchManagers.php`).subscribe(
+    this.http.get<any>('http://sict-iis.mandela.ac.za/12/assets/php/fetchManagers.php').subscribe(
       response => {
         this.managers = response.slice(0, this.size);
       }
@@ -45,7 +45,7 @@ export class RegionalManagerHomeComponent implements OnInit {
   }
 
   getFunds() {
-    this.http.get<any>(`${environment.baseUrl}/fetchFunds.php`).subscribe(
+    this.http.get<any>('http://sict-iis.mandela.ac.za/12/assets/php/fetchFunds.php').subscribe(
       response => {
         this.funds = response.slice(0, this.size);
       }
